@@ -1,87 +1,74 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Verdana;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f7;
 }
 a {
   text-decoration: none;
 }
-
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 .column {
-  display: inline-block;
-  vertical-align: top;
+  flex: 1 1 100%;
+  margin-bottom: 1rem;
 }
-
-.left-column {
-  width: 75%;
+@media screen and (min-width: 768px) {
+  .column {
+    flex: 1 1 50%;
+    margin-bottom: 0;
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
 }
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .stream {
-  max-width: 70.5vw;
-  max-height: 95vh;
-  margin-right: auto;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-  margin-top: 2.6vh;
-  margin-bottom: 2.6vh;
-  margin-left: 2.6vh;
-  /* margin-right: 2.6vh; */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
-
 .compare {
-  max-width: 23vw;
-  max-height: 95vh;
-  margin-top: 2.5vh;
-  margin-bottom: 2.5vh;
-  /* margin-left: 1.25vh; */
-  margin-right: 1.25vh;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
-
-.button1 {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
+.button1,
+.button2 {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease-in-out;
 }
 .button1:hover {
   background-color: #27ae60;
+  color: #fff;
 }
-
-.button2 {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
 .button2:hover {
-  background: #ae4d27;
+  background-color: #e74c3c;
+  color: #fff;
 }
-
-.result{
+.result {
   max-width: 10vw;
   max-height: 10vh;
 }
