@@ -1,4 +1,4 @@
-.container {
+.home-container {
   width: 100%;
   display: flex;
   overflow: auto;
@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.container1 {
+.home-container1 {
   width: 70%;
   height: 1080px;
   display: flex;
@@ -15,13 +15,13 @@
   flex-direction: column;
   background-color: #9c9b9b;
 }
-.stream {
+.home-image {
   width: 90%;
   height: 1223px;
   align-self: center;
   object-fit: fill;
 }
-.container2 {
+.home-container2 {
   right: 0px;
   width: 30%;
   bottom: 0px;
@@ -39,7 +39,7 @@
   background-color: #9c9b9b;
 }
 
-.text {
+.home-text {
   top: 0px;
   left: 0px;
   right: 0px;
@@ -57,14 +57,14 @@
   margin-bottom: auto;
   background-color: rgb(217, 217, 217);
 }
-.text01 {
+.home-text01 {
   font-style: normal;
   font-weight: 600;
 }
-.text02 {
+.home-text02 {
   box-shadow: rgb(212, 212, 212) 5px 5px 10px 0px;
 }
-.text03 {
+.home-text03 {
   top: 0px;
   left: 0px;
   right: 0px;
@@ -82,21 +82,21 @@
   margin-bottom: auto;
   background-color: #D9D9D9;
 }
-.text06 {
+.home-text06 {
   font-style: normal;
   font-weight: 400;
 }
-.text08 {
+.home-text08 {
   font-style: normal;
   font-weight: 400;
 }
-.image1 {
+.home-image1 {
   width: 90%;
   align-self: center;
   margin-top: 150px;
   object-fit: cover;
 }
-.text11 {
+.home-text11 {
   width: 80%;
   font-size: 20px;
   align-self: center;
@@ -111,7 +111,7 @@
   padding-bottom: var(--dl-space-space-unit);
   background-color: rgba(154, 251, 165, 0.62);
 }
-.button {
+.home-button {
   color: var(--dl-color-gray-black);
   width: 90%;
   height: auto;
@@ -125,7 +125,7 @@
   border-radius: 15px;
   background-color: var(--dl-color-success-700);
 }
-.button1 {
+.home-button1 {
   color: var(--dl-color-gray-white);
   width: 90%;
   font-size: 28px;
@@ -144,18 +144,18 @@
   padding-bottom: var(--dl-space-space-unit);
   background-color: var(--dl-color-danger-500);
 }
-.button1:hover {
+.home-button1:hover {
   bottom: var(--dl-space-space-halfunit);
   margin: var(--dl-space-space-twounits);
   padding: var(--dl-space-space-oneandhalfunits);
 }
-.button1:active {
+.home-button1:active {
   bottom: 0px;
   margin: var(--dl-space-space-threeunits);
   background-color: var(--dl-color-danger-300);
 }
 @media(max-width: 1200px) {
-  .button1 {
+  .home-button1 {
     margin-top: 800px;
   }
 }
