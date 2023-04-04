@@ -13,9 +13,13 @@ $(function () {
 function readFile() {
   jQuery.get('result.txt', function (txt) {
     $('#outputBx').text(txt);
-    var random = Math.floor(Math.random() * 1000000); // generate a random number
-    $('#re').attr('src', '/image.jpg?' + random); // update the image source with a random query string
+    refreshImage();
   });
+}
+
+function refreshImage() {
+  var timestamp = new Date().getTime();
+  $('#re').attr('src', '/image.jpg?' + timestamp);
 }
 
 $(function () {

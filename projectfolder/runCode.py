@@ -54,6 +54,8 @@ def control_motors():
                     LEFT = True
                 else:
                     LEFT = False
+                if keys.state('K_SPACE'):
+                    print('Compare')
                     
                 FRONTLIGHTS = UP
                 BACKLIGHTS = DOWN
