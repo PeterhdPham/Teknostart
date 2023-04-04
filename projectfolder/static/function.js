@@ -1,6 +1,5 @@
 $(function () {
   $("a#button").on("click", function (e) {
-    // window.location.reload();
     e.preventDefault();
     $.getJSON("/compare", function (data) {
 
@@ -9,13 +8,6 @@ $(function () {
     return false;
   });
 });
-
-function readFile() {
-  jQuery.get('result.txt', function (txt) {
-    $('#outputBx').text(txt);
-    refreshImage();
-  });
-}
 
 function readFile() {
   jQuery.get('result.txt', function (txt) {
