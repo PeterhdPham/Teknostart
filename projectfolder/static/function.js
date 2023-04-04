@@ -17,9 +17,11 @@ function readFile() {
   });
 }
 
-function refreshImage() {
-  var timestamp = new Date().getTime();
-  $('#re').attr('src', '/image.jpg?' + timestamp);
+function readFile() {
+  jQuery.get('result.txt', function (txt) {
+    $('#re').attr('src', '/image.jpg?' + new Date().getTime());
+    $('#outputBx').text(txt);
+  });
 }
 
 $(function () {
