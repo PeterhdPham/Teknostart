@@ -267,7 +267,7 @@ def start_http_server(video_resolution, fps, server_port, index_file,
             server_thread.start()
             while True:
                 time.sleep(0.1)
-                camera.capture('/home/teknostart/Teknostart/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
+                camera.capture('/home/pi/Teknostart/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
                 
         finally:
             print('closing web server')
