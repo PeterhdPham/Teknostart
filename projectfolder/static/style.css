@@ -104,6 +104,7 @@ main {
   border-radius: 5px;
   font-weight: bold;
   text-transform: uppercase;
+  margin-top: 1rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   background: linear-gradient(to bottom, #ff4f4f, #ff3b3b);
   color: #fff;
