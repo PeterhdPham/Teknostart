@@ -85,8 +85,7 @@ main {
 
 .button1 {
   display: block;
-  width: 100%;
-  max-width: 300px;
+  width: 80%;
   padding: 1rem 0.75rem;
   text-align: center;
   border-radius: 5px;
@@ -105,8 +104,8 @@ main {
 
 .button2 {
   display: block;
-  width: 100%;
-  max-width: 300px;
+  width: 80%;
+
   padding: 1rem 0.75rem;
   text-align: center;
   border-radius: 5px;
