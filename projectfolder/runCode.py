@@ -1,5 +1,5 @@
 from doctest import FAIL_FAST
- os
+import os
 from pickle import FALSE
 import subprocess
 from tkinter import LEFT, RIGHT
