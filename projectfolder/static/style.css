@@ -50,12 +50,7 @@ main {
     align-items: center;
     gap: 1rem;
   }
-  .button1,
-  .button2 {
-    max-width: 15vw; /* changed from max-width: 300px */
-    padding: 1.5vw; /* changed from padding: 1rem */
-  }
-}
+
 
 .stream {
   width: 100%;
