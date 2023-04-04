@@ -19,7 +19,7 @@ main {
   flex-wrap: wrap;
   align-items: center;
   max-height: 90vh;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 .column {
   flex: 1 1 100%;
