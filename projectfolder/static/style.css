@@ -75,27 +75,45 @@ main {
   border-radius: 8px;
   object-fit: cover;
 }
-
-.button1,
-.button2 {
+.button1 {
   display: block;
   width: 100%;
-  max-width: 20vw; /* changed from max-width: 300px */
-  padding: 2vw; /* changed from padding: 1rem */
+  max-width: 300px;
+  padding: 0.75rem;
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(to bottom, #4e9caf, #3a8b96);
+  background: linear-gradient(to bottom, #5368ff, #2f3cff);
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button1:hover {
+  background: linear-gradient(to bottom, #2f3cff, #1c23c7);
+}
+
+.button2 {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #ff4f4f, #ff3b3b);
   color: #fff;
   transition: background-color 0.2s ease-in-out;
 }
 
-.button1:hover,
 .button2:hover {
-  background: linear-gradient(to bottom, #3a8b96, #327d8f);
+  background: linear-gradient(to bottom, #ff3b3b, #f72d2d);
 }
+
 
 .result {
   max-width: 10vw;
