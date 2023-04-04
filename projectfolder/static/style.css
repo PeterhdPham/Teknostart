@@ -3,26 +3,34 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #f7f7f7;
+  height: 100%; /* Added property */
 }
+
 a {
   text-decoration: none;
 }
+
 main {
-  max-width: 1920px;
+  max-width: 100%; /* Modified property */
   margin: 0 auto;
   padding: 2rem;
-  max-height: 1080px; /* added property */
-  overflow: auto; /* added property */
+  max-height: 100%; /* Modified property */
+  overflow: auto; /* Modified property */
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  width: 100%; /* Added property */
+  height: 100%; /* Added property */
 }
+
 .column {
   flex: 1 1 100%;
   margin-bottom: 1rem;
 }
+
 @media screen and (min-width: 768px) {
   .row {
     flex-wrap: nowrap;
@@ -42,12 +50,16 @@ main {
     align-items: center;
   }
 }
+
 .stream {
   width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  max-width: 100%; /* Added property */
+  max-height: 100%; /* Added property */
 }
+
 .compare {
   width: 100%;
   height: auto;
@@ -55,7 +67,10 @@ main {
   margin-bottom: 1rem;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  max-width: 100%; /* Added property */
+  max-height: 100%; /* Added property */
 }
+
 .button1,
 .button2 {
   display: block;
@@ -76,7 +91,7 @@ main {
 .button2:hover {
   background: linear-gradient(to bottom, #3a8b96, #327d8f);
 }
-}
+
 .result {
   max-width: 10vw;
   max-height: 10vh;
