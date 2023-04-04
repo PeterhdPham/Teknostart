@@ -11,7 +11,7 @@ $(function () {
 
 function readFile() {
   jQuery.get('result.txt', function (txt) {
-    $('#re').attr('src', '/image.jpg?' + new Date().getTime());
+    $('#re').attr('src', '/image.jpg?');
     $('#outputBx').text(txt);
   });
 }
