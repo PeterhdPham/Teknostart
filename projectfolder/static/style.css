@@ -76,6 +76,12 @@ main {
   border-radius: 8px;
   object-fit: cover;
 }
+.compare_text{
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
 
 .button1 {
   display: block;
