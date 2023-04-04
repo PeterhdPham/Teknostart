@@ -17,8 +17,11 @@ function readFile() {
 }
 
 function refreshImage() {
-  var url = '/image.jpg?' + new Date().getTime();
-  $('#re').attr('src', url);
+  var timestamp = new Date().getTime();
+  var imagePath = '/image.jpg?' + timestamp;
+  jQuery.get(imagePath, function() {
+    $('#re').attr('src', imagePath);
+  });
 }
 
 $(function () {
