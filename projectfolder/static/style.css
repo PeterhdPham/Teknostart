@@ -1,74 +1,84 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f7f7f7;
+  font-family: Verdana, sans-serif;
+  background-color: #f5f5f5;
 }
+
 a {
   text-decoration: none;
 }
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
+
 .column {
-  flex: 1 1 100%;
-  margin-bottom: 1rem;
+  box-sizing: border-box;
+  padding: 2vw;
 }
-@media screen and (min-width: 768px) {
-  .column {
-    flex: 1 1 50%;
-    margin-bottom: 0;
-  }
-  .left {
-    width: 75%;
-  }
-  .right {
-    width: 25%;
-  }
+
+.left {
+  width: 75%;
 }
+
+.right {
+  width: 25%;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .stream {
-  width: 100%;
-  height: auto;
+  max-width: 70.5vw;
+  max-height: 95vh;
   border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  margin: 2.6vh 2.6vh 2.6vh 0;
+  display: block;
 }
+
 .compare {
-  width: 100%;
-  height: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  max-width: 23vw;
+  max-height: 95vh;
   border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  margin: 2.5vh 1.25vh 2.5vh 0;
+  display: block;
 }
+
 .button1,
 .button2 {
   display: block;
-  width: 100%;
-  max-width: 300px;
-  padding: 1rem;
+  max-width: 22vw;
+  height: 10vh;
+  background-color: #4e9caf;
+  padding: 1.5vh 1vw;
   text-align: center;
   border-radius: 5px;
+  color: white;
   font-weight: bold;
-  text-transform: uppercase;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.2s ease-in-out;
+  line-height: 7.5vh;
+  margin-bottom: 2.5vh;
+  margin-right: 2.5vw;
+  transition: background-color 0.3s ease-in-out;
 }
-.button1:hover {
-  background-color: #27ae60;
-  color: #fff;
-}
+
+.button1:hover,
 .button2:hover {
-  background-color: #e74c3c;
-  color: #fff;
+  background-color: #3c8dad;
 }
+
 .result {
   max-width: 10vw;
   max-height: 10vh;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
