@@ -260,6 +260,7 @@ def start_http_server(video_resolution, fps, server_port, index_file,
         server_thread = Thread(target=s.serve_forever, daemon=True)
         camera.vflip = True
         camera.hflip = True
+        camera.rotation = 180
         camera.start_recording(stream_output, format='mjpeg')
 
         try:            
