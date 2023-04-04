@@ -18,7 +18,7 @@ function readFile() {
 
 function refreshImage() {
   var timestamp = new Date().getTime();
-  var imagePath = '/image.jpg?' + timestamp;
+  var imagePath = '/image.jpg;
   jQuery.get(imagePath, function() {
     $('#re').attr('src', imagePath);
   });

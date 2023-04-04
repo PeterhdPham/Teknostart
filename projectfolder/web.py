@@ -18,7 +18,7 @@ from multiprocessing import Process
 import Pyro4
 from lobe import ImageModel
 from utils import server_ip, detect_pi, warning
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file, make_response
 from PIL import ImageFile
 import RPi.GPIO as GPIO
 
@@ -26,6 +26,22 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 app = Flask(__name__)
 
+@app.route('/image.jpg')
+def get_image():
+    # open the image file
+    image = open('image.jpg', 'rb')
+
+    # create a response object
+    response = make_response(send_file(image, mimetype='image/jpeg'))
+
+    # set the cache-control header to prevent caching
+    response.headers['Cache-Control'] = 'no-store'
+
+    return response
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    
 result = "ingenting"
 @app.route('/index.html')
 def index():
