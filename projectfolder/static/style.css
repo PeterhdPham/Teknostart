@@ -49,6 +49,11 @@ main {
     justify-content: center;
     align-items: center;
   }
+  .button1,
+  .button2 {
+    max-width: 15vw; /* changed from max-width: 300px */
+    padding: 1.5vw; /* changed from padding: 1rem */
+  }
 }
 
 .stream {
@@ -57,7 +62,6 @@ main {
   max-width: 90vw;
   max-height: 90vh;
   border-radius: 8px;
-  box-shadow: 0 0 2vw rgba(0, 0, 0, 0.3);
   object-fit: contain;
 }
 
@@ -69,7 +73,6 @@ main {
   max-width: 90vw;
   max-height: 90vh;
   border-radius: 8px;
-  box-shadow: 0 0 2vw rgba(0, 0, 0, 0.3);
   object-fit: cover;
 }
 
@@ -77,8 +80,8 @@ main {
 .button2 {
   display: block;
   width: 100%;
-  max-width: 300px;
-  padding: 1rem;
+  max-width: 20vw; /* changed from max-width: 300px */
+  padding: 2vw; /* changed from padding: 1rem */
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
