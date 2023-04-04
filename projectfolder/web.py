@@ -37,14 +37,14 @@ def background_process_test():
     return ("nothing")
 
 
-# model = ImageModel.load('/home/teknostart/teknobil2022/Lobe')
+model = ImageModel.load('/home/pi/Teknostart/Lobe')
 
-# def compare():
-#     res = model.predict_from_file('/home/teknostart/teknobil2022/projectfolder/image.jpg')
-#     return res.prediction
+def compare():
+    res = model.predict_from_file('/home/pi/Teknostart/projectfolder/image.jpg')
+    return res.prediction
 
-# def recognize(label):
-#     print("RESULT:  " + label)
+def recognize(label):
+    print("RESULT:  " + label)
 
 if detect_pi():
     import picamera
@@ -104,13 +104,13 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.end_headers()
             self.rov.run = False
-        # elif self.path.startswith('/compare'):
-        #     result = compare()
-        #     text_file = open('/home/teknostart/teknobil2022/projectfolder/result.txt', "w")
-        #     n = text_file.write(result)
-        #     text_file.close()
-        #     print("COMPARING...")
-        #     recognize(result)
+        elif self.path.startswith('/compare'):
+            result = compare()
+            text_file = open('/home/pi/Teknostart/projectfolder/result.txt', "w")
+            n = text_file.write(result)
+            text_file.close()
+            print("COMPARING...")
+            recognize(result)
 
         else:
             path = os.path.join(self.base_folder, self.path[1:])
