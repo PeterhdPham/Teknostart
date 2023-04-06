@@ -2,7 +2,7 @@ $(function () {
   $("a#button").on("click", function (e) {
     e.preventDefault();
     $.getJSON("/compare", function (data) {
-      readFile(); // Move the call to readFile() inside the $.getJSON() function
+      readFile();
     });
     return false;
   });
@@ -11,13 +11,12 @@ $(function () {
 function readFile() {
   jQuery.get('result.txt', function (txt) {
     $('#outputBx').text(txt);
-    refreshImage(); // Move the call to refreshImage() inside the $.get() function
+    refreshImage('/image.jpg'); // Pass the image path as a parameter
   });
 }
 
-function refreshImage() {
+function refreshImage(imagePath) {
   var timestamp = new Date().getTime();
-  var imagePath = '/image.jpg';
   jQuery.get(imagePath, function() {
     $('#re').attr('src', imagePath);
   });
