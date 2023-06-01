@@ -22,6 +22,9 @@ from flask import Flask, render_template, send_file, make_response, send_from_di
 from PIL import ImageFile
 import RPi.GPIO as GPIO
 
+# Create a lock
+image_lock = threading.Lock()
+
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 app = Flask(__name__)
@@ -60,7 +63,8 @@ def background_process_test():
 model = ImageModel.load('/home/pi/Teknostart/Lobe')
 
 def compare():
-    res = model.predict_from_file('/home/pi/Teknostart/projectfolder/image.jpg')
+    with image_lock:
+        res = model.predict_from_file('/home/pi/Teknostart/projectfolder/image.jpg')
     return res.prediction
 
 def recognize(label):
@@ -304,7 +308,8 @@ def start_http_server(video_resolution, fps, server_port, index_file,
             server_thread.start()
             while True:
                 time.sleep(0.1)
-                camera.capture('/home/pi/Teknostart/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
+                with image_lock:
+                    camera.capture('/home/pi/Teknostart/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
                 
         finally:
             print('closing web server')
