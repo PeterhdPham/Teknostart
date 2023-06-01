@@ -1,11 +1,10 @@
 $(function () {
   $("a#button").on("click", function (e) {
     e.preventDefault();
-    readFile(); // Move readFile() inside the click event handler
     $.getJSON("/compare", function (data) {
-      //Do nothing
+      // Only call readFile and refreshImage after receiving a response from the server
+      readFile();
     });
-
     return false;
   });
 
@@ -32,4 +31,3 @@ function refreshImage() {
   var imagePath = '/image_' + timestamp + '.jpg'; 
   $('#re').attr('src', imagePath);
 }
-
