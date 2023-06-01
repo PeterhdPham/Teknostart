@@ -125,15 +125,24 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             self.end_headers()
             self.rov.run = False
         elif self.path.startswith('/compare'):
-            result = compare()
-            text_file = open('/home/pi/Teknostart/projectfolder/result.txt', "w")
-            n = text_file.write(result)
-            text_file.close()
-            print("COMPARING...")
-            recognize(result)
-            self.send_response(200)
-            self.end_headers()
-            self.wfile.write(b'Compare completed')  # send a response to the client
+            try:
+                print("Starting compare...")
+                result = compare()
+                print("Compare completed, starting write to file...")
+                
+                text_file = open('/home/pi/Teknostart/projectfolder/result.txt', "w")
+                n = text_file.write(result)
+                text_file.close()
+                
+                print("File write completed, starting recognize...")
+                recognize(result)
+                
+                print("Recognize completed, sending response...")
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(b'Compare completed')  # send a response to the client
+            except Exception as e:
+                print("An error occurred: ", e)
 
         elif self.path.startswith('/image_') and self.path.endswith('.jpg'):
             path = os.path.join(self.base_folder, 'image.jpg')
