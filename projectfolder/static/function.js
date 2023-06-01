@@ -20,9 +20,11 @@ $(function () {
 });
 
 function readFile() {
+  console.log("readFile function called");
   $.get('/result.txt', function (txt) {
+    console.log("Reading file", txt);
     $('#outputBx').text(txt);
-    refreshImage(); // Call refreshImage() inside the success callback
+    refreshImage();
   });
 }
 
