@@ -2,12 +2,20 @@ $(function () {
   $("a#button").on("click", function (e) {
     e.preventDefault();
     readFile(); // Move readFile() inside the click event handler
+    $.getJSON("/compare", function (data) {
+      //Do nothing
+    });
+
     return false;
   });
 
   $("a#stop").on("click", function (e) {
     e.preventDefault();
     // Add code for stopping the image updates, if needed
+    $.getJSON("/stop", function (data) {
+      //do nothing
+    });
+
     return false;
   });
 });
