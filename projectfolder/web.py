@@ -18,13 +18,17 @@ from multiprocessing import Process
 import Pyro4
 from lobe import ImageModel
 from utils import server_ip, detect_pi, warning
-from flask import Flask, render_template, send_file, make_response
+from flask import Flask, render_template, send_file, make_response, send_from_directory
 from PIL import ImageFile
 import RPi.GPIO as GPIO
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 app = Flask(__name__)
+
+@app.route('/image.jpg')
+def serve_image():
+    return send_from_directory('/home/pi/Teknostart/projectfolder', 'image.jpg')
 
 # @app.route('/image.jpg')
 # def get_image():

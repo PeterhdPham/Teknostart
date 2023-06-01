@@ -11,8 +11,6 @@ Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart
 
 
 # Table of Contents
-- [Teknostart 2022](#teknostart-2022)
-- [Table of Contents](#table-of-contents)
   - [Teknobilen](#teknobilen)
     - [Sette sammen bilen](#sette-sammen-bilen)
   - [Raspberry Pi](#raspberry-pi)
