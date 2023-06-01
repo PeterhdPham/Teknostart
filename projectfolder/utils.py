@@ -230,7 +230,6 @@ def serial_connection(port='/dev/ttyACM0', baudrate=115200, timeout=0.05):
 def warning(message, filter='error', category=UserWarning):
     warnings.simplefilter(filter, category)
     warnings.formatwarning = warning_format
-    warnings.warn(message)
 
 
 def warning_format(message, category, filename, lineno,

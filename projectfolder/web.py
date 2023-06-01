@@ -131,6 +131,9 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             text_file.close()
             print("COMPARING...")
             recognize(result)
+        elif self.path.startswith('/image_') and self.path.endswith('.jpg'):
+            path = os.path.join(self.base_folder, 'image.jpg')
+            self.serve_path(path)
 
         else:
             path = os.path.join(self.base_folder, self.path[1:])
