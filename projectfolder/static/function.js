@@ -1,5 +1,6 @@
 $(function () {
   $("a#button").on("click", function (e) {
+    console.log("funcfunc function called");
     e.preventDefault();
     $.getJSON("/compare", function (data) {
       // Only call readFile and refreshImage after receiving a response from the server
