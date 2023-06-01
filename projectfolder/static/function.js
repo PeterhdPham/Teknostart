@@ -29,7 +29,7 @@ function readFile() {
 
 function refreshImage() {
   var timestamp = new Date().getTime();
-  var imagePath = '/image.jpg?' + timestamp; // Add a timestamp as a query parameter to the image URL to prevent caching
+  var imagePath = '/image_' + timestamp + '.jpg'; // Add a timestamp as part of the path to the image URL
   $('#re').attr('src', imagePath); // Update the image source with the new URL
 }
 
