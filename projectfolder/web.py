@@ -45,7 +45,6 @@ def background_process_test():
 
 
 
-
 model = ImageModel.load('/home/pi/Teknostart/Lobe')
 
 def compare():
@@ -135,9 +134,11 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 
                 response = {"status": "ok", "message": "Compare completed"}  # create the JSON object
                 self.wfile.write(bytes(json.dumps(response), 'utf-8'))  # convert the JSON object to a string and encode it to bytes
-
+                
             except Exception as e:
                 print("An error occurred: ", e)
+
+                
 
         elif self.path.startswith('/image_') and self.path.endswith('.jpg'):
             path = os.path.join(self.base_folder, 'image.jpg')

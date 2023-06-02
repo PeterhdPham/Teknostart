@@ -23,10 +23,19 @@ DOWN = False
 RIGHT = False
 LEFT =False
 
+GPIO.setup(27,GPIO.OUT) #RED
+GPIO.setup(17,GPIO.OUT) #BLUE
+GPIO.setup(4,GPIO.OUT) #YELLOW
+GPIO.setup(3,GPIO.OUT) #GREEN
+
+RED = False
+BLUE = False
+YELLOW = False
+GREEN =False
 
 
-GPIO.setup(2,GPIO.OUT) #FORWARD DRIVING LIGHTS (YELLOW)
-GPIO.setup(3,GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
+GPIO.setup(15,GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
+GPIO.setup(14,GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 
 
@@ -45,7 +54,7 @@ def control_motors():
                 else:
                     DOWN = False
                 if keys.state('K_RIGHT'):
-                    print('Rigth')
+                    print('Right')
                     RIGHT = True
                 else:
                     RIGHT = False
@@ -56,7 +65,35 @@ def control_motors():
                     LEFT = False
                 if keys.state('K_SPACE'):
                     print('Compare')
-                    
+                
+                # Check result.txt
+                with open("/home/pi/Teknostart/projectfolder/result.txt", 'r') as file:
+                    result = file.read().strip()
+
+                    if result == "INGENTING":
+                        print('INGENTING - lighting up red')
+                        RED = True
+                    else:
+                        RED = False
+
+                    if result == "PANT":
+                        print('PANT - lighting up green')
+                        GREEN = True
+                    else:
+                        GREEN = False
+
+                    if result == "GLASS":
+                        print('GLASS - lighting up blue')
+                        BLUE = True
+                    else:
+                        BLUE = False
+
+                    if result == "RESTAVFALL":
+                        print('RESTAVFALL - lighting up yellow')
+                        YELLOW = True
+                    else:
+                        YELLOW = False
+
                 FRONTLIGHTS = UP
                 BACKLIGHTS = DOWN
                 
@@ -64,8 +101,13 @@ def control_motors():
                 GPIO.output(13,DOWN)
                 GPIO.output(19,LEFT)
                 GPIO.output(26,RIGHT)
-                GPIO.output(2, FRONTLIGHTS)
-                GPIO.output(3,BACKLIGHTS)
+                GPIO.output(15, FRONTLIGHTS)
+                GPIO.output(14,BACKLIGHTS)
+                GPIO.output(27, RED)
+                GPIO.output(17, BLUE)
+                GPIO.output(4, YELLOW)
+                GPIO.output(3, GREEN)
+
 
 
 # Create the WebMethod class
