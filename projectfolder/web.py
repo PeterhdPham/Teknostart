@@ -126,9 +126,14 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 recognize(result)
                 
                 print("Recognize completed, sending response...")
+                
                 self.send_response(200)
+                self.send_header('Content-type','application/json')  # set the content type to json
                 self.end_headers()
-                self.wfile.write(b'Compare completed')  # send a response to the client
+                
+                response = {"status": "ok", "message": "Compare completed"}  # create the JSON object
+                self.wfile.write(bytes(json.dumps(response), 'utf-8'))  # convert the JSON object to a string and encode it to bytes
+
             except Exception as e:
                 print("An error occurred: ", e)
 
