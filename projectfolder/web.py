@@ -21,6 +21,7 @@ from utils import server_ip, detect_pi, warning
 from flask import Flask, render_template, send_file, make_response, send_from_directory, request
 from PIL import ImageFile
 import RPi.GPIO as GPIO
+import subprocess
 
 # Create a lock
 image_lock = threading.Lock()
@@ -44,6 +45,25 @@ def background_process_test():
     return ("nothing")
 
 
+
+@app.route('/pi_stats')
+def get_pi_stats():
+    # Retrieve CPU temperature
+    temp_str = subprocess.check_output(['vcgencmd', 'measure_temp']).decode('utf-8')
+    temp = float(temp_str.split('=')[1][:-3])  # Extract temperature value
+
+    # Retrieve battery information
+    # This is just a placeholder. You'll need to replace this with code that
+    # gets the actual battery voltage and state of charge from your battery
+    # management system.
+    battery_voltage = 0.0
+    battery_percentage = 0.0
+
+    return {
+        'cpu_temp': temp,
+        'battery_voltage': battery_voltage,
+        'battery_percentage': battery_percentage,
+    }
 model = ImageModel.load('/home/pi/Teknostart/Lobe')
 
 def compare():
