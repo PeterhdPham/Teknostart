@@ -145,6 +145,7 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                     print("Red light")
                 else:
                     GPIO.output(27, False)
+                    print("Red off")
 
                 if result == "PANT":
                     GPIO.output(17, True)  # Green light
