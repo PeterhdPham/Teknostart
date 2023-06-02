@@ -33,22 +33,6 @@ app = Flask(__name__)
 def serve_image(timestamp):
     return send_from_directory('/home/pi/Teknostart/projectfolder', 'image.jpg')
 
-# @app.route('/image.jpg')
-# def get_image():
-#     # open the image file
-#     image = open('image.jpg', 'rb')
-
-#     # create a response object
-#     response = make_response(send_file(image, mimetype='image/jpeg'))
-
-#     # set the cache-control header to prevent caching
-#     response.headers['Cache-Control'] = 'no-store'
-
-#     return response
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
 result = "ingenting"
 @app.route('/index.html')
 def index():
