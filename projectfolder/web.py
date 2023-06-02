@@ -22,6 +22,19 @@ from flask import Flask, render_template, send_file, make_response, send_from_di
 from PIL import ImageFile
 import RPi.GPIO as GPIO
 
+#set GPIO numbering mode and define output pins
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(27,GPIO.OUT) #RED
+GPIO.setup(17,GPIO.OUT) #BLUE
+GPIO.setup(4,GPIO.OUT) #YELLOW
+GPIO.setup(3,GPIO.OUT) #GREEN
+
+RED = False
+BLUE = False
+YELLOW = False
+GREEN =False
+
+
 # Create a lock
 image_lock = threading.Lock()
 
@@ -126,7 +139,28 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 print("File write completed, starting recognize...")
                 recognize(result)
                 
-                print("Recognize completed, sending response...")
+                print("Recognize completed, starting GPIO...")
+                if result == "INGENTING":
+                    GPIO.output(27, True)  # Red light
+                else:
+                    GPIO.output(27, False)
+
+                if result == "PANT":
+                    GPIO.output(17, True)  # Green light
+                else:
+                    GPIO.output(17, False)
+
+                if result == "GLASS":
+                    GPIO.output(4, True)  # Blue light
+                else:
+                    GPIO.output(4, False)
+
+                if result == "RESTAVFALL":
+                    GPIO.output(3, True)  # Yellow light
+                else:
+                    GPIO.output(3, False)
+
+                print("GPIO completed, sending response...")
                 
                 self.send_response(200)
                 self.send_header('Content-type','application/json')  # set the content type to json
