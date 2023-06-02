@@ -142,21 +142,25 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 print("Recognize completed, starting GPIO...")
                 if result == "INGENTING":
                     GPIO.output(27, True)  # Red light
+                    print("Red light")
                 else:
                     GPIO.output(27, False)
 
                 if result == "PANT":
                     GPIO.output(17, True)  # Green light
+                    print("Green light")
                 else:
                     GPIO.output(17, False)
 
                 if result == "GLASS":
                     GPIO.output(4, True)  # Blue light
+                    print(" Blue light")
                 else:
                     GPIO.output(4, False)
 
                 if result == "RESTAVFALL":
                     GPIO.output(3, True)  # Yellow light
+                    print("Yellow light")
                 else:
                     GPIO.output(3, False)
 
