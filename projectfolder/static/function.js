@@ -39,14 +39,3 @@ function refreshImage() {
   $('#re').attr('src', imagePath);
 }
 
-function updatePiStats() {
-  $.getJSON("/pi_stats", function(data) {
-      // Assuming you have elements with these IDs to display the stats
-      $('#cpuTemp').text(data.cpu_temp);
-      $('#batteryVoltage').text(data.battery_voltage);
-      $('#batteryPercentage').text(data.battery_percentage);
-  });
-}
-
-// Update every 5 seconds
-setInterval(updatePiStats, 1000);
