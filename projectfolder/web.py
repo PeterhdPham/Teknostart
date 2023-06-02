@@ -140,7 +140,7 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 recognize(result)
                 
                 print("Recognize completed, starting GPIO...")
-                if result == "INGENTING":
+                if result == "Ingenting":
                     GPIO.output(27, True)  # Red light
                     print("Red light")
                 else:
