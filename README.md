@@ -11,8 +11,21 @@ Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart
 
 
 # Table of Contents
-  - [Teknobilen](#teknobilen)
-    - [Sette sammen bilen](#sette-sammen-bilen)
+- [Teknostart 2022](#teknostart-2022)
+- [Table of Contents](#table-of-contents)
+- [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
+  - [Steg 1: Montering av motorer](#steg-1-montering-av-motorer)
+  - [Steg 2: Sammensetting av baseplate og avlange plater](#steg-2-sammensetting-av-baseplate-og-avlange-plater)
+  - [Steg 3: Ledninger](#steg-3-ledninger)
+  - [Steg 4: Montering av bunnplate](#steg-4-montering-av-bunnplate)
+  - [Steg 5: Raspbian](#steg-5-raspbian)
+  - [Steg 6: Montering av komponenter](#steg-6-montering-av-komponenter)
+  - [Steg 7: Montering av frontplate og kamera](#steg-7-montering-av-frontplate-og-kamera)
+  - [Steg 8: Oppkobling av GPIO](#steg-8-oppkobling-av-gpio)
+  - [Steg 9: Oppkobling av LED-lys](#steg-9-oppkobling-av-led-lys)
+  - [Steg 10: Kontroll og kobling av batteri](#steg-10-kontroll-og-kobling-av-batteri)
+  - [Steg 11: Montering av bakplate og topplokk](#steg-11-montering-av-bakplate-og-topplokk)
+  - [Steg 12: Ferdig produkt](#steg-12-ferdig-produkt)
   - [Raspberry Pi](#raspberry-pi)
     - [Sette opp SD-kortet](#sette-opp-sd-kortet)
     - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
@@ -24,72 +37,110 @@ Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart
     - [Last inn koden til Arduinoen](#last-inn-koden-til-arduinoen)
   - [(Bonus) Lobe](#bonus-lobe)
     - [Lag deres egen modell med maskinlæring](#lag-deres-egen-modell-med-maskinlæring)
+      - [Last ned LOBE](#last-ned-lobe)
+      - [Last ned riktig programvare for å kunne ta bilder med RPi](#last-ned-riktig-programvare-for-å-kunne-ta-bilder-med-rpi)
+      - [Ta bilder](#ta-bilder)
+      - [Lag gjenkjenningsmodell](#lag-gjenkjenningsmodell)
+      - [Bruk modellen](#bruk-modellen)
 
-## Teknobilen
+# Veiledning for montering av Teknobilen 2023
 
-### Sette sammen bilen
-Kun veiledende instruks/rekkefølge. Lov å gjøre en annen rekkefølge.
-1.	Fest motorer til sidevegger med lange M3 skruer og muttere. 
-  * NB! Pass på at de bakre veggene passer når dere setter dem sammen.
+Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2023/-/tree/main/Media/teknobil).
 
-<img src="Media/teknobil/01.jpg" height=350>
-<img src="Media/teknobil/02.jpg" height=350>
-<img src="Media/teknobil/03.jpg" height=350>
-<img src="Media/teknobil/04.jpg" height=350>
-<img src="Media/teknobil/05.jpg" height=350>
+## Steg 1: Montering av motorer
 
-2.	Fest lange standoffs til i bunnplaten med mellomlange M2,5 skruer, 4 til arduinoen og 3 til Raspberry Pi, og korte standoffs til taket med M3. 
-    * NB! Merk at det ene hullet ikke skal brukes, det skal kun være 7 standoffs totalt følg bildet.
+Start med å feste motorene til følgende plater med de 25mm lange M3 skruene.
 
-<img src="Media/teknobil/06.jpg" height=350>
-<img src="Media/teknobil/07.jpg" height=350>
+<p float="left">
+  <img src="Media/teknobil/01.png" width="300" />
+</p>
 
-Tips: Det kan være lurte å holde platen opp ned mens du skrur på standoffs
+## Steg 2: Sammensetting av baseplate og avlange plater
 
-<img src="Media/teknobil/09.jpg" height=350>
-<img src="Media/teknobil/15.jpg" height=350>
+Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på at baseplaten er riktig vei.
 
-3.	Skru arduino fast til bakerste standoffs i bunnen med korteste M2, og DC-DC converter til taket på korte svarte standoffs med M3.
+<p float="left">
+  <img src="Media/teknobil/02.png" width="300" />
+  <img src="Media/teknobil/03.png" width="300" />
+</p>
 
-<img src="Media/teknobil/10.jpg" height=350>
-<img src="Media/teknobil/16.jpg" height=350>
+## Steg 3: Ledninger
 
-4.	Sett sidestøttene ned i bunnplaten, og tre veggene på.
+Nå kan det være lurt å føre ledningene fra motorene igjennom de to firkantede hullene i baseplaten.
 
-<img src="Media/teknobil/11.jpg" height=350>
-<img src="Media/teknobil/12.jpg" height=350>
+<p float="left">
+  <img src="Media/teknobil/04.png" width="300" />
+</p>
 
-5.	Skru kamera fast i frontveggen, og sett inn to gule LEDs, samt to røde LEDs i bakveggen, og tre både frontveggen og bakveggen også på.
+## Steg 4: Montering av bunnplate
 
-<img src="Media/teknobil/13.jpg" height=350>
+Fest bunnplaten som vist i bildet.
 
-6.	Sett på hjul.
-7.	Koble motorene til motordriveren, og skru dem fast i gates, som følgende (illustrasjon av hjulene på bilen)
+## Steg 5: Raspbian
 
-<img src="Media/teknobil/14.jpg" height=350>
-<img src="Media/teknobil/motor.png" height=300>
+Før dere fortsetter med å feste komponentene bør dere laste ned Raspbian på et SD-kort som vist [her](URL_til_veiledning).
 
-* NB: Rød ledning er +, og svart er –
-SJEKK OVERSIKT PÅ CONVERTER HVILKE PINS/U SOM ER + (Vout) OG – (GND)
-8.	Koble USB-port til DC-DC converter i port 3 og 4, og batterikabel til GND og Vin.
+## Steg 6: Montering av komponenter
 
-<img src="Media/teknobil/17.jpg" height=350>
-<img src="Media/teknobil/18.jpg" height=350>
-<img src="Media/teknobil/19.jpg" height=350>
+Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 10mm lange M2.5 skruene.
 
-9.	Bruk tynne kabler til å koble OVin og GND på arduinoen til port 5 og 6, og fra +/- gaten på motordriveren (der det står PWR) til port 7 og 8 på converteren. 
+<p float="left">
+  <img src="Media/teknobil/05.png" width="300" />
+  <img src="Media/teknobil/06.png" width="300" />
+</p>
 
-<img src="Media/teknobil/21.jpg" height=350>
-<img src="Media/teknobil/22.jpg" height=350>
+## Steg 7: Montering av frontplate og kamera
 
+Fest frontplaten og skru fast kameraet til platen med de 4mm lange M2 skruene.
 
-10.	
-Fortsett når SD-kortet er skrevet og satt tilbake inn i Raspberry Pi (heretter RPi)
+<p float="left">
+  <img src="Media/teknobil/07.png" width="300" />
+  <img src="Media/teknobil/08.png" width="300" />
+</p>
 
-11.	Skru RPi til fremre standoffs med korte M2,5 skruer, og gjør følgende koblinger mellom RPi og arduino:
+## Steg 8: Oppkobling av GPIO
 
- <img src="Media/teknobil/21.jpg" height=350>
-<img src="Media/teknobil/22.jpg" height=350>
+Koble opp GPIO som vist på bildet.
+
+<p float="left">
+  <img src="Media/teknobil/09.png" width="300" />
+</p>
+
+## Steg 9: Oppkobling av LED-lys
+
+Koble opp ledsene som anvist i figuren under.
+
+<p float="left">
+  <img src="Media/teknobil/10.png" width="300" />
+  <img src="Media/teknobil/11.png" width="300" />
+</p>
+
+## Steg 10: Kontroll og kobling av batteri
+
+Når ledsene er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den kobles til som vist på bildet. Pass på at bryteren er satt til 5 V før dere skrur den på.
+
+<p float="left">
+  <img src="Media/teknobil/12.png" width="300" />
+  <img src="Media/teknobil/13.png" width="300" />
+</p>
+
+## Steg 11: Montering av bakplate og topplokk
+
+Fest bakplaten og sett på topplokket.
+
+<p float="left">
+  <img src="Media/teknobil/14.png" width="300" />
+</p>
+
+## Steg 12: Ferdig produkt
+
+Bilen skal nå se slik ut.
+
+<p float="left">
+  <img src="Media/teknobil/15.png" width="300" />
+</p>
+
+Lykke til med monteringen!
 
 | Arduino | Raspberry Pi |
 |---------|--------------|
@@ -98,40 +149,6 @@ Fortsett når SD-kortet er skrevet og satt tilbake inn i Raspberry Pi (heretter 
 | A3      | GPIO 19      |
 | A2      | GPIO 26      |
 | GND     | GND          |
-
-<img src="Media/teknobil/Pinout-UNOrev3_latest.png" height=300>
-<img src="Media/teknobil/rp2_pinout.png" height=300>
-
-12.	Koble kameraet til RPi med flatkabel. NB: Sørg for at du setter den inn riktig vei!
-13.	Sørg for at denne spaken står på 5V
-
-<img src="Media/teknobil/19.1.jpg" height=350>
-
-Når alt over er gjort, tilkall en studass. Vi kommer og sjekker at all oppkobling er riktig, så skal dere få batteriet.
-
-14.	Legg batteriet inn i bilen under arduinoen.
-    
-
-
-
-16.	Koble frontlys og baklys med breadboard som vist under.
-
-
-<img src="Media/teknobil/30.jpg" height=300>
-<img src="Media/teknobil/24.jpg" height=350>
-
-15.	Fest breadboardet inntil batteriet midt i bilen.
-
-<img src="Media/teknobil/25.jpg" height=350>
-<img src="Media/teknobil/26.jpg" height=350>
-<img src="Media/teknobil/27.jpg" height=350>
-<img src="Media/teknobil/28.jpg" height=350>
-
-18.	Sett på taket og koble RPi til USB-kabel
-
-<img src="Media/teknobil/29.jpg" height=350>
-
-19.	Koble til batteriet
 
 
 ## Raspberry Pi
