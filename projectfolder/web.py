@@ -138,26 +138,26 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 recognize(result)
                 
                 print("Recognize completed, starting GPIO...")
-                if result == "Ingenting":
+                if result == "headsett":
                     RED = True  # Red light
                     print("Red light")
                 else:
                     RED = False
                     print("Red off")
 
-                if result == "PANT":
+                if result == "headsett":
                     GREEN = True  # Green light
                     print("Green light")
                 else:
                     GREEN = False
 
-                if result == "GLASS":
+                if result == "stanley":
                     BLUE = True  # Blue light
                     print(" Blue light")
                 else:
                     BLUE = False
 
-                if result == "RESTAVFALL":
+                if result == "stanley":
                     YELLOW = True  # Yellow light
                     print("Yellow light")
                 else:
