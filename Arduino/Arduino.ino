@@ -1,12 +1,12 @@
 //MOTOR SETUP
-const int E1 = 3; ///<Motor1 Speed - Front Right
-const int E2 = 11;///<Motor2 Speed - Front Left
-const int E3 = 5; ///<Motor3 Speed - Back Right
+const int E1 = 3; ///<Motor1 Speed - Back Right
+const int E2 = 11;///<Motor2 Speed - Front Right
+const int E3 = 5; ///<Motor3 Speed - Front Left
 const int E4 = 6; ///<Motor4 Speed - Back Left
 
-const int M1 = 4; ///<Motor1 Direction - Front Right
-const int M2 = 12;///<Motor2 Direction - Front Left
-const int M3 = 8; ///<Motor3 Direction - Back Right
+const int M1 = 4; ///<Motor1 Direction - Back Right
+const int M2 = 12;///<Motor2 Direction - Front Right
+const int M3 = 8; ///<Motor3 Direction - Front Left
 const int M4 = 7; ///<Motor4 Direction - Back Left
 
 
