@@ -8,8 +8,6 @@ import Pyro4
 from core import WebMethod
 import RPi.GPIO as GPIO
 
-
-
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
@@ -23,12 +21,8 @@ DOWN = False
 RIGHT = False
 LEFT =False
 
-# dfsa
-
 GPIO.setup(23,GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
 GPIO.setup(18,GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
-
-
 
 def control_motors():
     with Pyro4.Proxy("PYRONAME:KeyManager") as keys:

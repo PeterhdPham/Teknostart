@@ -34,7 +34,6 @@ YELLOW = False
 GREEN =False
 BLUE = False
 
-
 # Create a lock
 image_lock = threading.Lock()
 
@@ -55,7 +54,6 @@ def index():
 def background_process_test():
     print ("Hello")
     return ("nothing")
-
 
 
 model = ImageModel.load('/home/pi/Teknostart/Lobe')
@@ -170,14 +168,21 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 GPIO.output(27, GREEN)
                 GPIO.output(22, BLUE)
 
-                print("GPIO completed, sending response...")
-                
+                print("Starting to send response...")
                 self.send_response(200)
                 self.send_header('Content-type','application/json')  # set the content type to json
                 self.end_headers()
-                
+
                 response = {"status": "ok", "message": "Compare completed"}  # create the JSON object
-                self.wfile.write(bytes(json.dumps(response), 'utf-8'))  # convert the JSON object to a string and encode it to bytes
+                print("Response object created...")
+
+                print("Starting to dump response into JSON...")
+                json_response = json.dumps(response)
+                print("JSON dump successful...")
+
+                print("Starting to write response to file...")
+                self.wfile.write(bytes(json_response, 'utf-8'))  # convert the JSON object to a string and encode it to bytes
+                print("Write to file successful...")
                 
             except Exception as e:
                 print("An error occurred: ", e)
