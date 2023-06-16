@@ -12,10 +12,10 @@ const int M4 = 7; ///<Motor4 Direction - Back Left
 
 /////////LOGIC/////////////////////////////////
 //INPUT PINS
-int drive = A5;
-int reverse = A4;
-int leftTurn = A3;
+int drive = A0;
+int reverse = A1;
 int rightTurn = A2;
+int leftTurn = A3;
 
 //BOOLS
 int go = 0;

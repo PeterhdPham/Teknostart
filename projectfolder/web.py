@@ -24,15 +24,15 @@ import RPi.GPIO as GPIO
 
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(27,GPIO.OUT) #RED
-GPIO.setup(17,GPIO.OUT) #BLUE
-GPIO.setup(4,GPIO.OUT) #YELLOW
-GPIO.setup(3,GPIO.OUT) #GREEN
+GPIO.setup(4,GPIO.OUT) #RED
+GPIO.setup(17,GPIO.OUT) #YELLOW
+GPIO.setup(27,GPIO.OUT) #GREEN
+GPIO.setup(22,GPIO.OUT) #BLUE
 
 RED = False
-BLUE = False
 YELLOW = False
 GREEN =False
+BLUE = False
 
 
 # Create a lock
@@ -141,29 +141,34 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 
                 print("Recognize completed, starting GPIO...")
                 if result == "Ingenting":
-                    GPIO.output(27, True)  # Red light
+                    RED = TRUE  # Red light
                     print("Red light")
                 else:
-                    GPIO.output(27, False)
+                    RED = FALSE
                     print("Red off")
 
                 if result == "PANT":
-                    GPIO.output(17, True)  # Green light
+                    GREEN = TRUE  # Green light
                     print("Green light")
                 else:
-                    GPIO.output(17, False)
+                    GREEN = FALSE
 
                 if result == "GLASS":
-                    GPIO.output(4, True)  # Blue light
+                    BLUE = TRUE  # Blue light
                     print(" Blue light")
                 else:
-                    GPIO.output(4, False)
+                    BLUE = FALSE
 
                 if result == "RESTAVFALL":
-                    GPIO.output(3, True)  # Yellow light
+                    YELLOW = TRUE  # Yellow light
                     print("Yellow light")
                 else:
-                    GPIO.output(3, False)
+                    YELLOW = FALSE
+
+                GPIO.output(4, RED)
+                GPIO.output(17, YELLOW)
+                GPIO.output(27, GREEN)
+                GPIO.output(22, BLUE)
 
                 print("GPIO completed, sending response...")
                 
