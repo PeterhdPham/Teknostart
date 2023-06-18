@@ -229,116 +229,7 @@ Utstyr:
      ![SSH into Raspberry Pi](Media/rpi/03SSH.png)
 Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
 
-#### Sette opp Eduroam på Raspberry Pi
 
-1. Først må du sette opp WLAN country for å kunne koble deg på nett og samtidig aktivere kameraet. Bruk kommandoen:
-
-```bash
-sudo raspi-config
-```
-
-- Gå videre inn på “Localisation options” -> “WLAN Country”, scroll ned til du finner “Norway” og trykk enter.
-- Gå inn på “Interface options” -> “Legacy Camera” og enable.
-- Naviger til <Finish> ved å trykke “høyre piltast” og trykk enter. Pi-en vil nå starte på nytt. Vent noen minutter og SSH inn igjen.
-
-2. Gå nå inn på superuser mode. Dette gjøres ved å bruke kommandoen:
-
-```bash
-sudo su
-```
-
-3. Deaktiver WLAN med kommandoen:
-
-```bash
-ifconfig wlan0 down
-```
-
-4. Deretter avslutter du alle prosesser assosiert med wpa_supplicant med kommandoen:
-
-```bash
-killall wpa_supplicant
-```
-
-5. Nå som wpa er deaktivert kan kan du modifisere på konfigurasjonsfilene. Dette gjøres med kommandoen:
-
-```bash
-nano /etc/network/interfaces
-```
-
-- Erstatt innholdet i tekstfilen med:
-
-```bash
-source-directory /etc/network/interfaces.d/*
-
-allow-hotplug wlan0
-iface wlan0 inet manual
-	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-
-iface wlan0 inet dhcp
-```
-![Interface](Media/rpi/04interface.png)
-
-6. Lagre og gå ut:
-   - trykk ctrl+x, så “y”, og enter.
-7. Nå kan vi endre på på wpa_supplicant, slik at den får informasjonen den trenger til å koble seg på “Eduroam”. Gå inn på:
-
-```bash
-nano /etc/wpa_supplicant/wpa_supplicant.conf
-```
-
-* Erstatt innholdet i tekstfilen med:
-
-```bash
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-country=NO
-
-network={
-	ssid="eduroam"
-	eap=PEAP
-	key_mgmt=WPA-EAP
-	phase2="auth=MSCHAPV2"
-	identity="elsys_teknostart@ntnu.no"
-	password="M97U@snq25"
-}
-```
-![wpa_suplicant](Media/rpi/05wpa_supplicant.png)
-8. Lagre og gå ut:
-   - trykk ctrl+x, så “y”, og enter.
-9. For å teste om innstillingene fungerer kan du test koblingen med kommandoen:
-
-```bash
-wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-```
-
-- Du vil da få en linje som sier “EAP-MSCHAPV2: Authentication succeeded” og se noe tilsvarende:
-![test1](Media/rpi/06test.png)
-- Den vil etter dette henge seg opp. For å gå ut av testen trykker du ctrl+c for å tvinge avslutning av testen.
-
-10. Du kan nå aktivere WLAN igjen med kommandoen:
-
-```bash
-ifconfig wlan0 up
-```
-
-11. Start Raspberry Pi igjen med kommandoen:
-
-```bash
-reboot
-```
-
-12. SSH inn til Raspberry Pien igjen og test koblingen med kommandoene:
-
-```bash
-iwconfig
-ping -c 3 www.google.com
-```
-
-    * Du vil få noe tilsvarende:
-![Test2](Media/rpi/07test2.png)
-Gratulerer, du har nå satt opp eduroam nettet på Raspberry Pi.
-
-#### Få inn riktig programvare
 
 Vi skal nå få inn riktig programvare, samt laste inn alt av kode som skal ligge lokalt på Pien.
 
@@ -367,13 +258,13 @@ sudo apt-get dist-upgrade
 3. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
 
 ```bash
-git clone https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022.git
+git clone [git@github.com:PeterhdPham/Teknostart.git](https://github.com/PeterhdPham/Teknostart.git)
 ```
     *NB dette kan ta litt tid
-4. Videre kan du navigere deg inn på "teknobil2022" mappen med kommandoen:
+4. Videre kan du navigere deg inn på "Teknostart" mappen med kommandoen:
    
 ```bash 
-cd teknobil2022/
+cd Teknostart/
 ```
 
 5. Last ned ekstra progrmvare som kreves for å kjøre koden med kommandoen:
@@ -423,182 +314,181 @@ Oppsett:
 
     ```c
     //MOTOR SETUP
-    const int E1 = 3; ///<Motor1 Speed - Front Right
-    const int E2 = 11;///<Motor2 Speed - Front Left
-    const int E3 = 5; ///<Motor3 Speed - Back Right
-    const int E4 = 6; ///<Motor4 Speed - Back Left
+const int E1 = 3; ///<Motor1 Speed - Back Right
+const int E2 = 11;///<Motor2 Speed - Front Right
+const int E3 = 5; ///<Motor3 Speed - Front Left
+const int E4 = 6; ///<Motor4 Speed - Back Left
 
-    const int M1 = 4; ///<Motor1 Direction - Front Right
-    const int M2 = 12;///<Motor2 Direction - Front Left
-    const int M3 = 8; ///<Motor3 Direction - Back Right
-    const int M4 = 7; ///<Motor4 Direction - Back Left
-
-
-    /////////LOGIC/////////////////////////////////
-    //INPUT PINS
-    int drive = A5;
-    int reverse = A4;
-    int leftTurn = A3;
-    int rightTurn = A2;
-
-    //BOOLS
-    int go = 0;
-    int back = 0;
-    int left = 0;
-    int right = 0;
+const int M1 = 4; ///<Motor1 Direction - Back Right
+const int M2 = 12;///<Motor2 Direction - Front Right
+const int M3 = 8; ///<Motor3 Direction - Front Left
+const int M4 = 7; ///<Motor4 Direction - Back Left
 
 
-    //SPEEDS
-    int drivingSpeed = 150;
-    int turningSpeed = 50;
+/////////LOGIC/////////////////////////////////
+//INPUT PINS
+int drive = A0;
+int reverse = A1;
+int rightTurn = A2;
+int leftTurn = A3;
+
+//BOOLS
+int go = 0;
+int back = 0;
+int left = 0;
+int right = 0;
 
 
-    //////DRIVING FUNCTIONS//////////////////////
-    void speedSet(String motors, int Speed){
-    //Choose speed from 0-255
-    if(motors == "right"){
-        analogWrite(E1, Speed);
-        analogWrite(E3, Speed);
-        }
-    else if(motors == "left"){
-        analogWrite(E2, Speed);
-        analogWrite(E4, Speed);
+//SPEEDS
+int drivingSpeed = 150;
+int turningSpeed = 50;
+
+
+//////DRIVING FUNCTIONS//////////////////////
+void speedSet(String motors, int Speed){
+  //Choose speed from 0-255
+  if(motors == "right"){
+    analogWrite(E1, Speed);
+    analogWrite(E3, Speed);
     }
-    else if(motors = "both"){
-        analogWrite(E1, Speed);
-        analogWrite(E2, Speed);
-        analogWrite(E3, Speed);
-        analogWrite(E4, Speed);
-    }
-    }
+  else if(motors == "left"){
+    analogWrite(E2, Speed);
+    analogWrite(E4, Speed);
+  }
+  else if(motors = "both"){
+    analogWrite(E1, Speed);
+    analogWrite(E2, Speed);
+    analogWrite(E3, Speed);
+    analogWrite(E4, Speed);
+  }
+}
 
-    //DRIVING FUNCTION
-    void driving(String motors, bool Direction){
-    //Direction = 0 -> forward
-    //Dircetion = 1 -> reverse
-    if (motors == "both"){
+//DRIVING FUNCTION
+void driving(String motors, bool Direction){
+  //Direction = 0 -> forward
+  //Dircetion = 1 -> reverse
+  if (motors == "both"){
+  digitalWrite(M1, Direction);
+  digitalWrite(M2, Direction);
+  digitalWrite(M3, Direction);
+  digitalWrite(M4, Direction);
+  }
+  else if (motors = "right"){
     digitalWrite(M1, Direction);
-    digitalWrite(M2, Direction);
     digitalWrite(M3, Direction);
+  }
+  else if (motors = "left"){
+    digitalWrite(M2, Direction);
     digitalWrite(M4, Direction);
-    }
-    else if (motors = "right"){
-        digitalWrite(M1, Direction);
-        digitalWrite(M3, Direction);
-    }
-    else if (motors = "left"){
-        digitalWrite(M2, Direction);
-        digitalWrite(M4, Direction);
-    }
-    }
+  }
+}
 
 
-    ////SETUP///////////////////////
-    void setup() {
-    Serial.begin(9600);   
-    Serial.println("Starting session...");
+////SETUP///////////////////////
+void setup() {
+  Serial.begin(9600);   
+  Serial.println("Starting session...");
 
-    //SET PINS 
-    pinMode(drive,INPUT);
-    pinMode(reverse, INPUT);
-    pinMode(leftTurn, INPUT);
-    pinMode(rightTurn, INPUT);
-    for(int i=3;i<9;i++)
-        pinMode(i,OUTPUT);
-    for(int i=11;i<13;i++)
-        pinMode(i,OUTPUT);
-        
-    }
-
-    void loop() {
-    //UPDTAING THE BOOLEANS
-    go = digitalRead(drive);
-    back = digitalRead(reverse);
-    left = digitalRead(leftTurn);
-    right = digitalRead(rightTurn);
-
+  //SET PINS 
+  pinMode(drive,INPUT);
+  pinMode(reverse, INPUT);
+  pinMode(leftTurn, INPUT);
+  pinMode(rightTurn, INPUT);
+  for(int i=3;i<9;i++)
+    pinMode(i,OUTPUT);
+  for(int i=11;i<13;i++)
+    pinMode(i,OUTPUT);
     
-    /////FORWARD DRIVE/////////////////////////////////////////
-    if(go && !back){  
-        driving("both", 0);  
-        //FORWARD WITH A RIGHT TURN
-        if(right){
-        speedSet("right",turningSpeed);
-        }
-        //FORWARD WITH A LEFT TURN
-        else if(left){
-        speedSet("left",turningSpeed);
-        }
-        else{
-        speedSet("both", drivingSpeed);
-        Serial.println("FORWARD");
-        }
+}
+
+void loop() {
+//UPDTAING THE BOOLEANS
+  go = digitalRead(drive);
+  back = digitalRead(reverse);
+  left = digitalRead(leftTurn);
+  right = digitalRead(rightTurn);
+
+  
+/////FORWARD DRIVE/////////////////////////////////////////
+  if(go && !back){  
+    driving("both", 0);  
+    //FORWARD WITH A RIGHT TURN
+    if(right){
+      speedSet("right",turningSpeed);
     }
-
-    
-    //REVERSE
-    else if(back && !go){
-        driving("both", 1);
-        //REVERSE WITH RIGHTTURN
-        if(right){
-        speedSet("right",turningSpeed);
-        }
-        //REVERSE WITH LEFTTURN
-        else if(left){
-        speedSet("left", turningSpeed);
-        }
-        else{
-        speedSet("both", drivingSpeed);      
-        Serial.println("REVERSE");
-        }
+    //FORWARD WITH A LEFT TURN
+    else if(left){
+      speedSet("left",turningSpeed);
     }
-
-
-
-    //RIGHTTURN
-    else if(right && !go && !back){
-        speedSet("both", turningSpeed);
-        if(!left){
-        digitalWrite(M1,1);
-        digitalWrite(M3,1);
-        digitalWrite(M2,0);
-        digitalWrite(M4,0);
-        //driving("left", 0);
-        Serial.println("RIGHTTURN");
-        }
-        
-        //IF YOU PRESS BOTH LEFT AND RIGHT
-        else{
-        driving("both", 0);
-        }
+    else{
+      speedSet("both", drivingSpeed);
+      Serial.println("FORWARD");
     }
+  }
 
-    //LEFTTURN
-    else if(left && !go && !back){
-        speedSet("both", turningSpeed);
-        if(!right){
-        digitalWrite(M1,0);
-        digitalWrite(M3,0);
-        digitalWrite(M2,1);
-        digitalWrite(M4,1);
-        //driving("right",0);
-        //driving("left", 1 );
-        Serial.println("LEFTTURN");
-        }
+  
+  //REVERSE
+  else if(back && !go){
+    driving("both", 1);
+    //REVERSE WITH RIGHTTURN
+    if(right){
+      speedSet("right",turningSpeed);
+    }
+    //REVERSE WITH LEFTTURN
+    else if(left){
+      speedSet("left", turningSpeed);
+    }
+    else{
+      speedSet("both", drivingSpeed);      
+      Serial.println("REVERSE");
+    }
+  }
+
+
+
+ //RIGHTTURN
+  else if(right && !go && !back){
+    speedSet("both", turningSpeed);
+    if(!left){
+      digitalWrite(M1,1);
+      digitalWrite(M3,1);
+      digitalWrite(M2,0);
+      digitalWrite(M4,0);
+      //driving("left", 0);
+      Serial.println("RIGHTTURN");
+    }
     
     //IF YOU PRESS BOTH LEFT AND RIGHT
-        else{
-        driving("both", 0);
-        }
-    }
-
-    //IF YOU DON'T PRESS ANYTHNIG
     else{
-        speedSet("both", 0);
-        Serial.println("STOP");
+      driving("both", 0);
     }
+  }
+
+  //LEFTTURN
+  else if(left && !go && !back){
+    speedSet("both", turningSpeed);
+    if(!right){
+      digitalWrite(M1,0);
+      digitalWrite(M3,0);
+      digitalWrite(M2,1);
+      digitalWrite(M4,1);
+      //driving("right",0);
+      //driving("left", 1 );
+      Serial.println("LEFTTURN");
     }
-    ```
+  
+  //IF YOU PRESS BOTH LEFT AND RIGHT
+    else{
+      driving("both", 0);
+    }
+  }
+
+  //IF YOU DON'T PRESS ANYTHNIG
+  else{
+    speedSet("both", 0);
+    Serial.println("STOP");
+ }
+}
     </details>
 
 4. Last opp koden til arduinokortet. Blå først for å verifisere koden (dobbeltsjekke at det ikke er noen feil med koden). Deretter rød for å laste opp.
