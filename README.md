@@ -1,17 +1,16 @@
-# Teknostart 2022
+# Teknostart 2023
 
-I denne teknostarten skal dere i en gruppe lage en fjernstyrt bil og en AI-bildegjenkjenningsmodul. Dere skal få jobbe med Raspberry Pi, Arduino Uno og LOBE. Det er ikke forventet at du skal kunne noe om dette fra før av eller vite hva det er, teknostart vil fungere som en introduksjon til dette, som dere vil få god bruk for senere.  Dere skal også bygge bilen, koble den opp få alt til å fungere sammen. 
-Hovedkonkurransen er TBA. Det er også poeng for estetikk, så bruk kreativiteten, maling og tusjer til å lage bilen som dere ønsker. 
-Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart er å samarbeide godt og fordele arbeidsoppgaver. Dette er ulike deler dere kan jobbe på. Vi foreslår at dere fordeler dere på disse hovedoppgavene:
+I denne teknostarten skal dere i en gruppe lage en fjernstyrt bil. Dere skal få jobbe med Raspberry Pi, Arduino Uno og LOBE. Det er ikke forventet at du skal kunne noe om dette fra før eller vite hva det er, teknostart vil fungere som en introduksjon til dette, som dere vil få god bruk for senere.  Dere skal også bygge bilen, koble den opp få alt til å fungere sammen. 
+I år er det tre konkurranser. Dere kan vinne ved å være raskest rundt en definert bane, ha den beste objektgjenkjenningen eller ved å ha den vakreste/kuleste bilen. Bruk kreativiteten, maling og tusjer til å skreddersy bilen slik dere ønsker. 
+Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgaven, så det går fint å jobbe i par og ta seg tid til å prøve å forstå eller finne ut mer om noe dersom dere synes det er interessant. En viktig del av teknostart er å samarbeide godt og fordele arbeidsoppgaver. Vi foreslår at dere fordeler dere på disse hovedoppgavene:
 1.	Den som ønsker en utfordring, kan jobbe med Raspberry Pien. Her er det viktig å holde tungen beint i bunnen og følge oppskriften til punkt og prikke for at ting skal fungere. Får dere problemer her, ta kontakt med en student assistent. 
-2.	Dere får også muligheten til å lage en egen bildegjenkjenningsmodul med LOBE. Vi har også laget en modul dere kan bruke, men vi oppfordrer dere til å lage en egen om dere får tid. 
-3.	En annen oppgave er å sette opp Arduinoen med motordriver, og laste opp den ferdigskrevne koden. 
-4.	Til slutt kan dere alle samarbeide om å koble alt sammen og få bilen til å fungere sammen. Vent på en studass før dere får batteriet og får startet bilen. 
-5.	Når dere har bygget ferdig bilen kan dere gå videre med utvidelsene for bilen og begynne å skreddersy den slik dere ønsker.
+2.	En annen oppgave er å sette opp Arduinoen med motordriver, og laste opp den ferdigskrevne koden. 
+3.	Til slutt kan dere alle samarbeide om å koble alt sammen og få bilen til å fungere sammen. Vent på en studass før dere får batteriet og får startet bilen. 
+4.	Når dere har bygget ferdig bilen kan dere gå videre med utvidelsesoppgavene og begynne å skreddersy den estetisk slik dere ønsker.
 
 
 # Table of Contents
-- [Teknostart 2022](#teknostart-2022)
+- [Teknostart 2023](#teknostart-2023)
 - [Table of Contents](#table-of-contents)
 - [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
   - [Hardware](#hardware)
