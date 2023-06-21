@@ -28,10 +28,12 @@ connection_thread.start()
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(26,GPIO.OUT) #UP/DRIVE
-GPIO.setup(19,GPIO.OUT) #DOWN/REVERSE
-GPIO.setup(13,GPIO.OUT) #RIGHT
-GPIO.setup(6,GPIO.OUT) #LEFT
+
+# Changed to pinouts from last 2022
+GPIO.setup(6,GPIO.OUT) #UP/DRIVE
+GPIO.setup(13,GPIO.OUT) #DOWN/REVERSE
+GPIO.setup(19,GPIO.OUT) #LEFT
+GPIO.setup(26,GPIO.OUT) #RIGHT
 
 UP = False
 DOWN = False
@@ -79,11 +81,13 @@ def control_motors():
                 
                 FRONTLIGHTS = UP
                 BACKLIGHTS = DOWN 
-                
-                GPIO.output(26, UP)
-                GPIO.output(19, DOWN)
-                GPIO.output(13, RIGHT)
-                GPIO.output(6, LEFT)
+
+                # Changed to pinouts from 2022
+                GPIO.output(6,UP)
+                GPIO.output(13,DOWN)
+                GPIO.output(19,LEFT)
+                GPIO.output(26,RIGHT)
+
                 GPIO.output(23, FRONTLIGHTS)
                 GPIO.output(18, BACKLIGHTS)
 
