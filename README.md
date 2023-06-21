@@ -9,7 +9,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 4.	Når dere har bygget ferdig bilen kan dere gå videre med utvidelsesoppgavene og begynne å skreddersy den estetisk slik dere ønsker.
 
 
-# Table of Contents
+# Innholdsfortegnelse
 - [Teknostart 2023](#teknostart-2023)
 - [Innholdsfortegnelse](#innholdsfortegnelse)
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
@@ -27,11 +27,10 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
     - [Steg 5: Raspbian](#steg-5-raspbian)
     - [Steg 6: Montering av komponenter](#steg-6-montering-av-komponenter)
     - [Steg 7: Montering av frontplate og kamera](#steg-7-montering-av-frontplate-og-kamera)
-    - [Steg 8: Oppkobling av GPIO](#steg-8-oppkobling-av-gpio)
-    - [Steg 9: Oppkobling av LED-lys](#steg-9-oppkobling-av-led-lys)
+    - [Steg 8: Oppkobling av spenningskilde](#steg-8-oppkobling-av-spenningskilde)
+    - [Steg 9: Oppkobling av GPIO](#steg-9-oppkobling-av-gpio)
     - [Steg 10: Kontroll og kobling av batteri](#steg-10-kontroll-og-kobling-av-batteri)
     - [Steg 11: Montering av bakplate og topplokk](#steg-11-montering-av-bakplate-og-topplokk)
-    - [Steg 12: Ferdig produkt](#steg-12-ferdig-produkt)
   - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
     - [Sette opp SD-kortet](#sette-opp-sd-kortet)
     - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
@@ -91,7 +90,7 @@ Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. De
   <img src="Media/teknobil/Motordriver.jpg" width="300" />
 </p>
 
-## [Raspberry Pi](#raspberry-pi-intro)
+## Raspberry Pi
 
 Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som er en hvilken som helst annen PC eller en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer. Videre kan Raspberry Pi samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram. I dette prosjektet brukes modellen Raspberry Pi 3B+. [Her](https://www.raspberrypi.com/documentation/) finner dere mer dokumentasjon om Raspberry Pi.
 
