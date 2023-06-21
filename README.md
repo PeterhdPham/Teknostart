@@ -4,10 +4,10 @@ I denne teknostarten skal dere i en gruppe lage en fjernstyrt bil og en AI-bilde
 Hovedkonkurransen er TBA. Det er også poeng for estetikk, så bruk kreativiteten, maling og tusjer til å lage bilen som dere ønsker. 
 Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart er å samarbeide godt og fordele arbeidsoppgaver. Dette er ulike deler dere kan jobbe på. Vi foreslår at dere fordeler dere på disse hovedoppgavene:
 1.	Den som ønsker en utfordring, kan jobbe med Raspberry Pien. Her er det viktig å holde tungen beint i bunnen og følge oppskriften til punkt og prikke for at ting skal fungere. Får dere problemer her, ta kontakt med en student assistent. 
-2.	Dere får også muligheten til å lage en egen bildegjenkjenningsmodul med LOBE. VI har også laget en modul dere kan bruke, men vi oppfordrer dere til å lage en egen om dere får tid. 
-3.	En annen oppgave er å sette opp Arduinoen med motorskiven, og laste opp den ferdigskrevne koden. 
+2.	Dere får også muligheten til å lage en egen bildegjenkjenningsmodul med LOBE. Vi har også laget en modul dere kan bruke, men vi oppfordrer dere til å lage en egen om dere får tid. 
+3.	En annen oppgave er å sette opp Arduinoen med motordriver, og laste opp den ferdigskrevne koden. 
 4.	Til slutt kan dere alle samarbeide om å koble alt sammen og få bilen til å fungere sammen. Vent på en studass før dere får batteriet og får startet bilen. 
-5.	Når dere ikke har noe å gjøre, bruk tiden til å pynt bilen med maling og tusjer. 
+5.	Når dere har bygget ferdig bilen kan dere gå videre med utvidelsene for bilen og begynne å skreddersy den slik dere ønsker.
 
 
 # Table of Contents
@@ -49,7 +49,7 @@ Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt 
 
 ## Steg 1: Montering av motorer
 
-Start med å feste motorene til følgende plater med de 25mm lange M3 skruene.
+Start med å feste motorene til følgende plater med de 25mm lange M3 skruene. Ettersom vi ikke benytter muttere vær oppmerksom på ikke å stramme skruene for hardt.
 
 <p float="left">
   <img src="Media/teknobil/01.png" width="300" />
