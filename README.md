@@ -358,10 +358,24 @@ cd projectfolder/
 python runCode.py
 ```
 
+Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. 
+* Dersom dere får opp en feilmelding om at kamera ikke er enabled:
+  - Trykk Ctrl+C for å avbryte kjøringen av koden i terminalen
+  - Åpne raspi-config:
+    ```bash
+    sudo raspi-config
+    ```
+  - Naviger til "Interface Options", deretter "Legacy Camera"
+  - Velg "Yes" til å enable kamera
+  - Start Pi-en på nytt med
+    ```bash
+    sudo reboot now
+    ```
+  - Naviger til mappen der runCode.py ligger og kjør koden på nytt
 
 
 # Arduino
-Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - lys på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter i programmeringsspråket C. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
+Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - lys på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
 
 ## Skaff Arduino Software til egen PC
 
@@ -372,12 +386,12 @@ Last ned Arduino IDE
 
 ## Last inn koden til Arduinoen
 Utstyr:
-1. Laptop
+1. PC
 2. Usb-A til usb-b kabel
 3. Arduino Uno
 
 Oppsett:
-1. Koble til arduino-kortet til din PC med en USB-B ledningen
+1. Koble til arduino-kortet til din PC med en USB-B ledning
 2. Sørg for at softwaren fungerer for riktig type arduinokort, her Arduino Uno
     * Gå inn på «Verktøy»/«Tools»
     * Velg riktig kort og port (porten er hvilken inngang/utgang du bruker på PC-en. Kan komme feilmelding om det velges feil)
@@ -571,7 +585,7 @@ void loop() {
 
 <img src="Media/arduino/02yeah.png" width="240">
 
-NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring:)
+NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring. :)
 
 # (Bonus) Lobe
 
