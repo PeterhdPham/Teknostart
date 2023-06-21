@@ -8,40 +8,24 @@ import Pyro4
 from core import WebMethod
 import RPi.GPIO as GPIO
 
-# -----------------------------------------------
-import time
-import threading
-connected = True
-
-def check_connection():
-    global connected
-    while True:
-        response = subprocess.call("ping -c 1 google.com", shell=True, stdout=subprocess.PIPE)
-        connected = (response == 0)
-        time.sleep(1)
-        
-connection_thread = threading.Thread(target=check_connection)
-connection_thread.start()
-# -----------------------------------------------
-
 
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
 
-# Changed to pinouts from last 2022
-GPIO.setup(6,GPIO.OUT) #UP/DRIVE
-GPIO.setup(13,GPIO.OUT) #DOWN/REVERSE
-GPIO.setup(19,GPIO.OUT) #LEFT
-GPIO.setup(26,GPIO.OUT) #RIGHT
+# Changed to pinouts from teknobil 2022
+GPIO.setup(6, GPIO.OUT) #UP/DRIVE
+GPIO.setup(13, GPIO.OUT) #DOWN/REVERSE
+GPIO.setup(19, GPIO.OUT) #LEFT
+GPIO.setup(26, GPIO.OUT) #RIGHT
+GPIO.setup(2, GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
+GPIO.setup(3, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 UP = False
 DOWN = False
 RIGHT = False
-LEFT =False
+LEFT = False
 
-GPIO.setup(23,GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
-GPIO.setup(18,GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 def control_motors():
     with Pyro4.Proxy("PYRONAME:KeyManager") as keys:
@@ -69,14 +53,6 @@ def control_motors():
                     LEFT = False
                 if keys.state('K_SPACE'):
                     print('Compare')
-
-                # -------------
-                if not connected:
-                    UP = False
-                    DOWN = False
-                    RIGHT = False
-                    LEFT = False
-                # -------------
                     
                 
                 FRONTLIGHTS = UP
@@ -87,9 +63,8 @@ def control_motors():
                 GPIO.output(13,DOWN)
                 GPIO.output(19,LEFT)
                 GPIO.output(26,RIGHT)
-
-                GPIO.output(23, FRONTLIGHTS)
-                GPIO.output(18, BACKLIGHTS)
+                GPIO.output(2, FRONTLIGHTS)
+                GPIO.output(3, BACKLIGHTS)
 
 
 # Create the WebMethod class
