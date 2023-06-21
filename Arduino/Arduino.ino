@@ -25,8 +25,8 @@ int right = 0;
 
 
 //SPEEDS
-int drivingSpeed = 255;
-int turningSpeed = 100;
+int drivingSpeed = 150;
+int turningSpeed = 50;
 
 
 //////DRIVING FUNCTIONS//////////////////////
