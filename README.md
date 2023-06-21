@@ -617,6 +617,16 @@ Det er mulig å endre hastigheten til bilen både i Arduino koden og med å kobl
 
 ### Kode
 
+Hastigheten til bilen er definert i Arduino koden i linjene under.
+
+```c
+//SPEEDS
+int drivingSpeed = 150;
+int turningSpeed = 50;
+```
+
+Bla ned til du finner dette i koden din og lek med tallverdiene. For hvilke verdier er bilen raskest?
+
 ### Omkobling av motorspenning
 
 
