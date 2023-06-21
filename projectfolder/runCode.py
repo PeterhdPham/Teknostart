@@ -10,6 +10,7 @@ import RPi.GPIO as GPIO
 
 
 # -----------------------
+"""
 # Reliability test
 import time
 import threading
@@ -26,7 +27,9 @@ def check_connection():
 
 connection_thread = threading.Thread(target=check_connection)
 connection_thread.start()
+"""
 # -----------------------
+
 
 
 #set GPIO numbering mode and define output pins
@@ -77,6 +80,7 @@ def control_motors():
 
                 
                 # -----------------------
+                """
                 # Reliability test
                 global connected
                 
@@ -85,6 +89,7 @@ def control_motors():
                     DOWN = False
                     RIGHT = False
                     LEFT = False
+                """
                 # -----------------------
                     
                 
