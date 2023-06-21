@@ -14,7 +14,7 @@ Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart
 - [Teknostart 2022](#teknostart-2022)
 - [Table of Contents](#table-of-contents)
 - [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
-  - Hardware
+  - [Hardware](#hardware)
     - [Steg 1: Montering av motorer](#steg-1-montering-av-motorer)
     - [Steg 2: Sammensetting av baseplate og avlange plater](#steg-2-sammensetting-av-baseplate-og-avlange-plater)
     - [Steg 3: Ledninger](#steg-3-ledninger)
@@ -46,6 +46,8 @@ Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart
 
 # Veiledning for montering av Teknobilen 2023
 
+# Hardware
+
 Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2023/-/tree/main/Media/teknobil).
 
 ## Steg 1: Montering av motorer
@@ -75,7 +77,11 @@ Nå kan det være lurt å føre ledningene fra motorene igjennom de to firkanted
 
 ## Steg 4: Montering av bunnplate
 
-Fest bunnplaten som vist i bildet.
+Fest bunnplaten.
+
+<p float="left">
+  <img src="Media/teknobil/06.png" width="300" />
+</p>
 
 ## Steg 5: Raspbian
 
@@ -161,14 +167,14 @@ Lykke til med monteringen!
 
 
 
-## Raspberry Pi
+# Raspberry Pi
 
 Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som en hvilken som helst annen PC en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer.
 Videre, kan Raspberry Pi muligheten til å samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram.
 I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til RPi-en, og denne sender videre informasjon til arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker arduino som slave.
 Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
 
-### Sette opp SD-kortet
+## Sette opp SD-kortet
 
 Utstyr:
 
@@ -206,7 +212,7 @@ Slik går du fram for å sette opp SD-kortet:
 8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
 
 
-### Sette opp Raspberry Pi headless
+## Sette opp Raspberry Pi headless
 Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”.
 
 Utstyr:
@@ -215,7 +221,7 @@ Utstyr:
 - Ethernet inngang (adapter hvis laptopen ikke har en dedikert inngang spør en studass ved behov)
 - Raspberry Pi med ferdig installert SD-kort
 
-#### SSH inn til Raspberry Pi
+### SSH inn til Raspberry Pi
 
 1. For å koble deg til Pi-en kobler du Raspberry Pi til laptopen via ethernet kabelen og ved behov en ethernet adapter.
 2. Åpne en terminal på laptopen:
@@ -294,17 +300,17 @@ cd projectfolder/
 python runCode.py
 ```
 
-## Arduino
+# Arduino
 Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - lys på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter i programmeringsspråket C. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
 
-### Skaff Arduino Software til egen PC
+## Skaff Arduino Software til egen PC
 
 Last ned Arduino IDE
 * [Windows](https://docs.arduino.cc/software/ide-v1/tutorials/Windows#download-the-arduino-software-ide)
 * [MacOS](https://docs.arduino.cc/software/ide-v1/tutorials/macOS?_gl=1*17wzpvg*_ga*MTY2NjU1MjEzOC4xNjI5OTYzMDk1*_ga_NEXN8H46L5*MTY1NTIwNjQyMy4zMy4xLjE2NTUyMDk1MTcuNjA.)
 * [Linux](https://docs.arduino.cc/software/ide-v1/tutorials/Linux?_gl=1*xpugwf*_ga*MTY2NjU1MjEzOC4xNjI5OTYzMDk1*_ga_NEXN8H46L5*MTY1NTIwNjQyMy4zMy4xLjE2NTUyMDk1NDcuMzA.)
 
-### Last inn koden til Arduinoen
+## Last inn koden til Arduinoen
 Utstyr:
 1. Laptop
 2. Usb-A til usb-b kabel
@@ -507,18 +513,18 @@ void loop() {
 
 NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring:)
 
-## (Bonus) Lobe
+# (Bonus) Lobe
 
-### Lag deres egen modell med maskinlæring
+## Lag deres egen modell med maskinlæring
 Det vi kaller object detection, eller objekt gjenkjenning, er en teknikk en datamaskin tar i bruk for å lokalisere objekter i bilder eller videoer. Vi mennesker kjenner fort igjen ulike objekter i bilder og videoer, og skille dem, ila. millisekunder. Målet med object detection er å kunne gjenskape denne egenskapen i en datamaskin. For å få til dette er det ofte tatt i bruk machine learning, som går ut på at maskinen lærer opp seg selv. 
 For å slippe å skrive egen kode for dette skal vi benytte et open-source program kalt LOBE. I dette programmet kan en legge inn bilder av de objektene man ønsker at maskinen/programmet skal kunne kjenne igjen, og sette merkelapp på dem. Disse bildene vil så LOBE bruke til å trene opp en modell (type program), til den klarer å kjenne igjen alle objektene den har merkelapp til. Denne modellen, i form av en mappe, legger vi inn på vår RPi, og du vil ha en egenlaget og fungerende gjenkjenningsmodell når du kjører bilen!
 
 
-####	Last ned LOBE
+###	Last ned LOBE
 -	Trykk på Download på denne nettsiden
 
 Bildene som skal brukes til å lage denne modellen skal tas med RPi, og for å få lagret disse lokalt på PC-en skal vi benytte en ny programvare
-#### Last ned riktig programvare for å kunne ta bilder med RPi
+### Last ned riktig programvare for å kunne ta bilder med RPi
 -	git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git
 -	cd RPi_Cam_Web_Interface
 -	./install.sh
@@ -527,7 +533,7 @@ Under nedlastingen vil du få opp denne menyen:
 
 Sørg for at alle parametere er like som på bildet over!
 
-#### Ta bilder
+### Ta bilder
 1.	Start programvaren med å skrive kommandoen /.start.sh i terminalen
 2.	Åpne en ny fane i nettleseren og bruk RPi-en sin IP-adresse som nettstedssøk
 Hvis du ikke vet IP-adressen fra før kan du finne den med kommando ifconfig
@@ -549,7 +555,7 @@ Om bildet er opp ned kan du gå inn på Camera Settings og sette flip-instilling
 5.	For å få lastet ned, trykk på Download Videos ond Images  Select All  Get Zip
 Denne vil bli lastet ned lokalt på egen PC, velg en filplassering du husker.
 
-#### Lag gjenkjenningsmodell
+### Lag gjenkjenningsmodell
 1.	Åpne Lobe
 2.	Velg New Project
 3.	Inne på Label (i sidemenyen), trykk på Import
@@ -566,7 +572,7 @@ b)	Legg alle bildene av samme objekt i en egen mappe, der mappenavnet er labelen
 
 <img src="Media/Lobe/05.jpg" height=100>
 
-####   Bruk modellen
+###   Bruk modellen
 1.	Gå inn på Use, deretter trykk på export
 2.	Velg alternativet TensorFlow Lite, dette vil gi deg en mappe som brukes i koden for RPi-en, derfor er det viktig å gi denne mappen navnet «Lobe», og plassere denne et sted du husker!
 3.	For å få denne inn i mappestrukturen til RPi-en deres så modellen deres faktisk blir brukt, må den erstatte den modellen som allerede ligger inne. Derfor er det nødvendig å laste ned et skrivebordsprogram som lar deg overføre filer og mapper mellom to maskiner, her egen PC og RPi
