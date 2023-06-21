@@ -17,7 +17,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
   - [Spenningsregulator](#spenningsregulator)
   - [Arduino Uno](#arduino-uno)
   - [Motordriver](#motordriver)
-  - [Raspberry Pi](#raspberry-pi-intro)
+  - [Raspberry Pi](#raspberry-pi)
 - [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
   - [Hardware](#hardware)
     - [Steg 1: Montering av motorer](#steg-1-montering-av-motorer)
@@ -32,7 +32,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
     - [Steg 10: Kontroll og kobling av batteri](#steg-10-kontroll-og-kobling-av-batteri)
     - [Steg 11: Montering av bakplate og topplokk](#steg-11-montering-av-bakplate-og-topplokk)
     - [Steg 12: Ferdig produkt](#steg-12-ferdig-produkt)
-  - [Raspberry Pi](#raspberry-pi)
+  - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
     - [Sette opp SD-kortet](#sette-opp-sd-kortet)
     - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
       - [SSH inn til Raspberry Pi](#ssh-inn-til-raspberry-pi)
@@ -224,9 +224,9 @@ Lykke til med monteringen!
 
 
 
-# Raspberry Pi
+# Raspberry Pi Oppsett
 
-I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til RPi-en, og denne sender videre informasjon til arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker arduino som slave.
+I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
 Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
 
 ## Sette opp SD-kortet
@@ -237,7 +237,7 @@ Utstyr:
 - SD-kort
 - SD-kortleser
 
-SD-kortene dere har fått utdelt inneholder ingen informasjon dere kan bruke. Derfor må dere starte med å laste opp en OS til dette kortet. RPi bruker ikke Windows eller MacOS, men et operativsystem som ofte kalles Rasbian/Debian, som er en versjon av Linux. For å kunne laste opp dette OS-et til kortet kreves et eget skrivebordsprogram som heter Raspberry Pi Imager.
+SD-kortene dere har fått utdelt inneholder ingen informasjon dere kan bruke. Derfor må dere starte med å laste opp et OS til dette kortet. RPi bruker ikke Windows eller MacOS, men et operativsystem som ofte kalles Rasbian/Debian, som er en versjon av Linux. For å kunne laste opp dette OS-et til kortet kreves et eget skrivebordsprogram som heter Raspberry Pi Imager.
 
 Slik går du fram for å sette opp SD-kortet:
 
@@ -258,15 +258,15 @@ Slik går du fram for å sette opp SD-kortet:
       - Password: "123", eller noe annet dere lett kan huske
    4. Configure wireless LAN
       - NB: SSID og Password må være likt det nettet dere kan dele fra mobilen
-   6. Enable Set locale settings:
+   5. Enable Set locale settings:
       - Time zone: Europe/Oslo
       - Keyboard layout: no
-   7. Når du er ferdig skal du se noe tilsvarende:
+   6. Når du er ferdig skal du se noe tilsvarende:
 
    ![Raspberry Pi Imager settings](Media/rpi/10settings.png)
 
-8. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
-9. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
+7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
+8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
 
 
 ## Sette opp Raspberry Pi headless
@@ -294,17 +294,18 @@ Utstyr:
      ```bash 
      teknostart@ELSYS1.local 
      ```
-     -NB! Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen.
+     - NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen.
      _ Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter.
      _ Du vil få noe tilsvarende:
      ![SSH into Raspberry Pi](Media/rpi/03SSH.png)
+
 Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
 
 
 
 Vi skal nå få inn riktig programvare, samt laste inn alt av kode som skal ligge lokalt på Pien.
 
-1. Start med å sjette at klokken inne på Raspberry Pien stemmer med kommandoen:
+1. Start med å sjekke at klokken inne på Raspberry Pien stemmer med kommandoen:
 
 ```bash
 date
@@ -354,6 +355,8 @@ cd projectfolder/
 ```python
 python runCode.py
 ```
+
+
 
 # Arduino
 Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - lys på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter i programmeringsspråket C. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
