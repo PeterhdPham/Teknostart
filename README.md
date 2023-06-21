@@ -100,13 +100,13 @@ Fest frontplaten og skru fast kameraet til platen med de 4 mm lange M2 skruene s
 
 <p float="left">
   <img src="Media/teknobil/09.png" width="300" />
-  <img src="Media/teknobil/10.png" width="300" />
+  <img src="Media/teknobil/10.png" width="500" />
 </p>
 
 Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet under. Sørg for å sette den inn riktig vei.
 
 <p float="left">
-  <img src="Media/teknobil/15.png" width="300" />
+  <img src="Media/teknobil/15.jpg" width="300" />
 </p>
 
 ## Steg 8: Oppkobling av spenningskilde
@@ -155,7 +155,7 @@ NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kret
 
 <p float="left">
   <img src="Media/teknobil/22.jpg" width="300" />
-  <img src="Media/teknobil/21.jpg" width="300" />
+  <img src="Media/teknobil/21.jpg" width="500" />
 </p>
 
 ## Steg 11: Montering av bakplate og topplokk
@@ -163,7 +163,7 @@ NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kret
 Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
 <p float="left">
-  <img src="Media/teknobil/14.jpg" width="300" />
+  <img src="Media/teknobil/14.png" width="300" />
 </p>
 
 Lykke til med monteringen!
