@@ -48,7 +48,7 @@ Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart
 
 # Hardware
 
-Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2023/-/tree/main/Media/teknobil).
+Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
 
 ## Steg 1: Montering av motorer
 
@@ -92,8 +92,7 @@ Før dere fortsetter med å feste komponentene bør dere laste ned Raspbian på 
 Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 10mm lange M2.5 skruene.
 
 <p float="left">
-  <img src="Media/teknobil/05.png" width="300" />
-  <img src="Media/teknobil/06.png" width="300" />
+  <img src="Media/teknobil/08.png" width="300" />
 </p>
 
 ## Steg 7: Montering av frontplate og kamera
@@ -101,18 +100,32 @@ Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 1
 Fest frontplaten og skru fast kameraet til platen med de 4mm lange M2 skruene som vist på bildet under
 
 <p float="left">
-  <img src="Media/teknobil/07.png" width="300" />
-  <img src="Media/teknobil/08.png" width="300" />
+  <img src="Media/teknobil/09.png" width="300" />
+  <img src="Media/teknobil/10.png" width="300" />
 </p>
 
 Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet under. Sørg for å sette den inn riktig vei.
 
-## Steg 8: Oppkobling av GPIO
+<p float="left">
+  <img src="Media/teknobil/15.png" width="300" />
+</p>
 
-I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under.
+## Steg 8: Oppkobling av spenningskilde
+
+Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som vist på bildene under.
 
 <p float="left">
-  <img src="Media/teknobil/09.png" width="300" />
+  <img src="Media/teknobil/16.png" width="300" />
+  <img src="Media/teknobil/17.png" width="300" />
+  <img src="Media/teknobil/18.png" width="300" />
+</p>
+
+## Steg 9: Oppkobling av GPIO
+
+I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
+
+<p float="left">
+  <img src="Media/teknobil/RPi_pinout.png" width="300" />
 </p>
 
 | Arduino | Raspberry Pi |
@@ -126,41 +139,32 @@ I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en
 Har dere koblet riktig skal det se ut som vist under.
 
 <p float="left">
-  <img src="Media/teknobil/09.png" width="300" />
-</p>
-
-## Steg 9: Oppkobling av spenningskilde
-
-Koble Arduino og Raspberry Pi til 5 V på spenningsregulatoren som vist på bildet under.
-
-<p float="left">
-  <img src="Media/teknobil/12.png" width="300" />
-  <img src="Media/teknobil/13.png" width="300" />
+  <img src="Media/teknobil/19.png" width="300" />
 </p>
 
 ## Steg 10: Kontroll og kobling av batteri
 
-Når ledsene er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den kobles til som vist på bildet. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
+Batterikonnektor til spenningsregulator kobles opp som vist under.
 
 <p float="left">
-  <img src="Media/teknobil/12.png" width="300" />
-  <img src="Media/teknobil/13.png" width="300" />
+  <img src="Media/teknobil/20.png" width="300" />
+</p>
+
+Når alt er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den skyves inn mellom motorene før dere fester bakplaten. 
+
+NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kretskortene på plass er skrudd såpass langt ut at batteriet kan skyves inn i bilen uten skade. Senere må dere sørge for ikke å skru disse inn i batteriet. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
+
+<p float="left">
+  <img src="Media/teknobil/22.png" width="300" />
+  <img src="Media/teknobil/21.png" width="300" />
 </p>
 
 ## Steg 11: Montering av bakplate og topplokk
 
-Fest bakplaten og sett på topplokket.
+Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
 <p float="left">
   <img src="Media/teknobil/14.png" width="300" />
-</p>
-
-## Steg 12: Ferdig produkt
-
-Bilen skal nå se slik ut.
-
-<p float="left">
-  <img src="Media/teknobil/15.png" width="300" />
 </p>
 
 Lykke til med monteringen!
