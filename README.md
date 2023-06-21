@@ -92,7 +92,7 @@ Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. De
 Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som er en hvilken som helst annen PC eller en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer. Videre kan Raspberry Pi samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram. I dette prosjektet brukes modellen Raspberry Pi 3B+. [Her](https://www.raspberrypi.com/documentation/) finner dere mer dokumentasjon om Raspberry Pi.
 
 <p float="left">
-  <img src="Media/teknobil/RaspberryPi3jpg" width="300" />
+  <img src="Media/teknobil/RaspberryPi3.jpg" width="300" />
 </p>
 
 
