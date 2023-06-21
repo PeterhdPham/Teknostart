@@ -68,7 +68,7 @@ def control_motors():
                     print('Compare')
 
                 # -------------
-                if !connected:
+                if not connected:
                     UP = False
                     DOWN = False
                     RIGHT = False
