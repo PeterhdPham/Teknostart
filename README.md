@@ -362,7 +362,7 @@ cd projectfolder/
 python runCode.py
 ```
 
-Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. Når dere skal stoppe koden fra å kjøre, trykk "stop server" i nettleser.
+Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. Når dere skal stoppe koden fra å kjøre, trykk "STOP" i nettleser. For å teste objektgjenkjenningen, trykk "COMPARE".
 
 * Dersom dere får opp en feilmelding om at kamera ikke er enabled:
   - Trykk Ctrl+C for å avbryte kjøringen av koden i terminalen
