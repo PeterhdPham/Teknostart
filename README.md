@@ -254,31 +254,31 @@ Slik går du fram for å sette opp SD-kortet:
    2. Enable SSH
       - Use password authentication
    3. Set username and password
-      - Username: teknostart NB! viktig at dere kun skriver “teknostart”
+      - Username: teknostart, NB: viktig at dere kun skriver “teknostart”
       - Password: "123", eller noe annet dere lett kan huske
-   4. Enable Set locale settings:
+   4. Configure wireless LAN
+      - NB: SSID og Password må være likt det nettet dere kan dele fra mobilen
+   6. Enable Set locale settings:
       - Time zone: Europe/Oslo
       - Keyboard layout: no
-   5. Når du er ferdig skal det se noe tilsvarende:
+   7. Når du er ferdig skal du se noe tilsvarende:
 
-   ![Raspberry Pi Imager settings](Media/rpi/02settings.png)
+   ![Raspberry Pi Imager settings](Media/rpi/10settings.png)
 
-7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
-8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
+8. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
+9. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
 
 
 ## Sette opp Raspberry Pi headless
-Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”.
+Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”. For å koble til Pi-en fra PC med SSH må begge to være koblet på samme nettverk. Derfor skal vi dele nett fra mobilen, og koble oss til dette nettet med både Pi og PC.
 
 Utstyr:
-- Laptop
-- Ethernet kabel
-- Ethernet inngang (adapter hvis laptopen ikke har en dedikert inngang spør en studass ved behov)
+- PC
 - Raspberry Pi med ferdig installert SD-kort
 
 ### SSH inn til Raspberry Pi
 
-1. For å koble deg til Pi-en kobler du Raspberry Pi til laptopen via ethernet kabelen og ved behov en ethernet adapter.
+1. Først må Pi-en være koblet til strøm, dette gjøres enten ved oppkobling i bilen eller ved microUSB porten på kortet
 2. Åpne en terminal på laptopen:
    - For Windows kan dere søke opp:
      - Terminal (🪟 + x)
@@ -286,7 +286,7 @@ Utstyr:
      - Command Promt
    - For Mac kan dere søke opp:
      - Terminal
-3. For å SSH inn til Pi-en går du inn på terminalen og skriver (du kan også copypaste ved kopiere vanlig for så å lime inn med høyre klikk inne på terminalen.):
+3. For å SSH inn til Pi-en går du inn på terminalen og skriver (du kan også copypaste ved å kopiere vanlig for så å lime inn med høyre klikk inne på terminalen.):
    ```bash
    ssh teknostart@<hostname>.local
    ```
