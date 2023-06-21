@@ -8,6 +8,22 @@ import Pyro4
 from core import WebMethod
 import RPi.GPIO as GPIO
 
+# -----------------------------------------------
+import threading
+connected = True
+
+def check_connection():
+    global connected
+    while True:
+        response = subprocess.call("ping -c 1 google.com", shell=True, stdout=subprocess.PIPE)
+        connected = (response == 0)
+        time.sleep(1)
+        
+connection_thread = threading.Thread(target=check_connection)
+connection_thread.start()
+# -----------------------------------------------
+
+
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
@@ -50,6 +66,15 @@ def control_motors():
                     LEFT = False
                 if keys.state('K_SPACE'):
                     print('Compare')
+
+                # -------------
+                if !connected:
+                    UP = False
+                    DOWN = False
+                    RIGHT = False
+                    LEFT = False
+                # -------------
+                    
                 
                 FRONTLIGHTS = UP
                 BACKLIGHTS = DOWN 
