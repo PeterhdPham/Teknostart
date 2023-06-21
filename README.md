@@ -362,7 +362,8 @@ cd projectfolder/
 python runCode.py
 ```
 
-Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. 
+Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. Når dere skal stoppe koden fra å kjøre, trykk "stop server" i nettleser.
+
 * Dersom dere får opp en feilmelding om at kamera ikke er enabled:
   - Trykk Ctrl+C for å avbryte kjøringen av koden i terminalen
   - Åpne raspi-config:
@@ -629,8 +630,12 @@ Bla ned til du finner dette i koden din og lek med tallverdiene. For hvilke verd
 
 ### Omkobling av motorspenning
 
+En annen måte å øke hastigheten til bilen er ved å øke spenningen til motorene. Slik bilen er koblet opp nå er motordriveren koblet til 5 V fra regulatoren, samme som Arduino og Raspberry Pi. Vi kan derimot ganske enkelt koble om spenningen til motordriveren slik at den er koblet direkte på batterispenningen. Bruk dokumentasjonen for spenningsregulatoren som du finner [her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) til å gjøre dette.
+
 
 ## Pålitelighet
+
+Det kan hende dere har lagt merke til 
 
 
 ## Tutehorn
