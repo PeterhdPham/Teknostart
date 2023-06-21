@@ -43,7 +43,8 @@ app = Flask(__name__)
 
 @app.route('/image_<timestamp>.jpg')
 def serve_image(timestamp):
-    return send_from_directory('/home/pi/Teknostart/projectfolder', 'image.jpg')
+    # Change from "pi" to teknostart"
+    return send_from_directory('/home/teknostart/Teknostart/projectfolder', 'image.jpg')
 
 result = "ingenting"
 @app.route('/index.html')
@@ -55,12 +56,13 @@ def background_process_test():
     print ("Hello")
     return ("nothing")
 
-
-model = ImageModel.load('/home/pi/Teknostart/Lobe')
+# Change from "pi" to "teknostart
+model = ImageModel.load('/home/teknostart/Teknostart/Lobe')
 
 def compare():
     with image_lock:
-        res = model.predict_from_file('/home/pi/Teknostart/projectfolder/image.jpg')
+        # Change from "pi" to "teknostart"
+        res = model.predict_from_file('/home/teknostart/Teknostart/projectfolder/image.jpg')
     return res.prediction
 
 def recognize(label):
@@ -129,8 +131,9 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 print("Starting compare...")
                 result = compare()
                 print("Compare completed, starting write to file...")
-                
-                text_file = open('/home/pi/Teknostart/projectfolder/result.txt', "w")
+
+                # Change from "pi" to "teknostart"
+                text_file = open('/home/teknostart/Teknostart/projectfolder/result.txt', "w")
                 n = text_file.write(result)
                 text_file.close()
                 
@@ -350,7 +353,8 @@ def start_http_server(video_resolution, fps, server_port, index_file,
             while True:
                 time.sleep(0.1)
                 with image_lock:
-                    camera.capture('/home/pi/Teknostart/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
+                    # Change from "pi" to "teknostart"
+                    camera.capture('/home/teknostart/Teknostart/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
                     time.sleep(0.01)  # add some delay
                 
         finally:
