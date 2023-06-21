@@ -14,18 +14,19 @@ Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart
 - [Teknostart 2022](#teknostart-2022)
 - [Table of Contents](#table-of-contents)
 - [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
-  - [Steg 1: Montering av motorer](#steg-1-montering-av-motorer)
-  - [Steg 2: Sammensetting av baseplate og avlange plater](#steg-2-sammensetting-av-baseplate-og-avlange-plater)
-  - [Steg 3: Ledninger](#steg-3-ledninger)
-  - [Steg 4: Montering av bunnplate](#steg-4-montering-av-bunnplate)
-  - [Steg 5: Raspbian](#steg-5-raspbian)
-  - [Steg 6: Montering av komponenter](#steg-6-montering-av-komponenter)
-  - [Steg 7: Montering av frontplate og kamera](#steg-7-montering-av-frontplate-og-kamera)
-  - [Steg 8: Oppkobling av GPIO](#steg-8-oppkobling-av-gpio)
-  - [Steg 9: Oppkobling av LED-lys](#steg-9-oppkobling-av-led-lys)
-  - [Steg 10: Kontroll og kobling av batteri](#steg-10-kontroll-og-kobling-av-batteri)
-  - [Steg 11: Montering av bakplate og topplokk](#steg-11-montering-av-bakplate-og-topplokk)
-  - [Steg 12: Ferdig produkt](#steg-12-ferdig-produkt)
+  - Hardware
+    - [Steg 1: Montering av motorer](#steg-1-montering-av-motorer)
+    - [Steg 2: Sammensetting av baseplate og avlange plater](#steg-2-sammensetting-av-baseplate-og-avlange-plater)
+    - [Steg 3: Ledninger](#steg-3-ledninger)
+    - [Steg 4: Montering av bunnplate](#steg-4-montering-av-bunnplate)
+    - [Steg 5: Raspbian](#steg-5-raspbian)
+    - [Steg 6: Montering av komponenter](#steg-6-montering-av-komponenter)
+    - [Steg 7: Montering av frontplate og kamera](#steg-7-montering-av-frontplate-og-kamera)
+    - [Steg 8: Oppkobling av GPIO](#steg-8-oppkobling-av-gpio)
+    - [Steg 9: Oppkobling av LED-lys](#steg-9-oppkobling-av-led-lys)
+    - [Steg 10: Kontroll og kobling av batteri](#steg-10-kontroll-og-kobling-av-batteri)
+    - [Steg 11: Montering av bakplate og topplokk](#steg-11-montering-av-bakplate-og-topplokk)
+    - [Steg 12: Ferdig produkt](#steg-12-ferdig-produkt)
   - [Raspberry Pi](#raspberry-pi)
     - [Sette opp SD-kortet](#sette-opp-sd-kortet)
     - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
@@ -91,33 +92,49 @@ Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 1
 
 ## Steg 7: Montering av frontplate og kamera
 
-Fest frontplaten og skru fast kameraet til platen med de 4mm lange M2 skruene.
+Fest frontplaten og skru fast kameraet til platen med de 4mm lange M2 skruene som vist på bildet under
 
 <p float="left">
   <img src="Media/teknobil/07.png" width="300" />
   <img src="Media/teknobil/08.png" width="300" />
 </p>
 
+Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet under. Sørg for å sette den inn riktig vei.
+
 ## Steg 8: Oppkobling av GPIO
 
-Koble opp GPIO som vist på bildet.
+I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under.
 
 <p float="left">
   <img src="Media/teknobil/09.png" width="300" />
 </p>
 
-## Steg 9: Oppkobling av LED-lys
+| Arduino | Raspberry Pi |
+|---------|--------------|
+| A5      | GPIO 6       |
+| A4      | GPIO 13      |
+| A3      | GPIO 19      |
+| A2      | GPIO 26      |
+| GND     | GND          |
 
-Koble opp ledsene som anvist i figuren under.
+Har dere koblet riktig skal det se ut som vist under.
 
 <p float="left">
-  <img src="Media/teknobil/10.png" width="300" />
-  <img src="Media/teknobil/11.png" width="300" />
+  <img src="Media/teknobil/09.png" width="300" />
+</p>
+
+## Steg 9: Oppkobling av spenningskilde
+
+Koble Arduino og Raspberry Pi til 5 V på spenningsregulatoren som vist på bildet under.
+
+<p float="left">
+  <img src="Media/teknobil/12.png" width="300" />
+  <img src="Media/teknobil/13.png" width="300" />
 </p>
 
 ## Steg 10: Kontroll og kobling av batteri
 
-Når ledsene er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den kobles til som vist på bildet. Pass på at bryteren er satt til 5 V før dere skrur den på.
+Når ledsene er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den kobles til som vist på bildet. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
 
 <p float="left">
   <img src="Media/teknobil/12.png" width="300" />
@@ -142,13 +159,6 @@ Bilen skal nå se slik ut.
 
 Lykke til med monteringen!
 
-| Arduino | Raspberry Pi |
-|---------|--------------|
-| A5      | GPIO 6       |
-| A4      | GPIO 13      |
-| A3      | GPIO 19      |
-| A2      | GPIO 26      |
-| GND     | GND          |
 
 
 ## Raspberry Pi
