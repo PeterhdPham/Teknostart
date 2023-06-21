@@ -36,7 +36,6 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
     - [Sette opp SD-kortet](#sette-opp-sd-kortet)
     - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
       - [SSH inn til Raspberry Pi](#ssh-inn-til-raspberry-pi)
-      - [Sette opp Eduroam på Raspberry Pi](#sette-opp-eduroam-på-raspberry-pi)
       - [Få inn riktig programvare](#få-inn-riktig-programvare)
   - [Arduino](#arduino)
     - [Skaff Arduino Software til egen PC](#skaff-arduino-software-til-egen-pc)
@@ -275,6 +274,7 @@ Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkur
 Utstyr:
 - PC
 - Raspberry Pi med ferdig installert SD-kort
+- Delt nett
 
 ### SSH inn til Raspberry Pi
 
@@ -302,8 +302,9 @@ Utstyr:
 Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
 
 
+### Få inn riktig programvare
 
-Vi skal nå få inn riktig programvare, samt laste inn alt av kode som skal ligge lokalt på Pien.
+Vi skal nå få inn riktig programvare, samt laste inn alt av kode som skal ligge lokalt på Pi-en.
 
 1. Start med å sjekke at klokken inne på Raspberry Pien stemmer med kommandoen:
 
