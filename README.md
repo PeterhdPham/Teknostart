@@ -294,9 +294,9 @@ Utstyr:
      ```bash 
      teknostart@ELSYS1.local 
      ```
-     - NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen.
-     _ Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter.
-     _ Du vil få noe tilsvarende:
+     - NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen
+     - Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
+     - Du vil få noe tilsvarende:
      ![SSH into Raspberry Pi](Media/rpi/03SSH.png)
 
 Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
