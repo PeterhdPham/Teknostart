@@ -40,7 +40,12 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
   - [Arduino](#arduino)
     - [Skaff Arduino Software til egen PC](#skaff-arduino-software-til-egen-pc)
     - [Last inn koden til Arduinoen](#last-inn-koden-til-arduinoen)
-  - [(Bonus) Lobe](#bonus-lobe)
+- [Utvidelser](#utvidelser)
+  - [Lys](#lys)
+  - [Hastighet](#hastighet)
+  - [Pålitelighet](#pålitelighet)
+  - [Tutehorn](#tutehorn)
+  - [Lobe](#lobe)
     - [Lag deres egen modell med maskinlæring](#lag-deres-egen-modell-med-maskinlæring)
       - [Last ned LOBE](#last-ned-lobe)
       - [Last ned riktig programvare for å kunne ta bilder med RPi](#last-ned-riktig-programvare-for-å-kunne-ta-bilder-med-rpi)
@@ -98,11 +103,11 @@ Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du tr
 
 # Veiledning for montering av Teknobilen 2023
 
-# Hardware
+## Hardware
 
 Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
 
-## Steg 1: Montering av motorer
+### Steg 1: Montering av motorer
 
 Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene. Ettersom vi ikke benytter muttere vær oppmerksom på ikke å stramme skruene for hardt.
 
@@ -110,7 +115,7 @@ Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene. 
   <img src="Media/teknobil/01.png" width="300" />
 </p>
 
-## Steg 2: Sammensetting av baseplate og avlange plater
+### Steg 2: Sammensetting av baseplate og avlange plater
 
 Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på at baseplaten er riktig vei.
 
@@ -119,7 +124,7 @@ Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på
   <img src="Media/teknobil/03.png" width="300" />
 </p>
 
-## Steg 3: Ledninger
+### Steg 3: Ledninger
 
 Nå kan det være lurt å føre ledningene fra motorene igjennom de to firkantede hullene i baseplaten.
 
@@ -127,7 +132,7 @@ Nå kan det være lurt å føre ledningene fra motorene igjennom de to firkanted
   <img src="Media/teknobil/04.png" width="300" />
 </p>
 
-## Steg 4: Montering av bunnplate
+### Steg 4: Montering av bunnplate
 
 Fest bunnplaten.
 
@@ -135,11 +140,11 @@ Fest bunnplaten.
   <img src="Media/teknobil/06.png" width="300" />
 </p>
 
-## Steg 5: Raspbian
+### Steg 5: Raspbian
 
 Før dere fortsetter med å feste komponentene bør dere laste ned Raspbian på et SD-kort som vist [her](#sette-opp-sd-kortet).
 
-## Steg 6: Montering av komponenter
+### Steg 6: Montering av komponenter
 
 Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 10 mm lange M2.5 skruene.
 
@@ -147,7 +152,7 @@ Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 1
   <img src="Media/teknobil/08.png" width="300" />
 </p>
 
-## Steg 7: Montering av frontplate og kamera
+### Steg 7: Montering av frontplate og kamera
 
 Fest frontplaten og skru fast kameraet til platen med de 4 mm lange M2 skruene som vist på bildet under.
 
@@ -162,7 +167,7 @@ Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet un
   <img src="Media/teknobil/15.jpg" width="300" />
 </p>
 
-## Steg 8: Oppkobling av spenningskilde
+### Steg 8: Oppkobling av spenningskilde
 
 Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som vist på bildene under.
 
@@ -172,7 +177,7 @@ Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som 
   <img src="Media/teknobil/18.jpg" width="300" />
 </p>
 
-## Steg 9: Oppkobling av GPIO
+### Steg 9: Oppkobling av GPIO
 
 I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
 
@@ -194,7 +199,7 @@ Har dere koblet riktig skal det se ut som vist under.
   <img src="Media/teknobil/19.jpg" width="300" />
 </p>
 
-## Steg 10: Kontroll og kobling av batteri
+### Steg 10: Kontroll og kobling av batteri
 
 Batterikonnektor til spenningsregulator kobles opp som vist under.
 
@@ -211,7 +216,7 @@ NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kret
   <img src="Media/teknobil/21.jpg" width="500" />
 </p>
 
-## Steg 11: Montering av bakplate og topplokk
+### Steg 11: Montering av bakplate og topplokk
 
 Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
@@ -223,12 +228,12 @@ Lykke til med monteringen!
 
 
 
-# Raspberry Pi Oppsett
+## Raspberry Pi Oppsett
 
 I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
 Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
 
-## Sette opp SD-kortet
+### Sette opp SD-kortet
 
 Utstyr:
 
@@ -268,7 +273,7 @@ Slik går du fram for å sette opp SD-kortet:
 8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
 
 
-## Sette opp Raspberry Pi headless
+### Sette opp Raspberry Pi headless
 Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”. For å koble til Pi-en fra PC med SSH må begge to være koblet på samme nettverk. Derfor skal vi dele nett fra mobilen, og koble oss til dette nettet med både Pi og PC.
 
 Utstyr:
@@ -276,7 +281,7 @@ Utstyr:
 - Raspberry Pi med ferdig installert SD-kort
 - Delt nett
 
-### SSH inn til Raspberry Pi
+#### SSH inn til Raspberry Pi
 
 1. Først må Pi-en være koblet til strøm, dette gjøres enten ved oppkobling i bilen eller ved microUSB porten på kortet
 2. Åpne en terminal på laptopen:
@@ -302,7 +307,7 @@ Utstyr:
 Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
 
 
-### Få inn riktig programvare
+#### Få inn riktig programvare
 
 Vi skal nå få inn riktig programvare, samt laste inn alt av kode som skal ligge lokalt på Pi-en.
 
@@ -374,17 +379,17 @@ Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i ne
   - Naviger til mappen der runCode.py ligger og kjør koden på nytt
 
 
-# Arduino
+## Arduino
 Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - lys på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
 
-## Skaff Arduino Software til egen PC
+### Skaff Arduino Software til egen PC
 
 Last ned Arduino IDE
 * [Windows](https://docs.arduino.cc/software/ide-v1/tutorials/Windows#download-the-arduino-software-ide)
 * [MacOS](https://docs.arduino.cc/software/ide-v1/tutorials/macOS?_gl=1*17wzpvg*_ga*MTY2NjU1MjEzOC4xNjI5OTYzMDk1*_ga_NEXN8H46L5*MTY1NTIwNjQyMy4zMy4xLjE2NTUyMDk1MTcuNjA.)
 * [Linux](https://docs.arduino.cc/software/ide-v1/tutorials/Linux?_gl=1*xpugwf*_ga*MTY2NjU1MjEzOC4xNjI5OTYzMDk1*_ga_NEXN8H46L5*MTY1NTIwNjQyMy4zMy4xLjE2NTUyMDk1NDcuMzA.)
 
-## Last inn koden til Arduinoen
+### Last inn koden til Arduinoen
 Utstyr:
 1. PC
 2. Usb-A til usb-b kabel
@@ -430,8 +435,8 @@ Oppsett:
     
     
     //SPEEDS
-    int drivingSpeed = 255;
-    int turningSpeed = 100;
+    int drivingSpeed = 150;
+    int turningSpeed = 50;
     
     
     //////DRIVING FUNCTIONS//////////////////////
@@ -598,10 +603,33 @@ Oppsett:
 
 NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring. :)
 
-# (Bonus) Lobe
 
-## Lag deres egen modell med maskinlæring
-Det vi kaller object detection, eller objekt gjenkjenning, er en teknikk en datamaskin tar i bruk for å lokalisere objekter i bilder eller videoer. Vi mennesker kjenner fort igjen ulike objekter i bilder og videoer, og skille dem, ila. millisekunder. Målet med object detection er å kunne gjenskape denne egenskapen i en datamaskin. For å få til dette er det ofte tatt i bruk machine learning, som går ut på at maskinen lærer opp seg selv. 
+
+# Utvidelser
+
+Når dere er ferdig med å bygge bilen er på tide å skreddersy bilen og legge til de utvidelsene dere ønsker. Utvidelsene er her listet i en rekke følge vi mener går fra lavest til høyest nivå, men dere kan gjøre hvilke dere vil i den rekkefølgen dere ønsker. Dere kan også velge om dere heller vil hoppe over utvidelsene og begynne rett på dekorasjonen. Dersom dere har andre ideer til utvidelser eller har behov for andre komponenter enn det som er tilgjengelig, hør med en læringsassistent.
+
+## Lys
+
+
+## Hastighet
+
+Det er mulig å endre hastigheten til bilen både i Arduino koden og med å koble om motorspenningen. Økt hastighet vil kunne være en stor fordel dersom dere ønsker å vinne raskeste bil. Men sørg for å teste underveis slik at dere fremdeles har kontroll.
+
+### Kode
+
+### Omkobling av motorspenning
+
+
+## Pålitelighet
+
+
+## Tutehorn
+
+
+## Lobe
+
+Lag dere egen modell for objektgjenkjenning. Det vi kaller object detection, eller objektgjenkjenning, er en teknikk en datamaskin tar i bruk for å lokalisere objekter i bilder eller videoer. Vi mennesker kjenner fort igjen ulike objekter i bilder og videoer, og skille dem, ila. millisekunder. Målet med object detection er å kunne gjenskape denne egenskapen i en datamaskin. For å få til dette er det ofte tatt i bruk machine learning, som går ut på at maskinen lærer opp seg selv. 
 For å slippe å skrive egen kode for dette skal vi benytte et open-source program kalt LOBE. I dette programmet kan en legge inn bilder av de objektene man ønsker at maskinen/programmet skal kunne kjenne igjen, og sette merkelapp på dem. Disse bildene vil så LOBE bruke til å trene opp en modell (type program), til den klarer å kjenne igjen alle objektene den har merkelapp til. Denne modellen, i form av en mappe, legger vi inn på vår RPi, og du vil ha en egenlaget og fungerende gjenkjenningsmodell når du kjører bilen!
 
 
