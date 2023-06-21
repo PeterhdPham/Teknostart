@@ -17,7 +17,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
   - [Spenningsregulator](#spenningsregulator)
   - [Arduino Uno](#arduino-uno)
   - [Motordriver](#motordriver)
-  - [Raspberry Pi](#raspberry-pi)
+  - [Raspberry Pi](#raspberry-pi-intro)
 - [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
   - [Hardware](#hardware)
     - [Steg 1: Montering av motorer](#steg-1-montering-av-motorer)
