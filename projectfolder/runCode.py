@@ -9,6 +9,7 @@ from core import WebMethod
 import RPi.GPIO as GPIO
 
 # -----------------------------------------------
+import time
 import threading
 connected = True
 
