@@ -318,6 +318,7 @@ date
 sudo date -s '18 Aug 2022 13:00'
 ```
 ![Change](Media/rpi/09change_date.png)
+
 2. Nå kan du oppdatere og oppgradere med kommandoene
 
 ```bash
@@ -325,7 +326,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade
 ```
 
-- Trykk enter når dem spør om du ønsker å fortsette.
+- Trykk enter når de spør om du ønsker å fortsette
 
 
 3. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
