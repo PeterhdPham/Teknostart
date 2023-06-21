@@ -11,7 +11,13 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 
 # Table of Contents
 - [Teknostart 2023](#teknostart-2023)
-- [Table of Contents](#table-of-contents)
+- [Innholdsfortegnelse](#innholdsfortegnelse)
+- [Introduksjon til komponentene](#introduksjon-til-komponentene)
+  - [Breadboard](#breadboard)
+  - [Spenningsregulator](#spenningsregulator)
+  - [Arduino Uno](#arduino-uno)
+  - [Motordriver](#motordriver)
+  - [Raspberry Pi](#raspberry-pi)
 - [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
   - [Hardware](#hardware)
     - [Steg 1: Montering av motorer](#steg-1-montering-av-motorer)
@@ -42,6 +48,54 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
       - [Ta bilder](#ta-bilder)
       - [Lag gjenkjenningsmodell](#lag-gjenkjenningsmodell)
       - [Bruk modellen](#bruk-modellen)
+
+
+
+# Introduksjon til komponentene
+
+Settet dere har fått utdelt inneholder komponenter som sikkert er nye for mange av dere. Her er en liten gjennomgang som forklarer hva de gjør. Det er ikke nødvendig å lese denne biten så nøye, men dere kan se over for å skjønne hvilke komponenter vi omtaler i instruksene.
+
+## Breadboard
+
+Et breadboard gir en rask måte å koble opp kretser for prototyping uten å måtte lodde eller lage kabler. Hver rad i breadboardet er koblet sammen slik at alt som kobles til samme rad er koblet til samme spenningen.
+
+<p float="left">
+  <img src="Media/teknobil/Breadboard.jpg" width="300" />
+</p>
+
+## Spenningsregulator
+
+Komponenten på bildet under er en spenningsregulatoren. Denne er viktig for Pi-en tåler ikke høyere spenning enn 5 V, men batterispenningen er på over 7 V. Denne har da til formål å senke spenningen slik at både Arduino og Raspberry Pi kan drives fra samme kilde. [Her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) er lenke til dokumentasjon.
+
+<p float="left">
+  <img src="Media/teknobil/Spenningsregulator.png" width="300" />
+</p>
+
+## Arduino Uno
+
+Arduino Uno er et lite utviklingskort som egner seg godt som første mikrokontroller å lære seg å bruke. For å programmere denne brukes Arduino IDE, med et eget språk som er en variant av C++. [Her](https://store.arduino.cc/products/arduino-uno-rev3) finner dere mer spesifikasjoner om kortet dere har blitt utdelt.
+
+<p float="left">
+  <img src="Media/teknobil/ArduinoUno.jpg" width="300" />
+</p>
+
+## Motordriver
+
+Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. Det betyr at den plasseres rett på Arduino Uno, uten noen ekstra ledninger mellom de to. Denne må i tillegg kobles til motorspenning og til motorene den skal kontrollere. [Her](https://wiki.dfrobot.com/Quad_Motor_Driver_Shield_for_Arduino_SKU_DRI0039) finner dere ekstra dokumentasjon.
+
+<p float="left">
+  <img src="Media/teknobil/Motordriver.jpg" width="300" />
+</p>
+
+## Raspberry Pi
+
+Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som er en hvilken som helst annen PC eller en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer. Videre kan Raspberry Pi samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram. I dette prosjektet brukes modellen Raspberry Pi 3B+. [Her](https://www.raspberrypi.com/documentation/) finner dere mer dokumentasjon om Raspberry Pi.
+
+<p float="left">
+  <img src="Media/teknobil/Breadboard,jpg" width="300" />
+</p>
+
+
 
 # Veiledning for montering av Teknobilen 2023
 
@@ -100,7 +154,7 @@ Fest frontplaten og skru fast kameraet til platen med de 4 mm lange M2 skruene s
 
 <p float="left">
   <img src="Media/teknobil/09.png" width="300" />
-  <img src="Media/teknobil/10.png" width="500" />
+  <img src="Media/teknobil/10.png" width="400" />
 </p>
 
 Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet under. Sørg for å sette den inn riktig vei.
@@ -172,8 +226,6 @@ Lykke til med monteringen!
 
 # Raspberry Pi
 
-Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som en hvilken som helst annen PC en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer.
-Videre, kan Raspberry Pi muligheten til å samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram.
 I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til RPi-en, og denne sender videre informasjon til arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker arduino som slave.
 Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
 
