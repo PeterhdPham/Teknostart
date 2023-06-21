@@ -18,8 +18,9 @@ GPIO.setup(6, GPIO.OUT) #UP/DRIVE
 GPIO.setup(13, GPIO.OUT) #DOWN/REVERSE
 GPIO.setup(19, GPIO.OUT) #LEFT
 GPIO.setup(26, GPIO.OUT) #RIGHT
-GPIO.setup(2, GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
-GPIO.setup(3, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
+
+GPIO.setup(23, GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
+GPIO.setup(18, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 UP = False
 DOWN = False
@@ -63,8 +64,9 @@ def control_motors():
                 GPIO.output(13,DOWN)
                 GPIO.output(19,LEFT)
                 GPIO.output(26,RIGHT)
-                GPIO.output(2, FRONTLIGHTS)
-                GPIO.output(3, BACKLIGHTS)
+                
+                GPIO.output(23, FRONTLIGHTS)
+                GPIO.output(18, BACKLIGHTS)
 
 
 # Create the WebMethod class
