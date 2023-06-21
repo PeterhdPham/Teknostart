@@ -114,9 +114,9 @@ Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet un
 Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som vist på bildene under.
 
 <p float="left">
-  <img src="Media/teknobil/16.png" width="300" />
-  <img src="Media/teknobil/17.png" width="300" />
-  <img src="Media/teknobil/18.png" width="300" />
+  <img src="Media/teknobil/16.jpg" width="300" />
+  <img src="Media/teknobil/17.jpg" width="300" />
+  <img src="Media/teknobil/18.jpg" width="300" />
 </p>
 
 ## Steg 9: Oppkobling av GPIO
@@ -138,7 +138,7 @@ I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en
 Har dere koblet riktig skal det se ut som vist under.
 
 <p float="left">
-  <img src="Media/teknobil/19.png" width="300" />
+  <img src="Media/teknobil/19.jpg" width="300" />
 </p>
 
 ## Steg 10: Kontroll og kobling av batteri
@@ -146,7 +146,7 @@ Har dere koblet riktig skal det se ut som vist under.
 Batterikonnektor til spenningsregulator kobles opp som vist under.
 
 <p float="left">
-  <img src="Media/teknobil/20.png" width="300" />
+  <img src="Media/teknobil/20.jpg" width="300" />
 </p>
 
 Når alt er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den skyves inn mellom motorene før dere fester bakplaten. 
@@ -154,8 +154,8 @@ Når alt er koblet opp kan dere få bilen deres kontrollert hos en læringsassis
 NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kretskortene på plass er skrudd såpass langt ut at batteriet kan skyves inn i bilen uten skade. Senere må dere sørge for ikke å skru disse inn i batteriet. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
 
 <p float="left">
-  <img src="Media/teknobil/22.png" width="300" />
-  <img src="Media/teknobil/21.png" width="300" />
+  <img src="Media/teknobil/22.jpg" width="300" />
+  <img src="Media/teknobil/21.jpg" width="300" />
 </p>
 
 ## Steg 11: Montering av bakplate og topplokk
@@ -163,7 +163,7 @@ NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kret
 Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
 <p float="left">
-  <img src="Media/teknobil/14.png" width="300" />
+  <img src="Media/teknobil/14.jpg" width="300" />
 </p>
 
 Lykke til med monteringen!
