@@ -51,7 +51,7 @@ Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt 
 
 ## Steg 1: Montering av motorer
 
-Start med å feste motorene til følgende plater med de 25mm lange M3 skruene. Ettersom vi ikke benytter muttere vær oppmerksom på ikke å stramme skruene for hardt.
+Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene. Ettersom vi ikke benytter muttere vær oppmerksom på ikke å stramme skruene for hardt.
 
 <p float="left">
   <img src="Media/teknobil/01.png" width="300" />
@@ -84,11 +84,11 @@ Fest bunnplaten.
 
 ## Steg 5: Raspbian
 
-Før dere fortsetter med å feste komponentene bør dere laste ned Raspbian på et SD-kort som vist [her](URL_til_veiledning).
+Før dere fortsetter med å feste komponentene bør dere laste ned Raspbian på et SD-kort som vist [her](#sette-opp-sd-kortet).
 
 ## Steg 6: Montering av komponenter
 
-Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 10mm lange M2.5 skruene.
+Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 10 mm lange M2.5 skruene.
 
 <p float="left">
   <img src="Media/teknobil/08.png" width="300" />
@@ -96,7 +96,7 @@ Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 1
 
 ## Steg 7: Montering av frontplate og kamera
 
-Fest frontplaten og skru fast kameraet til platen med de 4mm lange M2 skruene som vist på bildet under
+Fest frontplaten og skru fast kameraet til platen med de 4 mm lange M2 skruene som vist på bildet under.
 
 <p float="left">
   <img src="Media/teknobil/09.png" width="300" />
