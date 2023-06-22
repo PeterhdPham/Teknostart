@@ -12,6 +12,8 @@ import RPi.GPIO as GPIO
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
+BUZZER = 20
+
 
 # Changed to pinouts from teknobil 2022
 GPIO.setup(21, GPIO.OUT) #UP/DRIVE
@@ -23,10 +25,34 @@ GPIO.setup(23, GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
 GPIO.setup(18, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 
+# ------------------------
+# Buzzer output
+GPIO.setup(BUZZER, GPIO.OUT)
+# ------------------------
+
+
 UP = False
 DOWN = False
 RIGHT = False
 LEFT = False
+
+
+
+# ------------------------
+# Honking functionality
+import threading
+import time
+
+def honk():
+    while True:
+        GPIO.output(BUZZER, GPIO.HIGH)
+        time.sleep(0.01)
+        GPIO.output(BUZZER, GPIO.LOW)
+        time.sleep(0.01)
+
+honk_thread = threading.Thread(target=honk)
+# ------------------------
+
 
 
 def control_motors():
@@ -55,6 +81,16 @@ def control_motors():
                     LEFT = False
                 if keys.state('K_SPACE'):
                     print('Compare')
+
+                # ------------------------
+                # Honking
+                if keys.state('K_e'):
+                    print('Tut tut')
+                    honk_thread.start()
+                else:
+                    honk_thread.kill()
+                # ------------------------
+
 
                     
                 
