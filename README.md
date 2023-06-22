@@ -336,7 +336,7 @@ sudo apt-get dist-upgrade
 3. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
 
 ```bash
-git clone [git@github.com:PeterhdPham/Teknostart.git](https://github.com/PeterhdPham/Teknostart.git)
+git clone https://github.com/PeterhdPham/Teknostart.git
 ```
     *NB dette kan ta litt tid
 4. Videre kan du navigere deg inn på "Teknostart" mappen med kommandoen:
