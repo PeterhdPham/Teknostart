@@ -22,6 +22,7 @@ GPIO.setup(26, GPIO.OUT) #RIGHT
 GPIO.setup(23, GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
 GPIO.setup(18, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
+
 UP = False
 DOWN = False
 RIGHT = False
@@ -40,16 +41,8 @@ def check_connection():
     global connected
     
     while True:
-        GPIO.output(23, GPIO.HIGH)  # Slå på LED
-        time.sleep(2)  # Vent i 2 sekunder
-        GPIO.output(23, GPIO.LOW)  # Slå av LED
-        time.sleep(2)
-        try:
-            socket.create_connection(("www.google.com", 80))
-            connected = True
-        except OSError:
-            connected = False
-        print(connected)
+        response = subprocess.call("ping -c 1 google.com", shell=True, stdout=subprocess.PIPE)
+        connected = (response == 0)
         time.sleep(1)
 
 connection_thread = threading.Thread(target=check_connection)
@@ -62,32 +55,7 @@ def control_motors():
     with Pyro4.Proxy("PYRONAME:KeyManager") as keys:
         with Pyro4.Proxy("PYRONAME:ROVSyncer") as rov:
             while rov.run:
-                if keys.state('K_UP'):
-                    print('Forward')
-                    UP = True
-                else:
-                    UP = False
-                if keys.state('K_DOWN'):
-                    print('Down')
-                    DOWN = True
-                else:
-                    DOWN = False
-                if keys.state('K_RIGHT'):
-                    print('Rigth')
-                    RIGHT = True
-                else:
-                    RIGHT = False
-                if keys.state('K_LEFT'):
-                    print('Left')
-                    LEFT = True
-                else:
-                    LEFT = False
-                if keys.state('K_SPACE'):
-                    print('Compare')
-
-                
                 # -----------------------
-                
                 # Reliability test
                 global connected
                 
@@ -97,8 +65,31 @@ def control_motors():
                     DOWN = False
                     RIGHT = False
                     LEFT = False
-                
+                else:
                 # -----------------------
+                    if keys.state('K_UP'):
+                        print('Forward')
+                        UP = True
+                    else:
+                        UP = False
+                    if keys.state('K_DOWN'):
+                        print('Down')
+                        DOWN = True
+                    else:
+                        DOWN = False
+                    if keys.state('K_RIGHT'):
+                        print('Rigth')
+                        RIGHT = True
+                    else:
+                        RIGHT = False
+                    if keys.state('K_LEFT'):
+                        print('Left')
+                        LEFT = True
+                    else:
+                        LEFT = False
+                    if keys.state('K_SPACE'):
+                        print('Compare')
+
                     
                 
                 FRONTLIGHTS = UP
