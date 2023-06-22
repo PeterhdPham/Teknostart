@@ -14,7 +14,7 @@ GPIO.setmode(GPIO.BCM)
 
 
 # Changed to pinouts from teknobil 2022
-GPIO.setup(6, GPIO.OUT) #UP/DRIVE
+GPIO.setup(21, GPIO.OUT) #UP/DRIVE
 GPIO.setup(13, GPIO.OUT) #DOWN/REVERSE
 GPIO.setup(19, GPIO.OUT) #LEFT
 GPIO.setup(26, GPIO.OUT) #RIGHT
@@ -29,32 +29,67 @@ RIGHT = False
 LEFT = False
 
 
+
+# ------
+# Reliability
+import time
+import threading
+import socket
+
+connected = True
+
+def check_connection():
+    global connected
+
+    while True:
+        try:
+            res = socket.getaddrinfo('google.com',80)
+            connected = True
+        except:
+            connected = False
+
+
+connection_thread = threading.Thread(target=check_connection)
+connection_thread.start()
+# ------
+
+
+
 def control_motors():
+    global connected
+
     with Pyro4.Proxy("PYRONAME:KeyManager") as keys:
         with Pyro4.Proxy("PYRONAME:ROVSyncer") as rov:
             while rov.run:
-                if keys.state('K_UP'):
-                    print('Forward')
-                    UP = True
+                if connected:
+                    if keys.state('K_UP'):
+                        print('Forward')
+                        UP = True
+                    else:
+                        UP = False
+                    if keys.state('K_DOWN'):
+                        print('Down')
+                        DOWN = True
+                    else:
+                        DOWN = False
+                    if keys.state('K_RIGHT'):
+                        print('Rigth')
+                        RIGHT = True
+                    else:
+                        RIGHT = False
+                    if keys.state('K_LEFT'):
+                        print('Left')
+                        LEFT = True
+                    else:
+                        LEFT = False
+                    if keys.state('K_SPACE'):
+                        print('Compare')
                 else:
+                    GPIO.output(23, True)
                     UP = False
-                if keys.state('K_DOWN'):
-                    print('Down')
-                    DOWN = True
-                else:
                     DOWN = False
-                if keys.state('K_RIGHT'):
-                    print('Rigth')
-                    RIGHT = True
-                else:
                     RIGHT = False
-                if keys.state('K_LEFT'):
-                    print('Left')
-                    LEFT = True
-                else:
                     LEFT = False
-                if keys.state('K_SPACE'):
-                    print('Compare')
 
                     
                 
@@ -62,12 +97,12 @@ def control_motors():
                 BACKLIGHTS = DOWN 
 
                 # Changed to pinouts from 2022
-                GPIO.output(6,UP)
+                GPIO.output(21,UP)
                 GPIO.output(13,DOWN)
                 GPIO.output(19,LEFT)
                 GPIO.output(26,RIGHT)
                 
-                GPIO.output(23, FRONTLIGHTS)
+                #GPIO.output(23, FRONTLIGHTS)
                 GPIO.output(18, BACKLIGHTS)
 
 
