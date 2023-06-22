@@ -83,6 +83,7 @@ def control_motors():
                 global connected
                 
                 if not connected:
+                    GPIO.output(23, True)
                     UP = False
                     DOWN = False
                     RIGHT = False
