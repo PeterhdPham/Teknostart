@@ -31,27 +31,20 @@ LEFT = False
 
 # -----------------------
 # Reliability test
-import time
 import threading
 import socket
 
 connected = True
-"""
-def check_connection():
-    global connected
-    
-    while True:
-        response = subprocess.call("ping -c 1 google.com", shell=True, stdout=subprocess.PIPE)
-        connected = (response == 0)
-        time.sleep(1)
-"""
 
 def check_connection():
-    try:
-        res = socket.getaddrinfo('google.com',80)
-        return True
-    except:
-        return False
+    global connected
+
+    while True:
+        try:
+            res = socket.getaddrinfo('google.com',80)
+            connected = True
+        except:
+            connected = False
 
 connection_thread = threading.Thread(target=check_connection)
 connection_thread.start()
@@ -66,6 +59,7 @@ def control_motors():
                 # -----------------------
                 # Reliability test
                 global connected
+                print(connected)
                 
                 if not connected:
                     GPIO.output(23, True)
