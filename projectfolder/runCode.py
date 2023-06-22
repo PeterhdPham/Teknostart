@@ -13,6 +13,7 @@ import RPi.GPIO as GPIO
 # Reliability test
 import time
 import threading
+import socket
 
 connected = True
 
@@ -25,6 +26,7 @@ def check_connection():
             connected = True
         except OSError:
             connected = False
+        print(connected)
         time.sleep(1)
 
 connection_thread = threading.Thread(target=check_connection)
