@@ -21,6 +21,10 @@ def check_connection():
     global connected
     
     while True:
+        GPIO.output(23, GPIO.HIGH)  # Slå på LED
+        time.sleep(2)  # Vent i 2 sekunder
+        GPIO.output(23, GPIO.LOW)  # Slå av LED
+        time.sleep(2)
         try:
             socket.create_connection(("www.google.com", 80))
             connected = True
