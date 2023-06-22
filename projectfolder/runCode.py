@@ -60,8 +60,6 @@ def control_motors():
             while rov.run:
                 # -----------------------
                 # Reliability test
-                print(connected)
-                
                 if connected:
                     if keys.state('K_UP'):
                         print('Forward')
