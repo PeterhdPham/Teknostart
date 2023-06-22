@@ -10,7 +10,6 @@ import RPi.GPIO as GPIO
 
 
 # -----------------------
-"""
 # Reliability test
 import time
 import threading
@@ -22,12 +21,11 @@ def check_connection():
     while True:
         response = subprocess.call("ping -c 1 google.com", shell=True, stdout=subprocess.PIPE)
         connected = (response == 0)
-        print(response)
+        print(connected)
         time.sleep(1)
 
 connection_thread = threading.Thread(target=check_connection)
 connection_thread.start()
-"""
 # -----------------------
 
 
@@ -80,7 +78,7 @@ def control_motors():
 
                 
                 # -----------------------
-                """
+                
                 # Reliability test
                 global connected
                 
@@ -89,7 +87,7 @@ def control_motors():
                     DOWN = False
                     RIGHT = False
                     LEFT = False
-                """
+                
                 # -----------------------
                     
                 
