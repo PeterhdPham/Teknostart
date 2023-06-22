@@ -36,7 +36,7 @@ import threading
 import socket
 
 connected = True
-
+"""
 def check_connection():
     global connected
     
@@ -44,6 +44,14 @@ def check_connection():
         response = subprocess.call("ping -c 1 google.com", shell=True, stdout=subprocess.PIPE)
         connected = (response == 0)
         time.sleep(1)
+"""
+
+def check_connection():
+    try:
+        res = socket.getaddrinfo('google.com',80)
+        return True
+    except:
+        return False
 
 connection_thread = threading.Thread(target=check_connection)
 connection_thread.start()
