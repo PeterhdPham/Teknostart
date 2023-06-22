@@ -18,10 +18,13 @@ connected = True
 
 def check_connection():
     global connected
+    
     while True:
-        response = subprocess.call("ping -c 1 google.com", shell=True, stdout=subprocess.PIPE)
-        connected = (response == 0)
-        print(connected)
+        try:
+            socket.create_connection(("www.google.com", 80))
+            connected = True
+        except OSError:
+            connected = False
         time.sleep(1)
 
 connection_thread = threading.Thread(target=check_connection)
