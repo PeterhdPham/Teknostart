@@ -14,7 +14,7 @@ GPIO.setmode(GPIO.BCM)
 
 
 # Changed to pinouts from teknobil 2022
-GPIO.setup(6, GPIO.OUT) #UP/DRIVE
+GPIO.setup(21, GPIO.OUT) #UP/DRIVE
 GPIO.setup(13, GPIO.OUT) #DOWN/REVERSE
 GPIO.setup(19, GPIO.OUT) #LEFT
 GPIO.setup(26, GPIO.OUT) #RIGHT
