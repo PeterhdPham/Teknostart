@@ -9,6 +9,25 @@ from core import WebMethod
 import RPi.GPIO as GPIO
 
 
+#set GPIO numbering mode and define output pins
+GPIO.setmode(GPIO.BCM)
+
+
+# Changed to pinouts from teknobil 2022
+GPIO.setup(6, GPIO.OUT) #UP/DRIVE
+GPIO.setup(13, GPIO.OUT) #DOWN/REVERSE
+GPIO.setup(19, GPIO.OUT) #LEFT
+GPIO.setup(26, GPIO.OUT) #RIGHT
+
+GPIO.setup(23, GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
+GPIO.setup(18, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
+
+UP = False
+DOWN = False
+RIGHT = False
+LEFT = False
+
+
 # -----------------------
 # Reliability test
 import time
@@ -37,25 +56,6 @@ connection_thread = threading.Thread(target=check_connection)
 connection_thread.start()
 # -----------------------
 
-
-
-#set GPIO numbering mode and define output pins
-GPIO.setmode(GPIO.BCM)
-
-
-# Changed to pinouts from teknobil 2022
-GPIO.setup(6, GPIO.OUT) #UP/DRIVE
-GPIO.setup(13, GPIO.OUT) #DOWN/REVERSE
-GPIO.setup(19, GPIO.OUT) #LEFT
-GPIO.setup(26, GPIO.OUT) #RIGHT
-
-GPIO.setup(23, GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
-GPIO.setup(18, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
-
-UP = False
-DOWN = False
-RIGHT = False
-LEFT = False
 
 
 def control_motors():
