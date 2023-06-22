@@ -53,12 +53,13 @@ connection_thread.start()
 
 
 def control_motors():
+    global connected
+    
     with Pyro4.Proxy("PYRONAME:KeyManager") as keys:
         with Pyro4.Proxy("PYRONAME:ROVSyncer") as rov:
             while rov.run:
                 # -----------------------
                 # Reliability test
-                global connected
                 print(connected)
                 
                 if not connected:
