@@ -62,14 +62,7 @@ def control_motors():
                 # Reliability test
                 print(connected)
                 
-                if not connected:
-                    GPIO.output(23, True)
-                    UP = False
-                    DOWN = False
-                    RIGHT = False
-                    LEFT = False
-                else:
-                # -----------------------
+                if connected:
                     if keys.state('K_UP'):
                         print('Forward')
                         UP = True
@@ -92,6 +85,13 @@ def control_motors():
                         LEFT = False
                     if keys.state('K_SPACE'):
                         print('Compare')
+                else:
+                    GPIO.output(23, True)
+                    UP = False
+                    DOWN = False
+                    RIGHT = False
+                    LEFT = False
+                # -----------------------
 
                     
                 
