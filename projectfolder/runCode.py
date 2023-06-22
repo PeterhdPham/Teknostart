@@ -62,7 +62,7 @@ def control_motors():
                 BACKLIGHTS = DOWN 
 
                 # Changed to pinouts from 2022
-                GPIO.output(6,UP)
+                GPIO.output(21,UP)
                 GPIO.output(13,DOWN)
                 GPIO.output(19,LEFT)
                 GPIO.output(26,RIGHT)
