@@ -186,7 +186,7 @@ I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en
 
 | Arduino | Raspberry Pi |
 |---------|--------------|
-| A5      | GPIO 6       |
+| A5      | GPIO 21      |
 | A4      | GPIO 13      |
 | A3      | GPIO 19      |
 | A2      | GPIO 26      |
