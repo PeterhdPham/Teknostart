@@ -29,67 +29,32 @@ RIGHT = False
 LEFT = False
 
 
-
-# ------
-# Reliability
-import time
-import threading
-import socket
-
-connected = True
-
-def check_connection():
-    global connected
-
-    while True:
-        try:
-            res = socket.getaddrinfo('google.com',80)
-            connected = True
-        except:
-            connected = False
-
-
-connection_thread = threading.Thread(target=check_connection)
-connection_thread.start()
-# ------
-
-
-
 def control_motors():
-    global connected
-
     with Pyro4.Proxy("PYRONAME:KeyManager") as keys:
         with Pyro4.Proxy("PYRONAME:ROVSyncer") as rov:
             while rov.run:
-                if connected:
-                    if keys.state('K_UP'):
-                        print('Forward')
-                        UP = True
-                    else:
-                        UP = False
-                    if keys.state('K_DOWN'):
-                        print('Down')
-                        DOWN = True
-                    else:
-                        DOWN = False
-                    if keys.state('K_RIGHT'):
-                        print('Rigth')
-                        RIGHT = True
-                    else:
-                        RIGHT = False
-                    if keys.state('K_LEFT'):
-                        print('Left')
-                        LEFT = True
-                    else:
-                        LEFT = False
-                    if keys.state('K_SPACE'):
-                        print('Compare')
+                if keys.state('K_UP'):
+                    print('Forward')
+                    UP = True
                 else:
-                    GPIO.output(23, True)
                     UP = False
+                if keys.state('K_DOWN'):
+                    print('Down')
+                    DOWN = True
+                else:
                     DOWN = False
+                if keys.state('K_RIGHT'):
+                    print('Rigth')
+                    RIGHT = True
+                else:
                     RIGHT = False
+                if keys.state('K_LEFT'):
+                    print('Left')
+                    LEFT = True
+                else:
                     LEFT = False
+                if keys.state('K_SPACE'):
+                    print('Compare')
 
                     
                 
@@ -102,7 +67,7 @@ def control_motors():
                 GPIO.output(19,LEFT)
                 GPIO.output(26,RIGHT)
                 
-                #GPIO.output(23, FRONTLIGHTS)
+                GPIO.output(23, FRONTLIGHTS)
                 GPIO.output(18, BACKLIGHTS)
 
 
