@@ -611,11 +611,13 @@ NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er 
 Når dere er ferdig med å bygge bilen er på tide å skreddersy bilen og legge til de utvidelsene dere ønsker. Utvidelsene er her listet i en rekke følge vi mener går fra lavest til høyest nivå, men dere kan gjøre hvilke dere vil i den rekkefølgen dere ønsker. Dere kan også velge om dere heller vil hoppe over utvidelsene og begynne rett på dekorasjonen. Dersom dere har andre ideer til utvidelser eller har behov for andre komponenter enn det som er tilgjengelig, hør med en læringsassistent.
 
 ## Lys
-Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere. Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Det er hull foran og bak på bilen for å montere LED og dere skal ha fått utdelt male-female ledninger som kan brukes for å koble LED-ene til breadboardet.
+Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere. Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
 
 <p float="left">
   <img src="Media/teknobil/LEDSchematic.jpeg" width="300" />
 </p>
+
+Det er hull foran og bak på bilen for å montere LED og dere skal ha fått utdelt male-female ledninger som kan brukes for å koble LED-ene til breadboardet.
 
 
 ## Hastighet
