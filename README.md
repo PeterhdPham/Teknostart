@@ -670,6 +670,7 @@ buzzer = GPIO.PWM(BUZZER, 1000) # Set frequency to 1 kHz
 Det er tre slike kommenteringer som må fjernes. Dere må nå finne de to andre og gjøre det samme med de. De er markert på samme måte som koden over.
 
 3. Når dere har fjernet alle tre kommenteringene lukker dere nano ved å trykk Ctrl+X, deretter Y for å lagre og så Enter. Nå kan dere kjøre koden på nytt og kjøre rundt som før. Når dere trykker Space skal buzzeren spille av en vakker lyd.
+4. Nå kan dere prøve å sette en annen frekvens eller duty cycle for buzzeren.
 
 
 ## Lobe
