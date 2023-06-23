@@ -178,7 +178,7 @@ Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som 
 
 ### Steg 9: Oppkobling av GPIO
 
-I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
+I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. En GPIO pinne på Pi-en bruker vi for input og output fra kortet. Med disse kan vi for eksempel styre LED-lys eller kontrollere en motor. Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden på kortet som beskriver hvor pinnen er plassert. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
 
 <p float="left">
   <img src="Media/teknobil/RPi_pinout.png" width="300" />
@@ -610,6 +610,11 @@ NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er 
 Når dere er ferdig med å bygge bilen er på tide å skreddersy bilen og legge til de utvidelsene dere ønsker. Utvidelsene er her listet i en rekke følge vi mener går fra lavest til høyest nivå, men dere kan gjøre hvilke dere vil i den rekkefølgen dere ønsker. Dere kan også velge om dere heller vil hoppe over utvidelsene og begynne rett på dekorasjonen. Dersom dere har andre ideer til utvidelser eller har behov for andre komponenter enn det som er tilgjengelig, hør med en læringsassistent.
 
 ## Lys
+Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere. Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Det er hull foran og bak på bilen for å montere LED og dere skal ha fått utdelt male-female ledninger som kan brukes for å koble LED-ene til breadboardet.
+
+<p float="left">
+  <img src="Media/teknobil/LEDSchematic.jpg" width="300" />
+</p>
 
 
 ## Hastighet
