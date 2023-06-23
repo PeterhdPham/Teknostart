@@ -51,6 +51,8 @@ def honk():
         GPIO.output(BUZZER, GPIO.LOW)
         time.sleep(0.001)
         i += 1
+
+honk_thread = threading.Thread(target=honk)
 # ------------------------
 
 
