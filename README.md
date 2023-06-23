@@ -635,7 +635,7 @@ En annen måte å øke hastigheten til bilen er ved å øke spenningen til motor
 ## Lys
 Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere for deg og alle andre i trafikken. 
 
-Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et kretsskjema. Da bruker vi ulike symboler for de forskjellige komponentene og viser hvordan de kobles sammen. Under er kretssymbolet for en motstand vist til venstre og kretssymbolet for en LED vist til høyre.
+Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et kretsskjema. Da bruker vi ulike symboler for de forskjellige komponentene og viser hvordan de kobles sammen. Under er kretssymbolet for en motstand vist til venstre og kretssymbolet for en LED vist til høyre. Merk at det er viktig hvilken veg en LED plasseres. Står den feil veg vil den ikke lyse.
 
 <p float="left">
   <img src="Media/teknobil/motstandsymbol.png" width="300" />
