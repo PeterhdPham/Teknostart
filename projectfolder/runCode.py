@@ -45,6 +45,7 @@ LEFT = False
 # ------------------------
 # Honking functionality
 def honk():
+    print('Tut tut')
     buzzer.start(10) # Set dutycycle to 10
     time.sleep(1)
     buzzer.stop()
@@ -84,7 +85,6 @@ def control_motors():
                 # Honking
                 if keys.state('K_SPACE'):
                     if not threading.Thread().is_alive():
-                        print('Tut tut')
                         create_thread().start()
                 # ------------------------
 
