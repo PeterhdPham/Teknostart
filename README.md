@@ -639,7 +639,7 @@ Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et
 
 <p float="left">
   <img src="Media/teknobil/motstandsymbol.png" width="300" />
-  <img src="Media/teknobil/ledsymbol.png" width="400" />
+  <img src="Media/teknobil/ledsymbol.png" width="500" />
 </p>
 
 Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
