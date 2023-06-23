@@ -44,11 +44,13 @@ import threading
 import time
 
 def honk():
-    while True:
+    i = 0
+    while i < 100:
         GPIO.output(BUZZER, GPIO.HIGH)
         time.sleep(0.01)
         GPIO.output(BUZZER, GPIO.LOW)
         time.sleep(0.01)
+        i += 1
 
 honk_thread = threading.Thread(target=honk)
 # ------------------------
@@ -87,8 +89,6 @@ def control_motors():
                 if keys.state('K_e'):
                     print('Tut tut')
                     honk_thread.start()
-                else:
-                    honk_thread.kill()
                 # ------------------------
 
 
