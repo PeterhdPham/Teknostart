@@ -52,7 +52,8 @@ def honk():
         time.sleep(0.001)
         i += 1
 
-honk_thread = threading.Thread(target=honk)
+def create_thread():
+    return threading.Thread(target=honk)
 # ------------------------
 
 
@@ -88,9 +89,7 @@ def control_motors():
                 # Honking
                 if keys.state('K_e'):
                     print('Tut tut')
-                    if not honk_thread.is_alive():
-                        honk_thread = threading.Thread(target=honk)
-                        honk_thread.start()
+                    create_thread().start()
                 # ------------------------
 
 
