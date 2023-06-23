@@ -18,7 +18,6 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 
-# Changed to pinouts from teknobil 2022
 GPIO.setup(21, GPIO.OUT) #UP/DRIVE
 GPIO.setup(13, GPIO.OUT) #DOWN/REVERSE
 GPIO.setup(19, GPIO.OUT) #LEFT
@@ -46,18 +45,8 @@ LEFT = False
 # ------------------------
 # Honking functionality
 def honk():
-    i = 0
-    while i < 1000:
-        """
-        GPIO.output(BUZZER, GPIO.HIGH)
-        time.sleep(0.001)
-        GPIO.output(BUZZER, GPIO.LOW)
-        """
-        
-        buzzer.start(10) # Set dutycycle to 10
-
-        time.sleep(0.001)
-        i += 1
+    buzzer.start(10) # Set dutycycle to 10
+    time.sleep(1)
     buzzer.stop()
 
 def create_thread():
@@ -90,12 +79,10 @@ def control_motors():
                     LEFT = True
                 else:
                     LEFT = False
-                if keys.state('K_SPACE'):
-                    print('Compare')
 
                 # ------------------------
                 # Honking
-                if keys.state('K_e'):
+                if keys.state('K_SPACE'):
                     if not threading.Thread().is_alive():
                         print('Tut tut')
                         create_thread().start()
