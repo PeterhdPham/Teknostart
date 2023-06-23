@@ -28,10 +28,12 @@ GPIO.setup(18, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 
 # ------------------------
-# Buzzer output
+"""
+# Buzzer setup
 BUZZER = 12
 GPIO.setup(BUZZER, GPIO.OUT)
 buzzer = GPIO.PWM(BUZZER, 1000) # Set frequency to 1 kHz
+"""
 # ------------------------
 
 
@@ -43,7 +45,8 @@ LEFT = False
 
 
 # ------------------------
-# Honking functionality
+"""
+# Buzzer functionality
 def honk():
     print('Tut tut')
     buzzer.start(10) # Set dutycycle to 10
@@ -52,6 +55,7 @@ def honk():
 
 def create_thread():
     return threading.Thread(target=honk)
+"""
 # ------------------------
 
 
@@ -82,10 +86,12 @@ def control_motors():
                     LEFT = False
 
                 # ------------------------
-                # Honking
+                """
+                # Buzz
                 if keys.state('K_SPACE'):
                     if not threading.Thread().is_alive():
                         create_thread().start()
+                """
                 # ------------------------
 
 
