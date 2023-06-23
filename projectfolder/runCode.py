@@ -8,11 +8,14 @@ import Pyro4
 from core import WebMethod
 import RPi.GPIO as GPIO
 
+# Only needed for expansions
+import threading
+import time
+
+
 
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
-
-BUZZER = 20
 
 
 # Changed to pinouts from teknobil 2022
@@ -27,7 +30,9 @@ GPIO.setup(18, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 # ------------------------
 # Buzzer output
+BUZZER = 12
 GPIO.setup(BUZZER, GPIO.OUT)
+buzzer = GPIO.PWM(BUZZER, 1000) # Set frequency to 1 kHz
 # ------------------------
 
 
@@ -40,17 +45,20 @@ LEFT = False
 
 # ------------------------
 # Honking functionality
-import threading
-import time
-
 def honk():
     i = 0
     while i < 1000:
+        """
         GPIO.output(BUZZER, GPIO.HIGH)
         time.sleep(0.001)
         GPIO.output(BUZZER, GPIO.LOW)
+        """
+        
+        buzzer.start(10) # Set dutycycle to 10
+
         time.sleep(0.001)
         i += 1
+    buzzer.stop()
 
 def create_thread():
     return threading.Thread(target=honk)
@@ -88,8 +96,8 @@ def control_motors():
                 # ------------------------
                 # Honking
                 if keys.state('K_e'):
-                    print('Tut tut')
                     if not threading.Thread().is_alive():
+                        print('Tut tut')
                         create_thread().start()
                 # ------------------------
 
