@@ -40,10 +40,10 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
     - [Skaff Arduino Software til egen PC](#skaff-arduino-software-til-egen-pc)
     - [Last inn koden til Arduinoen](#last-inn-koden-til-arduinoen)
 - [Utvidelser](#utvidelser)
-  - [Lys](#lys)
   - [Hastighet](#hastighet)
     - [Kode](#kode)
     - [Omkobling av motorspenning](#omkobling-av-motorspenning)
+  - [Lys](#lys)
   - [Tutehorn](#tutehorn)
   - [Lobe](#lobe)
     - [Lag deres egen modell med maskinlæring](#lag-deres-egen-modell-med-maskinlæring)
@@ -608,16 +608,7 @@ NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er 
 
 # Utvidelser
 
-Når dere er ferdig med å bygge bilen er på tide å skreddersy bilen og legge til de utvidelsene dere ønsker. Utvidelsene er her listet i en rekke følge vi mener går fra lavest til høyest nivå, men dere kan gjøre hvilke dere vil i den rekkefølgen dere ønsker. Dere kan også velge om dere heller vil hoppe over utvidelsene og begynne rett på dekorasjonen. Dersom dere har andre ideer til utvidelser eller har behov for andre komponenter enn det som er tilgjengelig, hør med en læringsassistent.
-
-## Lys
-Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere. Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
-
-<p float="left">
-  <img src="Media/teknobil/LEDSchematic.jpeg" width="300" />
-</p>
-
-Det er hull foran og bak på bilen for å montere LED og dere skal ha fått utdelt male-female ledninger som kan brukes for å koble LED-ene til breadboardet.
+Når dere er ferdig med å bygge bilen er på tide å skreddersy bilen og legge til de utvidelsene dere ønsker. Utvidelsene er her listet i en rekke følge vi mener går fra lavest til høyest nivå, men dere kan gjøre hvilke dere vil i den rekkefølgen dere ønsker. Dere kan også velge om dere heller vil hoppe over utvidelsene og begynne rett på dekorasjonen. Dersom dere har andre ideer til utvidelser og har behov for andre komponenter enn det som er tilgjengelig, hør med en læringsassistent. Platene kan kuttes, bores og lekes med slik dere ønsker, men husk at elektronikken inni skal gjenbrukes til neste år også. 
 
 
 ## Hastighet
@@ -639,6 +630,25 @@ Bla ned til du finner dette i koden din og lek med tallverdiene. For hvilke verd
 ### Omkobling av motorspenning
 
 En annen måte å øke hastigheten til bilen er ved å øke spenningen til motorene. Slik bilen er koblet opp nå er motordriveren koblet til 5 V fra regulatoren, samme som Arduino og Raspberry Pi. Vi kan derimot ganske enkelt koble om spenningen til motordriveren slik at den er koblet direkte på batterispenningen. Bruk dokumentasjonen for spenningsregulatoren som du finner [her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) til å gjøre dette.
+
+
+## Lys
+Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere for deg og alle andre i trafikken. 
+
+Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et kretsskjema. Da bruker vi ulike symboler for de forskjellige komponentene og viser hvordan de kobles sammen. Under er kretssymbolet for en motstand vist til venstre og kretssymbolet for en LED vist til høyre.
+
+<p float="left">
+  <img src="Media/teknobil/motstandsymbol.png" width="300" />
+  <img src="Media/teknobil/ledsymbol.png" width="300" />
+</p>
+
+Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
+
+<p float="left">
+  <img src="Media/teknobil/LEDSchematic.jpeg" width="300" />
+</p>
+
+Det er hull foran og bak på bilen for å montere LED og dere skal ha fått utdelt male-female ledninger som kan brukes for å koble LED-ene til breadboardet.
 
 
 ## Tutehorn
