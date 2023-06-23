@@ -648,15 +648,15 @@ Det er gøy å tute. Det synes alle. Dere kan få en buzzer utdelt fra en lærin
 1. Koble opp buzzeren med den siden som er merket med + til GPIO 21 på Raspberry Pi og den andre siden koblet til GND.
 2. Nå må vi endre programmet runCode.py. Nano er en text editor som dere kan kjøre fra terminalen. Åpne runCode i nano.
    
-'''bash
+```bash
 nano runCode.py
-'''
+```
 
 I nano kan dere navigere med piltastene og bla ned gjennom koden. I Python kan vi kommentere ut ved å plassere # foran teksten vi ønsker å kommentere. Da kommenterer vi ut den ene linjen vi skriver på. Skal vi kommentere ut flere linjer bruker vi """ <teksten her ignoreres av Python> """.
 
 Den første kodesnutten som er kommentert bort er vist under. Fjern """ begge stedene for at koden ikke skal være kommentert bort.
 
-'''p
+```p
 # ------------------------
 """
 # Buzzer setup
@@ -665,7 +665,7 @@ GPIO.setup(BUZZER, GPIO.OUT)
 buzzer = GPIO.PWM(BUZZER, 1000) # Set frequency to 1 kHz
 """
 # ------------------------
-'''
+```
 
 Det er tre slike kommenteringer som må fjernes. Dere må nå finne de to andre og gjøre det samme med de. De er markert på samme måte som koden over.
 
