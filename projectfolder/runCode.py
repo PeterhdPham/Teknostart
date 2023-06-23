@@ -89,7 +89,8 @@ def control_motors():
                 # Honking
                 if keys.state('K_e'):
                     print('Tut tut')
-                    create_thread().start()
+                    if not threading.Thread().is_alive():
+                        create_thread().start()
                 # ------------------------
 
 
