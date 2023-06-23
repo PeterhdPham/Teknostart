@@ -42,7 +42,8 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 - [Utvidelser](#utvidelser)
   - [Lys](#lys)
   - [Hastighet](#hastighet)
-  - [Pålitelighet](#pålitelighet)
+    - [Kode](#kode)
+    - [Omkobling av motorspenning](#omkobling-av-motorspenning)
   - [Tutehorn](#tutehorn)
   - [Lobe](#lobe)
     - [Lag deres egen modell med maskinlæring](#lag-deres-egen-modell-med-maskinlæring)
@@ -613,7 +614,7 @@ Når dere er ferdig med å bygge bilen er på tide å skreddersy bilen og legge 
 Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere. Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Det er hull foran og bak på bilen for å montere LED og dere skal ha fått utdelt male-female ledninger som kan brukes for å koble LED-ene til breadboardet.
 
 <p float="left">
-  <img src="Media/teknobil/LEDSchematic.jpg" width="300" />
+  <img src="Media/teknobil/LEDSchematic.jpeg" width="300" />
 </p>
 
 
