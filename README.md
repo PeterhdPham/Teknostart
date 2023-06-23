@@ -641,12 +641,35 @@ Bla ned til du finner dette i koden din og lek med tallverdiene. For hvilke verd
 En annen måte å øke hastigheten til bilen er ved å øke spenningen til motorene. Slik bilen er koblet opp nå er motordriveren koblet til 5 V fra regulatoren, samme som Arduino og Raspberry Pi. Vi kan derimot ganske enkelt koble om spenningen til motordriveren slik at den er koblet direkte på batterispenningen. Bruk dokumentasjonen for spenningsregulatoren som du finner [her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) til å gjøre dette.
 
 
-## Pålitelighet
-
-Det kan hende dere har lagt merke til 
-
-
 ## Tutehorn
+
+Det er gøy å tute. Det synes alle. Dere kan få en buzzer utdelt fra en læringsassistent. Koden for at dette skal fungere på deres bil er allerede skrevet, men den er kommentert ut i filen runCode.py. Her blir dere nødt til å lese gjennom koden for å finne ut hvordan å få tutehornet til å fungere. Poenget med denne oppgaven er ikke at dere skal forstå all koden, men få erfaring med å endre filene dere har på Pi-en. Programmet runCode er skrevet i programmeringsspråket Python som dere skal lære dere etter hvert.
+
+1. Koble opp buzzeren med den siden som er merket med + til GPIO 21 på Raspberry Pi og den andre siden koblet til GND.
+2. Nå må vi endre programmet runCode.py. Nano er en text editor som dere kan kjøre fra terminalen. Åpne runCode i nano.
+   
+'''bash
+nano runCode.py
+'''
+
+I nano kan dere navigere med piltastene og bla ned gjennom koden. I Python kan vi kommentere ut ved å plassere # foran teksten vi ønsker å kommentere. Da kommenterer vi ut den ene linjen vi skriver på. Skal vi kommentere ut flere linjer bruker vi """ <teksten her ignoreres av Python> """.
+
+Den første kodesnutten som er kommentert bort er vist under. Fjern """ begge stedene for at koden ikke skal være kommentert bort.
+
+'''p
+# ------------------------
+"""
+# Buzzer setup
+BUZZER = 12
+GPIO.setup(BUZZER, GPIO.OUT)
+buzzer = GPIO.PWM(BUZZER, 1000) # Set frequency to 1 kHz
+"""
+# ------------------------
+'''
+
+Det er tre slike kommenteringer som må fjernes. Dere må nå finne de to andre og gjøre det samme med de. De er markert på samme måte som koden over.
+
+3. Når dere har fjernet alle tre kommenteringene lukker dere nano ved å trykk Ctrl+X, deretter Y for å lagre og så Enter. Nå kan dere kjøre koden på nytt og kjøre rundt som før. Når dere trykker Space skal buzzeren spille av en vakker lyd.
 
 
 ## Lobe
