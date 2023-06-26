@@ -109,7 +109,8 @@ Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt 
 
 ### Steg 1: Montering av motorer
 
-Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene. Ettersom vi ikke benytter muttere vær oppmerksom på ikke å stramme skruene for hardt.
+Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene. 
+(NB! Ettersom vi ikke benytter muttere vær oppmerksom på ikke å stramme skruene for hardt).
 
 <p float="left">
   <img src="Media/teknobil/01.png" width="300" />
@@ -142,7 +143,7 @@ Fest bunnplaten.
 
 ### Steg 5: Raspbian
 
-Før dere fortsetter med å feste komponentene bør dere laste ned Raspbian på et SD-kort som vist [her](#sette-opp-sd-kortet).
+Her kan dere ta en liten pause, komponentene trenger ikke festes før ettr oppsett av Rasberry Pi er ferdig. Før dere fortsetter med å feste komponentene bør dere laste ned Raspbian på et SD-kort som vist [her](#sette-opp-sd-kortet).
 
 ### Steg 6: Montering av komponenter
 
