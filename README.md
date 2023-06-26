@@ -143,7 +143,7 @@ Fest bunnplaten.
 
 ### Steg 5: Raspbian
 
-Her kan dere ta en liten pause, komponentene trenger ikke festes før ettr oppsett av Rasberry Pi er ferdig. Før dere fortsetter med å feste komponentene bør dere laste ned Raspbian på et SD-kort som vist [her](#sette-opp-sd-kortet).
+Før dere fortsetter med å feste komponentene bør oppsettet av Raspberry Pi være ferdig, ettersom det blir vanskelig å komme til SD-kortet etter at alt er skrudd på plass. dere laste ned Raspbian på et SD-kort som vist [her](#sette-opp-sd-kortet).
 
 ### Steg 6: Montering av komponenter
 
