@@ -143,7 +143,7 @@ Fest bunnplaten.
 
 ### Steg 5: Raspbian
 
-Før dere fortsetter med å feste komponentene bør oppsettet av Raspberry Pi være ferdig, ettersom det blir vanskelig å komme til SD-kortet etter at alt er skrudd på plass. dere laste ned Raspbian på et SD-kort som vist [her](#sette-opp-sd-kortet).
+Før dere fortsetter med å feste komponentene bør oppsettet av Raspberry Pi være ferdig, ettersom det blir vanskelig å komme til SD-kortet etter at alt er skrudd på plass. Dere bør ha fullført dette steget [her](#sette-opp-sd-kortet).
 
 ### Steg 6: Montering av komponenter
 
@@ -210,7 +210,7 @@ Batterikonnektor til spenningsregulator kobles opp som vist under.
 
 Når alt er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den skyves inn mellom motorene før dere fester bakplaten. 
 
-NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kretskortene på plass er skrudd såpass langt ut at batteriet kan skyves inn i bilen uten skade. Senere må dere sørge for ikke å skru disse inn i batteriet. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
+NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kretskortene på plass ikke er skrudd såpass stramt at batteriet tar skade når det skyves inn i bilen. Det er viktig å være obs på at man ikke skrur de inn i batteriet senere heller, ellers kan batteriet begynne å brenne. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
 
 <p float="left">
   <img src="Media/teknobil/22.jpg" width="300" />
