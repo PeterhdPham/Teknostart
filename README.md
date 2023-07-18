@@ -12,8 +12,8 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 
 ## Innholdsfortegnelse
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
-- [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
-  - [Hardware](#hardware)
+- [Veiledning for montering av Teknobilen 2023](#Trinnvis-veiledning-for-montering-av-Teknobilen-2023)
+  - [Hardware](#Montering-av-Teknobilen)
   - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
   - [Arduino](#arduino)
 - [Utvidelser](#utvidelser)
@@ -25,7 +25,6 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
   - [Lobe](#lobe)
 
 
-
 # Introduksjon til komponentene
 
 Settet dere har fått utdelt inneholder komponenter som sikkert er nye for mange av dere. Her er en liten gjennomgang som forklarer hva de gjør. Det er ikke nødvendig å lese denne biten så nøye, men dere kan se over for å skjønne hvilke komponenter vi omtaler i instruksene.
@@ -34,15 +33,14 @@ Settet dere har fått utdelt inneholder komponenter som sikkert er nye for mange
 
 Et breadboard gir en rask måte å koble opp kretser for prototyping uten å måtte lodde eller lage kabler. Hver rad i breadboardet er koblet sammen slik at alt som kobles til samme rad er koblet til samme spenningen.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/Breadboard.jpg" width="300" />
 </p>
-
 ## Spenningsregulator
 
 Komponenten på bildet under er en spenningsregulatoren. Denne er viktig for Pi-en tåler ikke høyere spenning enn 5 V, men batterispenningen er på over 7 V. Denne har da til formål å senke spenningen slik at både Arduino og Raspberry Pi kan drives fra samme kilde. [Her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) er lenke til dokumentasjon.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/Spenningsregulator.png" width="300" />
 </p>
 
@@ -50,15 +48,14 @@ Komponenten på bildet under er en spenningsregulatoren. Denne er viktig for Pi-
 
 Arduino Uno er et lite utviklingskort som egner seg godt som første mikrokontroller å lære seg å bruke. For å programmere denne brukes Arduino IDE, med et eget språk som er en variant av C++. [Her](https://store.arduino.cc/products/arduino-uno-rev3) finner dere mer spesifikasjoner om kortet dere har blitt utdelt.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/ArduinoUno.jpg" width="300" />
 </p>
-
 ## Motordriver
 
 Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. Det betyr at den plasseres rett på Arduino Uno, uten noen ekstra ledninger mellom de to. Denne må i tillegg kobles til motorspenning og til motorene den skal kontrollere. [Her](https://wiki.dfrobot.com/Quad_Motor_Driver_Shield_for_Arduino_SKU_DRI0039) finner dere ekstra dokumentasjon.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/Motordriver.jpg" width="300" />
 </p>
 
@@ -66,7 +63,7 @@ Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. De
 
 Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som er en hvilken som helst annen PC eller en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer. Videre kan Raspberry Pi samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram. I dette prosjektet brukes modellen Raspberry Pi 3B+. [Her](https://www.raspberrypi.com/documentation/) finner dere mer dokumentasjon om Raspberry Pi.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/RaspberryPi3.jpg" width="300" />
 </p>
 
@@ -83,7 +80,7 @@ Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt 
 Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene. 
 (NB! Ettersom vi ikke benytter muttere vær oppmerksom på ikke å stramme skruene for hardt).
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/01.png" width="300" />
 </p>
 
@@ -91,7 +88,7 @@ Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene.
 
 Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på at baseplaten er riktig vei.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/02.png" width="300" />
   <img src="Media/teknobil/03.png" width="300" />
 </p>
@@ -100,7 +97,7 @@ Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på
 
 Nå kan det være lurt å føre ledningene fra motorene igjennom de to firkantede hullene i baseplaten.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/04.png" width="300" />
 </p>
 
@@ -108,7 +105,7 @@ Nå kan det være lurt å føre ledningene fra motorene igjennom de to firkanted
 
 Fest bunnplaten.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/06.png" width="300" />
 </p>
 
@@ -120,7 +117,7 @@ Før dere fortsetter med å feste komponentene bør oppsettet av Raspberry Pi v�
 
 Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 10 mm lange M2.5 skruene.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/08.png" width="300" />
 </p>
 
@@ -128,14 +125,14 @@ Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 1
 
 Fest frontplaten og skru fast kameraet til platen med de 4 mm lange M2 skruene som vist på bildet under.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/09.png" width="300" />
   <img src="Media/teknobil/10.png" width="400" />
 </p>
 
 Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet under. Sørg for å sette den inn riktig vei.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/15.jpg" width="300" />
 </p>
 
@@ -143,7 +140,7 @@ Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet un
 
 Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som vist på bildene under.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/16.jpg" width="300" />
   <img src="Media/teknobil/17.jpg" width="300" />
   <img src="Media/teknobil/18.jpg" width="300" />
@@ -153,7 +150,7 @@ Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som 
 
 I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. En GPIO pinne på Pi-en bruker vi for input og output fra kortet. Med disse kan vi for eksempel styre LED-lys eller kontrollere en motor. Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden på kortet som beskriver hvor pinnen er plassert. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/RPi_pinout.png" width="300" />
 </p>
 
@@ -167,7 +164,7 @@ I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en
 
 Har dere koblet riktig skal det se ut som vist under.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/19.jpg" width="300" />
 </p>
 
@@ -175,7 +172,7 @@ Har dere koblet riktig skal det se ut som vist under.
 
 Batterikonnektor til spenningsregulator kobles opp som vist under.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/20.jpg" width="300" />
 </p>
 
@@ -183,7 +180,7 @@ Når alt er koblet opp kan dere få bilen deres kontrollert hos en læringsassis
 
 NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kretskortene på plass ikke er skrudd såpass stramt at batteriet tar skade når det skyves inn i bilen. Det er viktig å være obs på at man ikke skrur de inn i batteriet senere heller, ellers kan batteriet begynne å brenne. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/22.jpg" width="300" />
   <img src="Media/teknobil/21.jpg" width="500" />
 </p>
@@ -192,7 +189,7 @@ NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kret
 
 Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/14.png" width="300" />
 </p>
 
@@ -609,14 +606,14 @@ Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg pra
 
 Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et kretsskjema. Da bruker vi ulike symboler for de forskjellige komponentene og viser hvordan de kobles sammen. Under er kretssymbolet for en motstand vist til venstre og kretssymbolet for en LED vist til høyre. Merk at det er viktig hvilken veg en LED plasseres. Står den feil veg vil den ikke lyse.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/motstandsymbol.png" width="300" />
   <img src="Media/teknobil/ledsymbol.png" width="500" />
 </p>
 
 Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
 
-<p float="left">
+<p float="centered">
   <img src="Media/teknobil/LEDSchematic.jpeg" width="300" />
 </p>
 
