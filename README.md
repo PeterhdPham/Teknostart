@@ -1,44 +1,21 @@
 # Teknostart 2023
 
-I denne teknostarten skal dere i en gruppe lage en fjernstyrt bil. Dere skal få jobbe med Raspberry Pi, Arduino Uno og LOBE. Det er ikke forventet at du skal kunne noe om dette fra før eller vite hva det er, teknostart vil fungere som en introduksjon til dette, som dere vil få god bruk for senere.  Dere skal også bygge bilen, koble den opp få alt til å fungere sammen. 
+I denne teknostarten skal dere i en gruppe lage en fjernstyrt bil. Dere skal få jobbe med Raspberry Pi, Arduino Uno og LOBE. Det er ikke forventet at du skal kunne noe om dette fra før eller vite hva det er, teknostart vil fungere som en introduksjon til dette.  Dere skal også bygge bilen, koble den opp få alt til å fungere sammen. 
 I år er det tre konkurranser. Dere kan vinne ved å være raskest rundt en definert bane, ha den beste objektgjenkjenningen eller ved å ha den vakreste/kuleste bilen. Bruk kreativiteten, maling og tusjer til å skreddersy bilen slik dere ønsker. 
 Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgaven, så det går fint å jobbe i par og ta seg tid til å prøve å forstå eller finne ut mer om noe dersom dere synes det er interessant. En viktig del av teknostart er å samarbeide godt og fordele arbeidsoppgaver. Vi foreslår at dere fordeler dere på disse hovedoppgavene:
+
 1.	Den som ønsker en utfordring, kan jobbe med Raspberry Pien. Her er det viktig å holde tungen beint i bunnen og følge oppskriften til punkt og prikke for at ting skal fungere. Får dere problemer her, ta kontakt med en student assistent. 
 2.	En annen oppgave er å sette opp Arduinoen med motordriver, og laste opp den ferdigskrevne koden. 
 3.	Til slutt kan dere alle samarbeide om å koble alt sammen og få bilen til å fungere sammen. Vent på en studass før dere får batteriet og får startet bilen. 
 4.	Når dere har bygget ferdig bilen kan dere gå videre med utvidelsesoppgavene og begynne å skreddersy den estetisk slik dere ønsker.
 
 
-# Innholdsfortegnelse
-- [Teknostart 2023](#teknostart-2023)
-- [Innholdsfortegnelse](#innholdsfortegnelse)
+## Innholdsfortegnelse
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
-  - [Breadboard](#breadboard)
-  - [Spenningsregulator](#spenningsregulator)
-  - [Arduino Uno](#arduino-uno)
-  - [Motordriver](#motordriver)
-  - [Raspberry Pi](#raspberry-pi)
 - [Veiledning for montering av Teknobilen 2023](#veiledning-for-montering-av-teknobilen-2023)
   - [Hardware](#hardware)
-    - [Steg 1: Montering av motorer](#steg-1-montering-av-motorer)
-    - [Steg 2: Sammensetting av baseplate og avlange plater](#steg-2-sammensetting-av-baseplate-og-avlange-plater)
-    - [Steg 3: Ledninger](#steg-3-ledninger)
-    - [Steg 4: Montering av bunnplate](#steg-4-montering-av-bunnplate)
-    - [Steg 5: Raspbian](#steg-5-raspbian)
-    - [Steg 6: Montering av komponenter](#steg-6-montering-av-komponenter)
-    - [Steg 7: Montering av frontplate og kamera](#steg-7-montering-av-frontplate-og-kamera)
-    - [Steg 8: Oppkobling av spenningskilde](#steg-8-oppkobling-av-spenningskilde)
-    - [Steg 9: Oppkobling av GPIO](#steg-9-oppkobling-av-gpio)
-    - [Steg 10: Kontroll og kobling av batteri](#steg-10-kontroll-og-kobling-av-batteri)
-    - [Steg 11: Montering av bakplate og topplokk](#steg-11-montering-av-bakplate-og-topplokk)
   - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
-    - [Sette opp SD-kortet](#sette-opp-sd-kortet)
-    - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
-      - [SSH inn til Raspberry Pi](#ssh-inn-til-raspberry-pi)
-      - [Få inn riktig programvare](#få-inn-riktig-programvare)
   - [Arduino](#arduino)
-    - [Skaff Arduino Software til egen PC](#skaff-arduino-software-til-egen-pc)
-    - [Last inn koden til Arduinoen](#last-inn-koden-til-arduinoen)
 - [Utvidelser](#utvidelser)
   - [Hastighet](#hastighet)
     - [Kode](#kode)
@@ -46,12 +23,6 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
   - [Lys](#lys)
   - [Tutehorn](#tutehorn)
   - [Lobe](#lobe)
-    - [Lag deres egen modell med maskinlæring](#lag-deres-egen-modell-med-maskinlæring)
-      - [Last ned LOBE](#last-ned-lobe)
-      - [Last ned riktig programvare for å kunne ta bilder med RPi](#last-ned-riktig-programvare-for-å-kunne-ta-bilder-med-rpi)
-      - [Ta bilder](#ta-bilder)
-      - [Lag gjenkjenningsmodell](#lag-gjenkjenningsmodell)
-      - [Bruk modellen](#bruk-modellen)
 
 
 
@@ -101,9 +72,9 @@ Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du tr
 
 
 
-# Veiledning for montering av Teknobilen 2023
+# Trinnvis veiledning for montering av Teknobilen 2023
 
-## Hardware
+## Montering av Teknobilen
 
 Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
 
@@ -229,7 +200,7 @@ Lykke til med monteringen!
 
 
 
-## Raspberry Pi Oppsett
+## Raspberry Pi
 
 I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
 Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
