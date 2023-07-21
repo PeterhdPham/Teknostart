@@ -163,10 +163,10 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 else:
                     YELLOW = False
 
-                GPIO.output(4, RED)
-                GPIO.output(17, YELLOW)
-                GPIO.output(27, GREEN)
-                GPIO.output(22, BLUE)
+                GPIO.output(1, RED)
+                GPIO.output(7, YELLOW)
+                GPIO.output(8, GREEN)
+                GPIO.output(25, BLUE)
 
                 print("Starting to send response...")
                 self.send_response(200)
