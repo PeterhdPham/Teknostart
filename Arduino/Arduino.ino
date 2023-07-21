@@ -76,20 +76,26 @@ void driving(Motor motor, bool Direction) {
 
 ////SETUP///////////////////////
 void setup() {
-Serial.begin(9600);   
-Serial.println("Starting session...");
+  Serial.begin(9600);   
+  Serial.println("Starting session...");
 
-//SET PINS 
-pinMode(drive, INPUT);
-pinMode(reverse, INPUT);
-pinMode(leftTurn, INPUT);
-pinMode(rightTurn, INPUT);
-for(int i=3;i<=8;i++)
-    pinMode(i,OUTPUT);
-for(int i=11;i<=13;i++)
-    pinMode(i,OUTPUT);
-    
+  //SET PINS 
+  pinMode(drive, INPUT_PULLUP);
+  pinMode(reverse, INPUT_PULLUP);
+  pinMode(leftTurn, INPUT_PULLUP);
+  pinMode(rightTurn, INPUT_PULLUP);
+
+  for(int i=3;i<=8;i++) {
+      pinMode(i,OUTPUT);
+      digitalWrite(i, LOW);  // Initiate as LOW
+  }
+
+  for(int i=11;i<=13;i++) {
+      pinMode(i,OUTPUT);
+      digitalWrite(i, LOW);  // Initiate as LOW
+  }
 }
+
 
 void loop() {
 //UPDATING THE BOOLEANS
