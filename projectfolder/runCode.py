@@ -66,15 +66,15 @@ def control_motors():
                 FRONTLIGHTS = UP
                 BACKLIGHTS = DOWN 
 
-                GPIO.output(26,GPIO.HIGH if UP)    # UP/DRIVE
-                GPIO.output(19,GPIO.HIGH if DOWN)  # DOWN/REVERSE
-                GPIO.output(13,GPIO.HIGH if LEFT)  # LEFT
-                GPIO.output(6,GPIO.HIGH if RIGHT)  # RIGHT
+                GPIO.output(26, UP)    # UP/DRIVE
+                GPIO.output(19, DOWN)  # DOWN/REVERSE
+                GPIO.output(13, LEFT)  # LEFT
+                GPIO.output(6, RIGHT)  # RIGHT
 
-                GPIO.output(20, GPIO.HIGH if FRONTLIGHTS) # FORWARD DRIVING LIGHTS (WHITE)
-                GPIO.output(21, GPIO.HIGH if FRONTLIGHTS) # FORWARD DRIVING LIGHTS (WHITE)
-                GPIO.output(2, GPIO.HIGH if BACKLIGHTS)   # BACKWARDS DRIVING LIGHTS (RED)
-                GPIO.output(3, GPIO.HIGH if BACKLIGHTS)   # BACKWARDS DRIVING LIGHTS (RED)
+                GPIO.output(20, FRONTLIGHTS) # FORWARD DRIVING LIGHTS (WHITE)
+                GPIO.output(21, FRONTLIGHTS) # FORWARD DRIVING LIGHTS (WHITE)
+                GPIO.output(2, BACKLIGHTS)   # BACKWARDS DRIVING LIGHTS (RED)
+                GPIO.output(3, BACKLIGHTS)   # BACKWARDS DRIVING LIGHTS (RED)
 
 
 
