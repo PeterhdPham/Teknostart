@@ -24,10 +24,10 @@ import RPi.GPIO as GPIO
 
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(4,GPIO.OUT) #RED
-GPIO.setup(17,GPIO.OUT) #YELLOW
-GPIO.setup(27,GPIO.OUT) #GREEN
-GPIO.setup(22,GPIO.OUT) #BLUE
+GPIO.setup(1,GPIO.OUT) #RED
+GPIO.setup(7,GPIO.OUT) #YELLOW
+GPIO.setup(8,GPIO.OUT) #GREEN
+GPIO.setup(25,GPIO.OUT) #BLUE
 
 RED = False
 YELLOW = False
