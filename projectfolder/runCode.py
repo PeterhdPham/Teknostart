@@ -9,11 +9,10 @@ from core import WebMethod
 import RPi.GPIO as GPIO
 
 
+
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
-
-# Changed to pinouts from teknobil 2022
 GPIO.setup(26, GPIO.OUT) #UP/DRIVE
 GPIO.setup(19, GPIO.OUT) #DOWN/REVERSE
 GPIO.setup(13, GPIO.OUT) #LEFT
@@ -26,11 +25,12 @@ DOWN = False
 RIGHT = False
 LEFT = False
 
-GPIO.setup(20,GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
-GPIO.setup(21,GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
-
-GPIO.setup(2,GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
-GPIO.setup(3,GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
+#FORWARD DRIVING LIGHTS (WHITE)
+GPIO.setup(20,GPIO.OUT)
+GPIO.setup(21,GPIO.OUT) 
+#BACKWARDS DRIVING LIGHTS (RED)
+GPIO.setup(2,GPIO.OUT) 
+GPIO.setup(3,GPIO.OUT)
 
 def control_motors():
     global UP, DOWN, LEFT, RIGHT
@@ -66,16 +66,15 @@ def control_motors():
                 FRONTLIGHTS = UP
                 BACKLIGHTS = DOWN 
 
-                # Changed to pinouts from 2022
-                GPIO.output(26,GPIO.HIGH if UP else GPIO.LOW)    # UP/DRIVE
-                GPIO.output(19,GPIO.HIGH if DOWN else GPIO.LOW)  # DOWN/REVERSE
-                GPIO.output(13,GPIO.HIGH if LEFT else GPIO.LOW)  # LEFT
-                GPIO.output(6,GPIO.HIGH if RIGHT else GPIO.LOW)  # RIGHT
+                GPIO.output(26,GPIO.HIGH if UP)    # UP/DRIVE
+                GPIO.output(19,GPIO.HIGH if DOWN)  # DOWN/REVERSE
+                GPIO.output(13,GPIO.HIGH if LEFT)  # LEFT
+                GPIO.output(6,GPIO.HIGH if RIGHT)  # RIGHT
 
-                GPIO.output(20, GPIO.HIGH if FRONTLIGHTS else GPIO.LOW) # FORWARD DRIVING LIGHTS (WHITE)
-                GPIO.output(21, GPIO.HIGH if FRONTLIGHTS else GPIO.LOW) # FORWARD DRIVING LIGHTS (WHITE)
-                GPIO.output(2, GPIO.HIGH if BACKLIGHTS else GPIO.LOW)   # BACKWARDS DRIVING LIGHTS (RED)
-                GPIO.output(3, GPIO.HIGH if BACKLIGHTS else GPIO.LOW)   # BACKWARDS DRIVING LIGHTS (RED)
+                GPIO.output(20, GPIO.HIGH if FRONTLIGHTS) # FORWARD DRIVING LIGHTS (WHITE)
+                GPIO.output(21, GPIO.HIGH if FRONTLIGHTS) # FORWARD DRIVING LIGHTS (WHITE)
+                GPIO.output(2, GPIO.HIGH if BACKLIGHTS)   # BACKWARDS DRIVING LIGHTS (RED)
+                GPIO.output(3, GPIO.HIGH if BACKLIGHTS)   # BACKWARDS DRIVING LIGHTS (RED)
 
 
 
