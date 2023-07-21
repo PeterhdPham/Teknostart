@@ -1,3 +1,5 @@
+#include <string.h> 
+
 //MOTOR SETUP
 const int E1 = 3; ///<Motor1 Speed - Front Right
 const int E2 = 11;///<Motor2 Speed - Front Left
@@ -12,10 +14,10 @@ const int M4 = 4; ///<Motor4 Direction - Back Left
 
 /////////LOGIC/////////////////////////////////
 //INPUT PINS
-int drive = A5;
-int reverse = A4;
-int leftTurn = A3;
-int rightTurn = A2;
+int drive = A0;
+int reverse = A1;
+int leftTurn = A2;
+int rightTurn = A3;
 
 //BOOLS
 int go = 0;
@@ -30,22 +32,21 @@ int turningSpeed = 50;
 
 
 //////DRIVING FUNCTIONS//////////////////////
-void speedSet(String motors, int Speed){
-//Choose speed from 0-255
-if(motors == "right"){
-    analogWrite(E1, Speed);
-    analogWrite(E3, Speed);
+void speedSet(char* motors, int Speed){
+    if(strcmp(motors, "right") == 0){
+        analogWrite(E1, Speed);
+        analogWrite(E3, Speed);
     }
-else if(motors == "left"){
-    analogWrite(E2, Speed);
-    analogWrite(E4, Speed);
-}
-else if(motors = "both"){
-    analogWrite(E1, Speed);
-    analogWrite(E2, Speed);
-    analogWrite(E3, Speed);
-    analogWrite(E4, Speed);
-}
+    else if(strcmp(motors, "left") == 0){
+        analogWrite(E2, Speed);
+        analogWrite(E4, Speed);
+    }
+    else if(strcmp(motors, "both") == 0){
+        analogWrite(E1, Speed);
+        analogWrite(E2, Speed);
+        analogWrite(E3, Speed);
+        analogWrite(E4, Speed);
+    }
 }
 
 //DRIVING FUNCTION
@@ -53,12 +54,12 @@ void driving(String motors, bool Direction){
 //Direction = 0 -> forward
 //Dircetion = 1 -> reverse
 if (motors == "both"){
-Direction = !Direction;
-digitalWrite(M1, Direction);
-digitalWrite(M2, Direction);
-digitalWrite(M3, Direction);
-digitalWrite(M4, Direction);
-}
+        Direction = !Direction;
+        digitalWrite(M1, !Direction);
+        digitalWrite(M2, !Direction);
+        digitalWrite(M3, !Direction);
+        digitalWrite(M4, !Direction);
+    }
 else if (motors = "right"){
     digitalWrite(M1, Direction);
     digitalWrite(M3, Direction);
@@ -76,7 +77,7 @@ Serial.begin(9600);
 Serial.println("Starting session...");
 
 //SET PINS 
-pinMode(drive,INPUT);
+pinMode(drive, INPUT);
 pinMode(reverse, INPUT);
 pinMode(leftTurn, INPUT);
 pinMode(rightTurn, INPUT);
@@ -93,16 +94,6 @@ go = digitalRead(drive);
 back = digitalRead(reverse);
 left = digitalRead(leftTurn);
 right = digitalRead(rightTurn);
-
-"""
-// Troubleshooting for reliability of RPi GPIO
-Serial.print("RPi control inputs:   ");
-Serial.print(go);
-Serial.print(back);
-Serial.print(left);
-Serial.print(right);
-Serial.print("    ");
-"""
 
 
 /////FORWARD DRIVE/////////////////////////////////////////
