@@ -43,6 +43,7 @@ app = Flask(__name__)
 
 @app.route('/image_<timestamp>.jpg')
 def serve_image(timestamp):
+    # Change from "pi" to teknostart"
     return send_from_directory('/home/pi/Teknostart/projectfolder', 'image.jpg')
 
 result = "ingenting"
@@ -55,11 +56,12 @@ def background_process_test():
     print ("Hello")
     return ("nothing")
 
-
+# Change from "pi" to "teknostart
 model = ImageModel.load('/home/pi/Teknostart/Lobe')
 
 def compare():
     with image_lock:
+        # Change from "pi" to "teknostart"
         res = model.predict_from_file('/home/pi/Teknostart/projectfolder/image.jpg')
     return res.prediction
 
@@ -129,7 +131,8 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 print("Starting compare...")
                 result = compare()
                 print("Compare completed, starting write to file...")
-                
+
+                # Change from "pi" to "teknostart"
                 text_file = open('/home/pi/Teknostart/projectfolder/result.txt', "w")
                 n = text_file.write(result)
                 text_file.close()
@@ -350,6 +353,7 @@ def start_http_server(video_resolution, fps, server_port, index_file,
             while True:
                 time.sleep(0.1)
                 with image_lock:
+                    # Change from "pi" to "teknostart"
                     camera.capture('/home/pi/Teknostart/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
                     time.sleep(0.01)  # add some delay
                 
