@@ -14,7 +14,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
 - [Trinnvisveiledning for montering av Teknobilen 2023](#Trinnvis-veiledning-for-montering-av-Teknobilen-2023)
   - [Montering av Teknobilen](#Montering-av-Teknobilen)
-  - [Raspberry Pi](#raspberry-pi)
+  - [Raspberry Pi oppsett](#raspberry-pi-oppsett)
   - [Arduino](#arduino)
 - [Utvidelser](#utvidelser)
   - [Hastighet](#hastighet)
@@ -205,7 +205,7 @@ Lykke til med monteringen!
 
 
 
-## Raspberry Pi
+## Raspberry Pi oppsett
 
 I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
 Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
