@@ -12,7 +12,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 
 ## Innholdsfortegnelse
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
-- [Trinnvisveiledning for montering av Teknobilen 2023](#Trinnvis-veiledning-for-montering-av-Teknobilen-2023)
+- [Trinnvisveiledning for montering av Teknobilen](#Trinnvis-veiledning-for-montering-av-Teknobilen)
   - [Montering av Teknobilen](#Montering-av-Teknobilen)
   - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
   - [Arduino](#arduino)
@@ -36,6 +36,7 @@ Et breadboard gir en rask måte å koble opp kretser for prototyping uten å må
 <p align="center">
   <img src="Media/teknobil/Breadboard.jpg" width="300" />
 </p>
+
 ## Spenningsregulator
 
 Komponenten på bildet under er en spenningsregulatoren. Denne er viktig for Pi-en tåler ikke høyere spenning enn 5 V, men batterispenningen er på over 7 V. Denne har da til formål å senke spenningen slik at både Arduino og Raspberry Pi kan drives fra samme kilde. [Her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) er lenke til dokumentasjon.
@@ -51,6 +52,7 @@ Arduino Uno er et lite utviklingskort som egner seg godt som første mikrokontro
 <p align="center">
   <img src="Media/teknobil/ArduinoUno.jpg" width="300" />
 </p>
+
 ## Motordriver
 
 Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. Det betyr at den plasseres rett på Arduino Uno, uten noen ekstra ledninger mellom de to. Denne må i tillegg kobles til motorspenning og til motorene den skal kontrollere. [Her](https://wiki.dfrobot.com/Quad_Motor_Driver_Shield_for_Arduino_SKU_DRI0039) finner dere ekstra dokumentasjon.
@@ -69,11 +71,20 @@ Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du tr
 
 
 
-# Trinnvis veiledning for montering av Teknobilen 2023
+# Trinnvis veiledning for montering av Teknobilen
+Før dere starter monteringen av bilen, ønsker vi å gi dere en kort introduksjon til funksjonaliteten til Teknobilen. Dette vil gi dere en bedre forståelse av hvordan Arduino og Raspberry Pi samarbeider for å gi bilen sine kjøreegenskaper.
+
+Teknobilen bruker Arduino til å kontrollere motorene, mens Raspberry Pi fungerer som hjernen i systemet der den hoster en nettside som et brukergrensesnitt som tillater oss å styre bilen.
+
+For å oppnå kommunikasjon mellom Raspberry Pi og Arduino, bruker dere GPIO-pinner. Disse pinnene lar dere sende styringskommandoer fra Raspberry Pi til Arduino, som deretter styrer motorene basert på disse instruksjonene.
+
+Gjennom kombinasjonen av Arduino og Raspberry Pi kan dere utforske spennende funksjoner som motorstyring, lyskontroll og objektgjennskjenning.
+
+Nå som dere har fått en kort forklaring på funksjonaliteten til Teknobilen, er dere klare til å starte monteringen. Følg instruksjonene nøye, koble sammen komponentene riktig, og gled dere til å oppleve de morsomme og interaktive egenskapene til Teknobilen!
 
 ## Montering av Teknobilen
 
-Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
+Følg trinnene nedenfor nøye for å montere Teknobilen . Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
 
 ### Steg 1: Montering av motorer
 
@@ -86,7 +97,7 @@ Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene.
 
 ### Steg 2: Sammensetting av baseplate og avlange plater
 
-Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på at baseplaten er riktig vei.
+Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på at baseplaten er riktig vei som vis på bildet slik at hullene passer med komponentene som skal skrus på senere.
 
 <p align="center">
   <img src="Media/teknobil/02.png" width="300" />
@@ -111,7 +122,7 @@ Fest bunnplaten.
 
 ### Steg 5: Raspbian
 
-Før dere fortsetter med å feste komponentene bør oppsettet av Raspberry Pi være ferdig, ettersom det blir vanskelig å komme til SD-kortet etter at alt er skrudd på plass. Dere bør ha fullført dette steget [her](#sette-opp-sd-kortet).
+Før dere fortsetter med å feste komponentene bør oppsettet av Raspberry Pi være ferdig, ettersom man ikke vil få tilgang til SD-kortet etter at alt er skrudd på plass. Dere bør ha fullført dette steget [her](#sette-opp-sd-kortet).
 
 ### Steg 6: Montering av komponenter
 
@@ -126,8 +137,8 @@ Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 1
 Fest frontplaten og skru fast kameraet til platen med de 4 mm lange M2 skruene som vist på bildet under.
 
 <p align="center">
-  <img src="Media/teknobil/09.png" width="300" />
-  <img src="Media/teknobil/10.png" width="400" />
+  <img src="Media/teknobil/09.png" height="250" />
+  <img src="Media/teknobil/10.png" height="250" />
 </p>
 
 Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet under. Sørg for å sette den inn riktig vei.
@@ -148,7 +159,8 @@ Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som 
 
 ### Steg 9: Oppkobling av GPIO
 
-I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. En GPIO pinne på Pi-en bruker vi for input og output fra kortet. Med disse kan vi for eksempel styre LED-lys eller kontrollere en motor. Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden på kortet som beskriver hvor pinnen er plassert. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
+For å koble sammen Raspberry Pi og Arduino Uno.
+Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden på kortet som beskriver hvor pinnen er plassert. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
 
 <p align="center">
   <img src="Media/teknobil/RPi_pinout.png" width="300" />
