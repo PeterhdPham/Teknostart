@@ -24,10 +24,10 @@ import RPi.GPIO as GPIO
 
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(4,GPIO.OUT) #RED
-GPIO.setup(17,GPIO.OUT) #YELLOW
-GPIO.setup(27,GPIO.OUT) #GREEN
-GPIO.setup(22,GPIO.OUT) #BLUE
+GPIO.setup(1,GPIO.OUT) #RED
+GPIO.setup(7,GPIO.OUT) #YELLOW
+GPIO.setup(8,GPIO.OUT) #GREEN
+GPIO.setup(25,GPIO.OUT) #BLUE
 
 RED = False
 YELLOW = False
@@ -141,35 +141,36 @@ class RequestHandler(server.BaseHTTPRequestHandler):
                 recognize(result)
                 
                 print("Recognize completed, starting GPIO...")
-                if result == "headsett":
+                if result == "pepsi":
                     RED = True  # Red light
                     print("Red light")
                 else:
                     RED = False
                     print("Red off")
 
-                if result == "headsett":
+                if result == "fanta":
+                    YELLOW = True  # Yellow light
+                    print("Yellow light")
+                else:
+                    YELLOW = False
+                    
+                if result == "sprite":
                     GREEN = True  # Green light
                     print("Green light")
                 else:
                     GREEN = False
 
-                if result == "stanley":
+                if result == "elsys":
                     BLUE = True  # Blue light
                     print(" Blue light")
                 else:
                     BLUE = False
 
-                if result == "stanley":
-                    YELLOW = True  # Yellow light
-                    print("Yellow light")
-                else:
-                    YELLOW = False
 
-                GPIO.output(4, RED)
-                GPIO.output(17, YELLOW)
-                GPIO.output(27, GREEN)
-                GPIO.output(22, BLUE)
+                GPIO.output(1, RED)
+                GPIO.output(7, YELLOW)
+                GPIO.output(8, GREEN)
+                GPIO.output(25, BLUE)
 
                 print("Starting to send response...")
                 self.send_response(200)

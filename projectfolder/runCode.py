@@ -9,18 +9,15 @@ from core import WebMethod
 import RPi.GPIO as GPIO
 
 
+
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
+GPIO.setup(26, GPIO.OUT) #UP/DRIVE
+GPIO.setup(19, GPIO.OUT) #DOWN/REVERSE
+GPIO.setup(13, GPIO.OUT) #LEFT
+GPIO.setup(6, GPIO.OUT) #RIGHT
 
-# Changed to pinouts from teknobil 2022
-GPIO.setup(21, GPIO.OUT) #UP/DRIVE
-GPIO.setup(13, GPIO.OUT) #DOWN/REVERSE
-GPIO.setup(19, GPIO.OUT) #LEFT
-GPIO.setup(26, GPIO.OUT) #RIGHT
-
-GPIO.setup(23, GPIO.OUT) #FORWARD DRIVING LIGHTS (WHITE)
-GPIO.setup(18, GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 
 UP = False
@@ -28,8 +25,16 @@ DOWN = False
 RIGHT = False
 LEFT = False
 
+#FORWARD DRIVING LIGHTS (WHITE)
+GPIO.setup(20,GPIO.OUT)
+GPIO.setup(21,GPIO.OUT) 
+#BACKWARDS DRIVING LIGHTS (RED)
+GPIO.setup(2,GPIO.OUT) 
+GPIO.setup(3,GPIO.OUT)
 
 def control_motors():
+    global UP, DOWN, LEFT, RIGHT
+
     with Pyro4.Proxy("PYRONAME:KeyManager") as keys:
         with Pyro4.Proxy("PYRONAME:ROVSyncer") as rov:
             while rov.run:
@@ -61,14 +66,16 @@ def control_motors():
                 FRONTLIGHTS = UP
                 BACKLIGHTS = DOWN 
 
-                # Changed to pinouts from 2022
-                GPIO.output(21,UP)
-                GPIO.output(13,DOWN)
-                GPIO.output(19,LEFT)
-                GPIO.output(26,RIGHT)
-                
-                GPIO.output(23, FRONTLIGHTS)
-                GPIO.output(18, BACKLIGHTS)
+                GPIO.output(26, UP)    # UP/DRIVE
+                GPIO.output(19, DOWN)  # DOWN/REVERSE
+                GPIO.output(13, LEFT)  # LEFT
+                GPIO.output(6, RIGHT)  # RIGHT
+
+                GPIO.output(20, FRONTLIGHTS) # FORWARD DRIVING LIGHTS (WHITE)
+                GPIO.output(21, FRONTLIGHTS) # FORWARD DRIVING LIGHTS (WHITE)
+                GPIO.output(2, BACKLIGHTS)   # BACKWARDS DRIVING LIGHTS (RED)
+                GPIO.output(3, BACKLIGHTS)   # BACKWARDS DRIVING LIGHTS (RED)
+
 
 
 # Create the WebMethod class
