@@ -13,7 +13,6 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 
 ## Innholdsfortegnelse
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
-
 - [Trinnvis veiledning for montering av Teknobilen](#trinnvis-veiledning-for-montering-av-teknobilen)
   - [Montering av Teknobilen](#montering-av-teknobilen)
   - [Raspberry Pi oppsett](#raspberry-pi-oppsett)
