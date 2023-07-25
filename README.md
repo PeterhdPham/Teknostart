@@ -12,7 +12,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 
 ## Innholdsfortegnelse
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
-- [Trinnvisveiledning for montering av Teknobilen 2023](#Trinnvis-veiledning-for-montering-av-Teknobilen-2023)
+- [Trinnvisveiledning for montering av Teknobilen](#Trinnvis-veiledning-for-montering-av-Teknobilen)
   - [Montering av Teknobilen](#Montering-av-Teknobilen)
   - [Raspberry Pi oppsett](#raspberry-pi-oppsett)
   - [Arduino](#arduino)
@@ -69,11 +69,11 @@ Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du tr
 
 
 
-# Trinnvis veiledning for montering av Teknobilen 2023
+# Trinnvis veiledning for montering av Teknobilen
 
 ## Montering av Teknobilen
 
-Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
+Følg trinnene nedenfor nøye for å montere Teknobilen. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
 
 ### Steg 1: Montering av motorer
 
