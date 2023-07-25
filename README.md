@@ -14,7 +14,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
 - [Trinnvisveiledning for montering av Teknobilen 2023](#Trinnvis-veiledning-for-montering-av-Teknobilen-2023)
   - [Montering av Teknobilen](#Montering-av-Teknobilen)
-  - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
+  - [Raspberry Pi](#raspberry-pi)
   - [Arduino](#arduino)
 - [Utvidelser](#utvidelser)
   - [Hastighet](#hastighet)
