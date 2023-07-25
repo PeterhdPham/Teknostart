@@ -10,16 +10,16 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 4.	Når dere har bygget ferdig bilen kan dere gå videre med utvidelsesoppgavene og begynne å skreddersy den estetisk slik dere ønsker.
 
 
+
 ## Innholdsfortegnelse
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
-- [Trinnvisveiledning for montering av Teknobilen](#Trinnvis-veiledning-for-montering-av-Teknobilen)
-  - [Montering av Teknobilen](#Montering-av-Teknobilen)
+
+- [Trinnvis veiledning for montering av Teknobilen](#trinnvis-veiledning-for-montering-av-teknobilen)
+  - [Montering av Teknobilen](#montering-av-teknobilen)
   - [Raspberry Pi oppsett](#raspberry-pi-oppsett)
   - [Arduino](#arduino)
 - [Utvidelser](#utvidelser)
   - [Hastighet](#hastighet)
-    - [Kode](#kode)
-    - [Omkobling av motorspenning](#omkobling-av-motorspenning)
   - [Lys](#lys)
   - [Tutehorn](#tutehorn)
   - [Lobe](#lobe)
