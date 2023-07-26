@@ -164,21 +164,9 @@ Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle til
 </p>
 
 som vis i illustrasjonen så kobles motorene slikt:
+
 <table>
-    <tr>
-        <td>
-
-            | Power Module | Arduino/RPI/Motor |
-            |-------------|--------------      |
-            | 3 (V_out)   | Motor (+)          |
-            | 4 (GND)     | Motor (-)          |
-            | 5 (V_out)   | Arduino (5V)       |
-            | 6 (GND)     | Arduino (GND)      |
-            | 7 (V_out)   | RPI (5V PWR)       |
-            | 8 (GND)     | RPI (GND)          |
-
-        </td>
-        <td>
+<tr><td>
 
 | Motorshield | Motor        |
 |-------------|--------------|
@@ -187,8 +175,18 @@ som vis i illustrasjonen så kobles motorene slikt:
 | M3          | VENSTRE FRONT|
 | M4          | VENSTRE BAK  |
 
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
 
-</table>
+| Power Module | Arduino/RPI/Motor |
+|-------------|--------------      |
+| 3 (V_out)   | Motor (+)          |
+| 4 (GND)     | Motor (-)          |
+| 5 (V_out)   | Arduino (5V)       |
+| 6 (GND)     | Arduino (GND)      |
+| 7 (V_out)   | RPI (5V PWR)       |
+| 8 (GND)     | RPI (GND)          |
+
+</td></tr> </table>
 
 
 
