@@ -163,7 +163,7 @@ Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle til
   <img src="Media/teknobil/18.jpg" height="300" />
 </p>
 
-som vis i illustrasjonen så kobles motorene og komponentene slikt:
+som vis i illustrasjonen så kobles motorene og komponentene  slikt:
 
 <table>
 <tr><td>
@@ -236,13 +236,6 @@ Hver LED har to ben; en kort (katode) og en lang (anode), dette tilsvarer ledden
 
 Her er den tilsvarende tilkoblingen:
 
-<table>
-    <tr>
-        <td>
-          <img src="Media/teknobil/LED.png" height="300>
-
-        
-          
 | GPIO-tilkoblinger | Funksjon                      |
 |------------------|--------------------------------|
 | 20               | kjøreled (Gjennomsiktig LED)   |
@@ -254,11 +247,9 @@ Her er den tilsvarende tilkoblingen:
 | 8                | Grønt led                      |
 | 25               | Blått led                      |
 
-
-
-</table>
-
-
+<p align="center">
+  <img src="Media/teknobil/LED.png" height="300>
+</p>
 
 
 **Viktig:** Motstand er nødvendig for å begrense strømmen som går gjennom LEDene, og dermed hindre dem i å brenne ut. Alltid koble motstanden til katodesiden (den kortere benet) av LEDen.
