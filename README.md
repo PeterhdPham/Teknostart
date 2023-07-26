@@ -275,7 +275,7 @@ Her er den tilsvarende tilkoblingen:
     </tr>
 </table>
 
-<img src="Media/teknobil/LED.png" align="right" height="200">
+<img src="Media/teknobil/LED.png" align="right" height="300">
 <br clear="all" />
 
 
