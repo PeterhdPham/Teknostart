@@ -179,9 +179,13 @@ Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden
 <p align="center">
   <img src="Media/teknobil/RPi_pinout.png" height="300" />
   <img src="Media/teknobil/Arduino_pinout.png" height="300" />
-  <img src="Media/teknobil/oppkoblingRPIArduino.png" height="300" />
-
-
+<table>
+    <tr>
+        <td>
+            <img src="Media/teknobil/oppkoblingRPIArduino.png" height="300" />
+        </td>
+        <td>
+          
 | Arduino | Raspberry Pi |
 |---------|--------------|
 | A5      | GPIO 21      |
@@ -189,7 +193,10 @@ Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden
 | A3      | GPIO 19      |
 | A2      | GPIO 26      |
 | GND     | GND          |
-</p>
+
+        </td>
+    </tr>
+</table>
 
 Har dere koblet riktig skal det se ut som vist under.
 
