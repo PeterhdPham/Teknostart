@@ -163,7 +163,7 @@ Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle til
   <img src="Media/teknobil/18.jpg" height="300" />
 </p>
 
-som vis i illustrasjonen så kobles motorene slikt:
+som vis i illustrasjonen så kobles motorene og komponentene slikt:
 
 <table>
 <tr><td>
@@ -235,9 +235,10 @@ Hver LED har to ben; en kort (katode) og en lang (anode), dette tilsvarer ledden
 3. **Koble til GPIO-pinnene**: Bruk jumperkabler til å koble anoden (den lengre delen av LED) direkte til de tilsvarende GPIO-pinnene på Raspberry Pi. Katodene (den kortere delen av LED) kobles til brødfjølet (som er koblet til GND gjennom motstanden) ved hjelp av jumperkabler.
 
 Her er den tilsvarende tilkoblingen:
-<table>
-    <tr>
-        <td>
+
+|<table>
+  <tr>
+    <td valign="top">
 
 | GPIO-tilkoblinger | Funksjon                      |
 |------------------|--------------------------------|
@@ -250,20 +251,18 @@ Her er den tilsvarende tilkoblingen:
 | 8                | Grønt led                      |
 | 25               | Blått led                      |
 
-        </td>
-        <td>
-<p align="center">
-  <img src="Media/teknobil/oppkoblingLED.png" height="300" />
-</p>
+    </td>
+    <td valign="top"><img src="Media/teknobil/LED.png" height="300></td>
+  </tr>
 </table>
 
 
 **Viktig:** Motstand er nødvendig for å begrense strømmen som går gjennom LEDene, og dermed hindre dem i å brenne ut. Alltid koble motstanden til katodesiden (den kortere benet) av LEDen.
 
 
-
-
-
+<p align="center">
+  <img src="Media/teknobil/oppkoblingLED.png" height="300" />
+</p>
 
 Illustrasjonen over 
 
