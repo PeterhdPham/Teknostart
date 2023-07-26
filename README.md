@@ -163,20 +163,11 @@ Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle til
   <img src="Media/teknobil/18.jpg" height="300" />
 </p>
 
+som vis i illustrasjonen så kobles motorene slikt:
 <table>
     <tr>
         <td>
 
-| Arduino | Raspberry Pi |
-|---------|--------------|
-| A5      | GPIO 21      |
-| A4      | GPIO 13      |
-| A3      | GPIO 19      |
-| A2      | GPIO 26      |
-| GND     | GND          |
-
-        </td>
-        <td>
 | Power Module | Arduino/RPI/Motor |
 |-------------|--------------      |
 | 3 (V_out)   | Motor (+)          |
@@ -185,9 +176,20 @@ Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle til
 | 6 (GND)     | Arduino (GND)      |
 | 7 (V_out)   | RPI (5V PWR)       |
 | 8 (GND)     | RPI (GND)          |
+
         </td>
-    </tr>
+        <td>
+
+| Motorshield | Motor        |
+|-------------|--------------|
+| M1          | HØYRE BAK    |
+| M2          | HØYRE FRONT  |
+| M3          | VENSTRE FRONT|
+| M4          | VENSTRE BAK  |
+
+
 </table>
+
 
 
 
