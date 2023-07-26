@@ -251,10 +251,11 @@ Her er den tilsvarende tilkoblingen:
 | 8                | Grønt led                      |
 | 25               | Blått led                      |
 
-    </td>
-    <p align="top">
-      <img src="Media/teknobil/LED.png" height="300>
-    </p>
+
+  <p align="center">
+    <img src="Media/teknobil/LED.png" height="300>
+  </p>
+  
   </tr>
 </table>
 
