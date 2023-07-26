@@ -294,8 +294,6 @@ Illustrasjonen over viser et forslg til hvordan en ferdig krets kan se ut. Bilde
 
 ### Steg 11: Kontroll og kobling av batteri
 
-Nå
-
 Batterikonnektor til spenningsregulator kobles opp som vist under.
 
 <p align="center">
@@ -308,10 +306,10 @@ NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kret
 
 <p align="center">
   <img src="Media/teknobil/22.jpg" height="300" />
-  <img src="Media/teknobil/21.jpg" width="500" />
+  <img src="Media/teknobil/batteri_connection.jpg" width="500" />
 </p>
 
-### Steg 11: Montering av bakplate og topplokk
+### Steg 112: Montering av bakplate og topplokk
 
 Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
