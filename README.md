@@ -393,9 +393,10 @@ bytt ut <hostname> med det du satte i Raspberry Pi imager F.eks:
    ```bash 
    pi@elsys1.local 
    ```
-- NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen du kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen du brukte.
-- Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
-- Du vil få noe tilsvarende:
+NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen. Du kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen du brukte. 
+Dobbeltsjekk også at det delte nettet er på 2.4GHz.
+Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
+Du vil få noe tilsvarende:
 
 ![SSH into Raspberry Pi](Media/rpi/03SSH.png)
 
@@ -404,32 +405,15 @@ Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skri
 
 #### Få inn riktig programvare
 
-Vi skal nå få inn riktig programvare, samt laste inn alt av kode som skal ligge lokalt på Pi-en.
-
-1. Start med å sjekke at klokken inne på Raspberry Pien stemmer med kommandoen:
+1. Du kan nå oppdatere og oppgradere med kommandoene
 
 ```bash
-date
-```
-![Date](Media/rpi/08check_date.png)
-    * Dersom dato og klokken er feil kan du fikse opp i dette ved å bruke kommandoen (Husk å endre dato/klokkeslett til gjeldende tid):
+sudo apt-get update && sudo apt-get dist-upgrade -y
 
-```bash
-sudo date -s '18 Aug 2022 13:00'
-```
-![Change](Media/rpi/09change_date.png)
-
-2. Nå kan du oppdatere og oppgradere med kommandoene
-
-```bash
-sudo apt-get update
-sudo apt-get dist-upgrade
 ```
 
-- Trykk enter når de spør om du ønsker å fortsette
 
-
-3. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
+2. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
 
 ```bash
 git clone https://github.com/PeterhdPham/Teknostart.git
