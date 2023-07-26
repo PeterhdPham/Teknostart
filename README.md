@@ -19,7 +19,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
   - [Arduino](#arduino)
 - [Utvidelser](#utvidelser)
   - [Hastighet](#hastighet)
-  - [Lys](#lys)
+  - [led](#led)
   - [Tutehorn](#tutehorn)
   - [Lobe](#lobe)
 ****
@@ -77,7 +77,7 @@ Teknobilen bruker Arduino til å kontrollere motorene, mens Raspberry Pi fungere
 
 For å oppnå kommunikasjon mellom Raspberry Pi og Arduino, bruker dere GPIO-pinner. Disse pinnene lar dere sende styringskommandoer fra Raspberry Pi til Arduino, som deretter styrer motorene basert på disse instruksjonene.
 
-Gjennom kombinasjonen av Arduino og Raspberry Pi kan dere utforske spennende funksjoner som motorstyring, lyskontroll og objektgjennskjenning.
+Gjennom kombinasjonen av Arduino og Raspberry Pi kan dere utforske spennende funksjoner som motorstyring, ledkontroll og objektgjennskjenning.
 
 Nå som dere har fått en kort forklaring på funksjonaliteten til Teknobilen, er dere klare til å starte monteringen. Følg instruksjonene nøye, koble sammen komponentene riktig, og gled dere til å oppleve de morsomme og interaktive egenskapene til Teknobilen!
 
@@ -224,6 +224,37 @@ Har dere koblet riktig skal det se ut som vist under.
 </p>
 
 ### Steg 11: Oppkobling av LEDS
+
+
+Hver LED har to ben; en kort (katode) og en lang (anode), dette tilsvarer leddenes positive og negative side som vist i illustrasjonen under. 
+
+1.  **Koble motstandene til brødfjølet**: Koble en 220-ohms motstand til brødfjølet. Du vil ha en for katodene til kjøreled og ryggeled (2 røde og 2 gjennomsiktige), og en annen for de andre LEDene (rødt, gult, grønt, blått).
+
+2.  **Koble til GND**: Koble Raspberry Pi's GND (jord) pinne til brødfjølet, deretter til motstanden(e).
+
+3. **Koble til GPIO-pinnene**: Bruk jumperkabler til å koble anoden (den lengre delen av LED) direkte til de tilsvarende GPIO-pinnene på Raspberry Pi. Katodene (den kortere delen av LED) kobles til brødfjølet (som er koblet til GND gjennom motstanden) ved hjelp av jumperkabler.
+
+Her er den tilsvarende tilkoblingen:
+
+| GPIO-tilkoblinger | Funksjon                      |
+|------------------|--------------------------------|
+| 20               | kjøreled (Gjennomsiktig LED)   |
+| 21               | kjøreled (Gjennomsiktig LED)   |
+| 2                | Ryggeled   (Rødt LED)          |
+| 3                | Ryggeled   (Rødt LED)          |
+| 1                | Rødt led                       |
+| 7                | Gult led                       |
+| 8                | Grønt led                      |
+| 25               | Blått led                      |
+
+
+**Viktig:** Motstand er nødvendig for å begrense strømmen som går gjennom LEDene, og dermed hindre dem i å brenne ut. Alltid koble motstanden til katodesiden (den kortere benet) av LEDen.
+
+
+<p align="center">
+  <img src="Media/teknobil/LED.png" height="300>
+</p>
+
 
 <p align="center">
   <img src="Media/teknobil/oppkoblingLED.png" height="300" />
@@ -412,7 +443,7 @@ Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i ne
 
 
 ## Arduino
-Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - lys på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
+Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - led på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
 
 ### Skaff Arduino Software til egen PC
 
@@ -663,17 +694,17 @@ Bla ned til du finner dette i koden din og lek med tallverdiene. For hvilke verd
 En annen måte å øke hastigheten til bilen er ved å øke spenningen til motorene. Slik bilen er koblet opp nå er motordriveren koblet til 5 V fra regulatoren, samme som Arduino og Raspberry Pi. Vi kan derimot ganske enkelt koble om spenningen til motordriveren slik at den er koblet direkte på batterispenningen. Bruk dokumentasjonen for spenningsregulatoren som du finner [her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) til å gjøre dette.
 
 
-## Lys
-Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere for deg og alle andre i trafikken. 
+## led
+Noen kjøreled vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere for deg og alle andre i trafikken. 
 
-Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et kretsskjema. Da bruker vi ulike symboler for de forskjellige komponentene og viser hvordan de kobles sammen. Under er kretssymbolet for en motstand vist til venstre og kretssymbolet for en LED vist til høyre. Merk at det er viktig hvilken veg en LED plasseres. Står den feil veg vil den ikke lyse.
+Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et kretsskjema. Da bruker vi ulike symboler for de forskjellige komponentene og viser hvordan de kobles sammen. Under er kretssymbolet for en motstand vist til venstre og kretssymbolet for en LED vist til høyre. Merk at det er viktig hvilken veg en LED plasseres. Står den feil veg vil den ikke lede.
 
 <p align="center">
   <img src="Media/teknobil/motstandsymbol.png" height="300" />
   <img src="Media/teknobil/ledsymbol.png" width="500" />
 </p>
 
-Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
+Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggeled er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
 
 <p align="center">
   <img src="Media/teknobil/LEDSchematic.jpeg" height="300" />
