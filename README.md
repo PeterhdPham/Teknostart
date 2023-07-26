@@ -309,12 +309,15 @@ NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kret
   <img src="Media/teknobil/batteri_connection.jpg" width="500" />
 </p>
 
-### Steg 112: Montering av bakplate og topplokk
+### Steg 12: Montering av bakplate og topplokk
 
 Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
 <p align="center">
   <img src="Media/teknobil/14.png" height="300" />
+  <img src="Media/teknobil/last.jpg" height="300" />
+
+
 </p>
 
 
