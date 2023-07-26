@@ -22,7 +22,7 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
   - [Lys](#lys)
   - [Tutehorn](#tutehorn)
   - [Lobe](#lobe)
-
+****
 
 # Introduksjon til komponentene
 
@@ -156,7 +156,9 @@ Under ser dere pinout for Arduino, strømmodulen og Raspberry Pi.
 Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle tilkoblinger før dere fortsetter.
 
 
+
 <p align="center">
+  <img src="Media/teknobil/oppkoblingPSU.png" height="300" />
   <img src="Media/teknobil/16.jpg" height="300" />
   <img src="Media/teknobil/17.jpg" height="300" />
   <img src="Media/teknobil/18.jpg" height="300" />
@@ -170,6 +172,7 @@ Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden
 <p align="center">
   <img src="Media/teknobil/RPi_pinout.png" height="300" />
   <img src="Media/teknobil/Arduino_pinout.png" height="300" />
+  <img src="Media/teknobil/oppkoblingRPIArduino.png" height="300" />
 
 </p>
 
@@ -187,7 +190,14 @@ Har dere koblet riktig skal det se ut som vist under.
   <img src="Media/teknobil/19.jpg" height="300" />
 </p>
 
-### Steg 10: Kontroll og kobling av batteri
+### Steg 11: Oppkobling av LEDS
+
+<p align="center">
+  <img src="Media/teknobil/oppkoblingLED.png" height="300" />
+</p>
+
+
+### Steg 11: Kontroll og kobling av batteri
 
 Batterikonnektor til spenningsregulator kobles opp som vist under.
 
