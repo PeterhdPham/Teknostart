@@ -153,8 +153,7 @@ Vi er nå kommet til et kritisk punkt i prosjektet - det er tid for å koble sam
 
 Under ser dere pinout for Arduino, strømmodulen og Raspberry Pi.
 
-Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle tilkoblinger før dere fortsetter.
-
+Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle tilkoblinger før dere fortsetter. I Illustrasjonen under så kobles 
 
 
 <p align="center">
@@ -163,6 +162,14 @@ Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle til
   <img src="Media/teknobil/17.jpg" height="300" />
   <img src="Media/teknobil/18.jpg" height="300" />
 </p>
+
+som vis i illustrasjonen så kobles motorene slikt:
+| Motorshield | Motor        |
+|-------------|--------------|
+| M1          | HØYRE BAK    |
+| M2          | HØYRE FRONT  |
+| M3          | VENSTRE FRONT|
+| M4          | VENSTRE BAK  |
 
 ### Steg 9: Oppkobling av GPIO
 
