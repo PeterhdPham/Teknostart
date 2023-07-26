@@ -252,7 +252,9 @@ Her er den tilsvarende tilkoblingen:
 | 25               | Blått led                      |
 
     </td>
-    <td valign="top"><img src="Media/teknobil/LED.png" height="300></td>
+    <p align="top">
+      <img src="Media/teknobil/LED.png" height="300>
+    </p>
   </tr>
 </table>
 
