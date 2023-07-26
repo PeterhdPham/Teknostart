@@ -236,20 +236,47 @@ Hver LED har to ben; en kort (katode) og en lang (anode), dette tilsvarer ledden
 
 Her er den tilsvarende tilkoblingen:
 
-| GPIO-tilkoblinger | Funksjon                      |
-|------------------|--------------------------------|
-| 20               | kjøreled (Gjennomsiktig LED)   |
-| 21               | kjøreled (Gjennomsiktig LED)   |
-| 2                | Ryggeled   (Rødt LED)          |
-| 3                | Ryggeled   (Rødt LED)          |
-| 1                | Rødt led                       |
-| 7                | Gult led                       |
-| 8                | Grønt led                      |
-| 25               | Blått led                      |
+<table align="left" border="0">
+    <tr>
+        <th>GPIO-tilkoblinger</th>
+        <th>Funksjon</th>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>kjøreled (Gjennomsiktig LED)</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>kjøreled (Gjennomsiktig LED)</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Ryggeled (Rødt LED)</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Ryggeled (Rødt LED)</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Rødt led</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Gult led</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Grønt led</td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>Blått led</td>
+    </tr>
+</table>
 
-<p align="center">
-  <img src="Media/teknobil/LED.png" height="200>
-</p>
+<img src="Media/teknobil/LED.png" align="right" height="200">
+<br clear="all" />
 
 
 **Viktig:** Motstand er nødvendig for å begrense strømmen som går gjennom LEDene, og dermed hindre dem i å brenne ut. Alltid koble motstanden til katodesiden (den kortere benet) av LEDen.
