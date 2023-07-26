@@ -236,10 +236,13 @@ Hver LED har to ben; en kort (katode) og en lang (anode), dette tilsvarer ledden
 
 Her er den tilsvarende tilkoblingen:
 
-|<table>
-  <tr>
-    <td valign="top">
-
+<table>
+    <tr>
+        <td>
+          <img src="Media/teknobil/LED.png" height="300>
+        </td>
+        <td>
+          
 | GPIO-tilkoblinger | Funksjon                      |
 |------------------|--------------------------------|
 | 20               | kjøreled (Gjennomsiktig LED)   |
@@ -252,12 +255,10 @@ Her er den tilsvarende tilkoblingen:
 | 25               | Blått led                      |
 
 
-  <p align="center">
-    <img src="Media/teknobil/LED.png" height="300>
-  </p>
-  
-  </tr>
+
 </table>
+
+
 
 
 **Viktig:** Motstand er nødvendig for å begrense strømmen som går gjennom LEDene, og dermed hindre dem i å brenne ut. Alltid koble motstanden til katodesiden (den kortere benet) av LEDen.
