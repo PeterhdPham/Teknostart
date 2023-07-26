@@ -390,9 +390,9 @@ Utstyr:
    ssh pi@<hostname>.local
    ```
   -bytt ut <hostname> med det du satte i Raspberry Pi imager F.eks:
-    ```bash 
-    pi@elsys1.local 
-    ```
+   ```bash 
+   pi@elsys1.local 
+   ```
      - NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen du kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen du brukte.
      - Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
      - Du vil få noe tilsvarende:
