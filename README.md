@@ -248,7 +248,7 @@ Her er den tilsvarende tilkoblingen:
 | 25               | Blått led                      |
 
 <p align="center">
-  <img src="Media/teknobil/LED.png" height="300>
+  <img src="Media/teknobil/LED.png" height="200>
 </p>
 
 
