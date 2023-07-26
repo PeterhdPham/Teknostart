@@ -286,9 +286,15 @@ Her er den tilsvarende tilkoblingen:
   <img src="Media/teknobil/oppkoblingLED.png" height="300" />
 </p>
 
-Illustrasjonen over viser et forslg til hvordan en ferdig krets kan se ut.
+Illustrasjonen over viser et forslg til hvordan en ferdig krets kan se ut. Bildet under viser hva for et kaos det kan bli etter at det er ferdig. Lykke til 😈
+
+<p align="center">
+  <img src="Media/teknobil/realLED.jpg" height="300" />
+</p>
 
 ### Steg 11: Kontroll og kobling av batteri
+
+Nå
 
 Batterikonnektor til spenningsregulator kobles opp som vist under.
 
@@ -312,8 +318,6 @@ Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 <p align="center">
   <img src="Media/teknobil/14.png" height="300" />
 </p>
-
-Lykke til med monteringen!
 
 
 
@@ -343,11 +347,11 @@ Slik går du fram for å sette opp SD-kortet:
 
    ![Raspberry Pi Imager](Media/rpi/01Pi-imager.png)
 
-   1. Sett hostname til «ELSYS"gruppenummer"», eksempel: ELSYS14
+   1. Sett hostname til «elsys"gruppenummer"», eksempel: elsys14
    2. Enable SSH
       - Use password authentication
    3. Set username and password
-      - Username: teknostart, NB: viktig at dere kun skriver “teknostart”
+      - Username: pi, NB: viktig at dere kun skriver “pi”
       - Password: "123", eller noe annet dere lett kan huske
    4. Configure wireless LAN
       - NB: SSID og Password må være likt det nettet dere kan dele fra mobilen
@@ -356,7 +360,7 @@ Slik går du fram for å sette opp SD-kortet:
       - Keyboard layout: no
    6. Når du er ferdig skal du se noe tilsvarende:
 
-   ![Raspberry Pi Imager settings](Media/rpi/10settings.png)
+   ![Raspberry Pi Imager settings](Media/rpi/02settings.png)
 
 7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
 8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
@@ -380,15 +384,15 @@ Utstyr:
      - Command Promt
    - For Mac kan dere søke opp:
      - Terminal
-3. For å SSH inn til Pi-en går du inn på terminalen og skriver (du kan også copypaste ved å kopiere vanlig for så å lime inn med høyre klikk inne på terminalen.):
+3. For å SSH inn til Pi-en går du inn på terminalen og skriver:
    ```bash
-   ssh teknostart@<hostname>.local
+   ssh pi@<hostname>.local
    ```
-   - Som du satte i Raspberry Pi imager F.eks:
-     ```bash 
-     teknostart@ELSYS1.local 
-     ```
-     - NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen
+  -bytt ut <hostname> med det du satte i Raspberry Pi imager F.eks:
+    ```bash 
+    pi@elsys1.local 
+    ```
+     - NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen du kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen du brukte.
      - Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
      - Du vil få noe tilsvarende:
      ![SSH into Raspberry Pi](Media/rpi/03SSH.png)
