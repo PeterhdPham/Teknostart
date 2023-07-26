@@ -15,8 +15,8 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
 - [Trinnvisveiledning for montering av Teknobilen](#Trinnvis-veiledning-for-montering-av-Teknobilen)
   - [Montering av Teknobilen](#Montering-av-Teknobilen)
-  - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
   - [Arduino](#arduino)
+  - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
 - [Utvidelser](#utvidelser)
   - [Hastighet](#hastighet)
   - [led](#led)
@@ -320,145 +320,6 @@ Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
 </p>
 
-
-
-## Raspberry Pi oppsett
-
-I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
-Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
-
-### Sette opp SD-kortet
-
-Utstyr:
-
-- Laptop
-- SD-kort
-- SD-kortleser
-
-SD-kortene dere har fått utdelt inneholder ingen informasjon dere kan bruke. Derfor må dere starte med å laste opp et OS til dette kortet. RPi bruker ikke Windows eller MacOS, men et operativsystem som ofte kalles Rasbian/Debian, som er en versjon av Linux. For å kunne laste opp dette OS-et til kortet kreves et eget skrivebordsprogram som heter Raspberry Pi Imager.
-
-Slik går du fram for å sette opp SD-kortet:
-
-1. Last ned Raspberry Pi Imager
-2. Sett inn SD-kortet inn i SD-kortleseren
-3. Åpne Raspberry Pi Imager
-4. Trykk på «CHOOSE OS» og velg: «Raspberry Pi OS (32-bit)»
-5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
-6. Gå inn på settings:
-
-   ![Raspberry Pi Imager](Media/rpi/01Pi-imager.png)
-
-   1. Sett hostname til «elsys"gruppenummer"», eksempel: elsys14
-   2. Enable SSH
-      - Use password authentication
-   3. Set username and password
-      - Username: pi, NB: viktig at dere kun skriver “pi”
-      - Password: "123", eller noe annet dere lett kan huske
-   4. Configure wireless LAN
-      - NB: SSID og Password må være likt det nettet dere kan dele fra mobilen
-   5. Enable Set locale settings:
-      - Time zone: Europe/Oslo
-      - Keyboard layout: no
-   6. Når du er ferdig skal du se noe tilsvarende:
-
-   ![Raspberry Pi Imager settings](Media/rpi/02settings.png)
-
-7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
-8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
-
-
-### Sette opp Raspberry Pi headless
-Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”. For å koble til Pi-en fra PC med SSH må begge to være koblet på samme nettverk. Derfor skal vi dele nett fra mobilen, og koble oss til dette nettet med både Pi og PC.
-
-Utstyr:
-- PC
-- Raspberry Pi med ferdig installert SD-kort
-- Delt nett
-
-#### SSH inn til Raspberry Pi
-
-1. Først må Pi-en være koblet til strøm, dette gjøres enten ved oppkobling i bilen eller ved microUSB porten på kortet
-2. Åpne en terminal på laptopen:
-   - For Windows kan dere søke opp:
-     - Terminal (🪟 + x)
-     - Windows PowerShell
-     - Command Promt
-   - For Mac kan dere søke opp:
-     - Terminal
-3. For å SSH inn til Pi-en går du inn på terminalen og skriver:
-   ```bash
-   ssh pi@<hostname>.local
-   ```
-bytt ut <hostname> med det du satte i Raspberry Pi imager F.eks:
-   ```bash 
-   pi@elsys1.local 
-   ```
-NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen. Du kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen du brukte. 
-Dobbeltsjekk også at det delte nettet er på 2.4GHz.
-Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
-Du vil få noe tilsvarende:
-
-![SSH into Raspberry Pi](Media/rpi/03SSH.png)
-
-Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
-
-
-#### Få inn riktig programvare
-
-1. Du kan nå oppdatere og oppgradere med kommandoene
-
-```bash
-sudo apt-get update && sudo apt-get dist-upgrade -y
-
-```
-
-
-2. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
-
-```bash
-git clone https://github.com/PeterhdPham/Teknostart.git
-```
-    *NB dette kan ta litt tid
-4. Videre kan du navigere deg inn på "Teknostart" mappen med kommandoen:
-   
-```bash 
-cd Teknostart/
-```
-
-5. Last ned ekstra progrmvare som kreves for å kjøre koden med kommandoen:
-```bash
-pip3 install -r requirements.txt
-sudo apt-get install libatlas-base-dev
-sudo apt-get install python3-pyro4
-```
-6. Naviger videre inn i "projectfolder" med kommandoen:
-
-```bash
-cd projectfolder/
-```
-7. Når Arduino koden er ferdig lastet kan du kjøre Python koden med kommandoen:
-
-```python
-python runCode.py
-```
-
-Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. Når dere skal stoppe koden fra å kjøre, trykk "STOP" i nettleser. For å teste objektgjenkjenningen, trykk "COMPARE".
-
-* Dersom dere får opp en feilmelding om at kamera ikke er enabled:
-  - Trykk Ctrl+C for å avbryte kjøringen av koden i terminalen
-  - Åpne raspi-config:
-    ```bash
-    sudo raspi-config
-    ```
-  - Naviger til "Interface Options", deretter "Legacy Camera"
-  - Velg "Yes" til å enable kamera
-  - Start Pi-en på nytt med
-    ```bash
-    sudo reboot now
-    ```
-  - Naviger til mappen der runCode.py ligger og kjør koden på nytt
-
-
 ## Arduino
 Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - led på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
 
@@ -684,6 +545,139 @@ Oppsett:
 NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring. :)
 
 
+## Raspberry Pi oppsett
+
+I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
+Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
+
+### Sette opp SD-kortet
+
+Utstyr:
+
+- Laptop
+- SD-kort
+- SD-kortleser
+
+SD-kortene dere har fått utdelt inneholder ingen informasjon dere kan bruke. Derfor må dere starte med å laste opp et OS til dette kortet. RPi bruker ikke Windows eller MacOS, men et operativsystem som ofte kalles Rasbian/Debian, som er en versjon av Linux. For å kunne laste opp dette OS-et til kortet kreves et eget skrivebordsprogram som heter Raspberry Pi Imager.
+
+Slik går du fram for å sette opp SD-kortet:
+
+1. Last ned Raspberry Pi Imager
+2. Sett inn SD-kortet inn i SD-kortleseren
+3. Åpne Raspberry Pi Imager
+4. Trykk på «CHOOSE OS» og velg: «Raspberry Pi OS (32-bit)»
+5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
+6. Gå inn på settings:
+
+   ![Raspberry Pi Imager](Media/rpi/01Pi-imager.png)
+
+   1. Sett hostname til «elsys"gruppenummer"», eksempel: elsys14
+   2. Enable SSH
+      - Use password authentication
+   3. Set username and password
+      - Username: pi, NB: viktig at dere kun skriver “pi”
+      - Password: "123", eller noe annet dere lett kan huske
+   4. Configure wireless LAN
+      - NB: SSID og Password må være likt det nettet dere kan dele fra mobilen
+   5. Enable Set locale settings:
+      - Time zone: Europe/Oslo
+      - Keyboard layout: no
+   6. Når du er ferdig skal du se noe tilsvarende:
+
+   ![Raspberry Pi Imager settings](Media/rpi/02settings.png)
+
+7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
+8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
+
+
+### Sette opp Raspberry Pi headless
+Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”. For å koble til Pi-en fra PC med SSH må begge to være koblet på samme nettverk. Derfor skal vi dele nett fra mobilen, og koble oss til dette nettet med både Pi og PC.
+
+Utstyr:
+- PC
+- Raspberry Pi med ferdig installert SD-kort
+- Delt nett
+
+#### SSH inn til Raspberry Pi
+
+1. Først må Pi-en være koblet til strøm, dette gjøres enten ved oppkobling i bilen eller ved microUSB porten på kortet
+2. Åpne en terminal på laptopen:
+   - For Windows kan dere søke opp:
+     - Terminal (🪟 + x)
+     - Windows PowerShell
+     - Command Promt
+   - For Mac kan dere søke opp:
+     - Terminal
+3. For å SSH inn til Pi-en går du inn på terminalen og skriver:
+   ```bash
+   ssh pi@<hostname>.local
+   ```
+bytt ut <hostname> med det du satte i Raspberry Pi imager F.eks:
+   ```bash 
+   pi@elsys1.local 
+   ```
+NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen. Du kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen du brukte. 
+Dobbeltsjekk også at det delte nettet er på 2.4GHz.
+Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
+Du vil få noe tilsvarende:
+
+![SSH into Raspberry Pi](Media/rpi/03SSH.png)
+
+Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
+#### Enable camera
+Aktiver kameraet på RPI-en med kommandoen:
+
+```bash
+sudo raspi-config
+```
+
+- Naviger til "Interface Options", deretter "Legacy Camera"
+  - Velg "Yes" til å enable kamera
+  - Start Pi-en på nytt med
+```bash
+sudo reboot now
+```
+#### Få inn riktig programvare
+
+1. Du kan nå oppdatere og oppgradere med kommandoene
+
+```bash
+sudo apt-get update && sudo apt-get dist-upgrade -y
+
+```
+
+
+2. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
+
+```bash
+git clone https://github.com/PeterhdPham/teknobil2023.git
+```
+3. Videre kan du navigere deg inn på "Teknostart" mappen med kommandoen:
+   
+```bash 
+cd teknobil2023/
+```
+
+4. Last ned ekstra progrmvare som kreves for å kjøre koden med kommandoen:
+```bash
+pip3 install -r requirements.txt && sudo apt-get install libatlas-base-dev -y && sudo apt-get install python3-pyro4 -y
+```
+
+5. Naviger videre inn i "projectfolder" med kommandoen:
+
+```bash
+cd projectfolder/
+```
+6. Når Arduino koden er ferdig lastet kan du kjøre Python koden med kommandoen:
+
+```python
+python runCode.py
+```
+
+Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. Når dere skal stoppe koden fra å kjøre, trykk "STOP" i nettleser. For å teste objektgjenkjenningen, trykk "COMPARE".
+
+
+
 
 # Utvidelser
 
@@ -709,25 +703,6 @@ Bla ned til du finner dette i koden din og lek med tallverdiene. For hvilke verd
 ### Omkobling av motorspenning
 
 En annen måte å øke hastigheten til bilen er ved å øke spenningen til motorene. Slik bilen er koblet opp nå er motordriveren koblet til 5 V fra regulatoren, samme som Arduino og Raspberry Pi. Vi kan derimot ganske enkelt koble om spenningen til motordriveren slik at den er koblet direkte på batterispenningen. Bruk dokumentasjonen for spenningsregulatoren som du finner [her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) til å gjøre dette.
-
-
-## led
-Noen kjøreled vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere for deg og alle andre i trafikken. 
-
-Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et kretsskjema. Da bruker vi ulike symboler for de forskjellige komponentene og viser hvordan de kobles sammen. Under er kretssymbolet for en motstand vist til venstre og kretssymbolet for en LED vist til høyre. Merk at det er viktig hvilken veg en LED plasseres. Står den feil veg vil den ikke lede.
-
-<p align="center">
-  <img src="Media/teknobil/motstandsymbol.png" height="300" />
-  <img src="Media/teknobil/ledsymbol.png" width="500" />
-</p>
-
-Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggeled er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
-
-<p align="center">
-  <img src="Media/teknobil/LEDSchematic.jpeg" height="300" />
-</p>
-
-Det er hull foran og bak på bilen for å montere LED og dere skal ha fått utdelt male-female ledninger som kan brukes for å koble LED-ene til breadboardet.
 
 
 ## Tutehorn
