@@ -306,7 +306,7 @@ NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kret
 
 <p align="center">
   <img src="Media/teknobil/22.jpg" height="300" />
-  <img src="Media/teknobil/batteri_connection.jpg" width="500" />
+  <img src="Media/teknobil/batteri_connection.jpg" height="300" />
 </p>
 
 ### Steg 12: Montering av bakplate og topplokk
