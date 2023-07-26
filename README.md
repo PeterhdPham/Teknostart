@@ -241,7 +241,7 @@ Her er den tilsvarende tilkoblingen:
         <td>
           <img src="Media/teknobil/LED.png" height="300>
         </td>
-        <td>
+        
           
 | GPIO-tilkoblinger | Funksjon                      |
 |------------------|--------------------------------|
