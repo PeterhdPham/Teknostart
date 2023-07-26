@@ -194,8 +194,7 @@ Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden
 | A2      | GPIO 26      |
 | GND     | GND          |
 
-        </td>
-    </tr>
+
 </table>
 
 Har dere koblet riktig skal det se ut som vist under.
