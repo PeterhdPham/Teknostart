@@ -275,7 +275,7 @@ Her er den tilsvarende tilkoblingen:
     </tr>
 </table>
 
-<img src="Media/teknobil/LED.png" align="right" height="250">
+<img src="Media/teknobil/LED.png" align="right" height="280">
 <br clear="all" />
 
 
@@ -286,7 +286,7 @@ Her er den tilsvarende tilkoblingen:
   <img src="Media/teknobil/oppkoblingLED.png" height="300" />
 </p>
 
-Illustrasjonen over 
+Illustrasjonen over viser et forslg til hvordan en ferdig krets kan se ut.
 
 ### Steg 11: Kontroll og kobling av batteri
 
