@@ -168,14 +168,14 @@ som vis i illustrasjonen så kobles motorene slikt:
     <tr>
         <td>
 
-| Power Module | Arduino/RPI/Motor |
-|-------------|--------------      |
-| 3 (V_out)   | Motor (+)          |
-| 4 (GND)     | Motor (-)          |
-| 5 (V_out)   | Arduino (5V)       |
-| 6 (GND)     | Arduino (GND)      |
-| 7 (V_out)   | RPI (5V PWR)       |
-| 8 (GND)     | RPI (GND)          |
+            | Power Module | Arduino/RPI/Motor |
+            |-------------|--------------      |
+            | 3 (V_out)   | Motor (+)          |
+            | 4 (GND)     | Motor (-)          |
+            | 5 (V_out)   | Arduino (5V)       |
+            | 6 (GND)     | Arduino (GND)      |
+            | 7 (V_out)   | RPI (5V PWR)       |
+            | 8 (GND)     | RPI (GND)          |
 
         </td>
         <td>
