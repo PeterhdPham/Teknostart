@@ -744,7 +744,7 @@ For å slippe å skrive egen kode for dette skal vi benytte et open-source progr
 
 
 ###	Last ned LOBE
--	Last ned lobe fra [denne]  (https://www.lobe.ai/) lenken.
+-	Last ned lobe fra [her]  (https://www.lobe.ai/) 
 
 
 
