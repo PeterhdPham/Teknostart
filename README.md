@@ -748,6 +748,7 @@ For å slippe å skrive egen kode for dette skal vi benytte et open-source progr
 
 
 
+
 Bildene som skal brukes til å lage denne modellen skal tas med RPi, og for å få lagret disse lokalt på PC-en skal vi benytte en ny programvare
 ### Last ned riktig programvare for å kunne ta bilder med RPi
 -	git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git
