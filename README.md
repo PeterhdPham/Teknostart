@@ -659,7 +659,9 @@ For å slippe å skrive egen kode for dette skal vi benytte et open-source progr
 
 
 ###	Last ned LOBE
--	Trykk på Download på denne nettsiden
+-	Last ned lobe fra [denne]  (https://www.lobe.ai/) lenken.
+
+
 
 Bildene som skal brukes til å lage denne modellen skal tas med RPi, og for å få lagret disse lokalt på PC-en skal vi benytte en ny programvare
 ### Last ned riktig programvare for å kunne ta bilder med RPi
