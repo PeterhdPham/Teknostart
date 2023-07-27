@@ -10,20 +10,19 @@ Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgav
 4.	Når dere har bygget ferdig bilen kan dere gå videre med utvidelsesoppgavene og begynne å skreddersy den estetisk slik dere ønsker.
 
 
+
 ## Innholdsfortegnelse
 - [Introduksjon til komponentene](#introduksjon-til-komponentene)
-- [Trinnvisveiledning for montering av Teknobilen 2023](#Trinnvis-veiledning-for-montering-av-Teknobilen-2023)
+- [Trinnvisveiledning for montering av Teknobilen](#Trinnvis-veiledning-for-montering-av-Teknobilen)
   - [Montering av Teknobilen](#Montering-av-Teknobilen)
-  - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
   - [Arduino](#arduino)
+  - [Raspberry Pi Oppsett](#raspberry-pi-oppsett)
 - [Utvidelser](#utvidelser)
   - [Hastighet](#hastighet)
-    - [Kode](#kode)
-    - [Omkobling av motorspenning](#omkobling-av-motorspenning)
-  - [Lys](#lys)
+  - [led](#led)
   - [Tutehorn](#tutehorn)
   - [Lobe](#lobe)
-
+****
 
 # Introduksjon til komponentene
 
@@ -34,14 +33,15 @@ Settet dere har fått utdelt inneholder komponenter som sikkert er nye for mange
 Et breadboard gir en rask måte å koble opp kretser for prototyping uten å måtte lodde eller lage kabler. Hver rad i breadboardet er koblet sammen slik at alt som kobles til samme rad er koblet til samme spenningen.
 
 <p align="center">
-  <img src="Media/teknobil/Breadboard.jpg" width="300" />
+  <img src="Media/teknobil/Breadboard.jpg" height="300" />
 </p>
+
 ## Spenningsregulator
 
 Komponenten på bildet under er en spenningsregulatoren. Denne er viktig for Pi-en tåler ikke høyere spenning enn 5 V, men batterispenningen er på over 7 V. Denne har da til formål å senke spenningen slik at både Arduino og Raspberry Pi kan drives fra samme kilde. [Her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) er lenke til dokumentasjon.
 
 <p align="center">
-  <img src="Media/teknobil/Spenningsregulator.png" width="300" />
+  <img src="Media/teknobil/Pwermodule.jpg" height="300" />
 </p>
 
 ## Arduino Uno
@@ -49,14 +49,15 @@ Komponenten på bildet under er en spenningsregulatoren. Denne er viktig for Pi-
 Arduino Uno er et lite utviklingskort som egner seg godt som første mikrokontroller å lære seg å bruke. For å programmere denne brukes Arduino IDE, med et eget språk som er en variant av C++. [Her](https://store.arduino.cc/products/arduino-uno-rev3) finner dere mer spesifikasjoner om kortet dere har blitt utdelt.
 
 <p align="center">
-  <img src="Media/teknobil/ArduinoUno.jpg" width="300" />
+  <img src="Media/teknobil/ArduinoUno.jpg" height="300" />
 </p>
+
 ## Motordriver
 
 Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. Det betyr at den plasseres rett på Arduino Uno, uten noen ekstra ledninger mellom de to. Denne må i tillegg kobles til motorspenning og til motorene den skal kontrollere. [Her](https://wiki.dfrobot.com/Quad_Motor_Driver_Shield_for_Arduino_SKU_DRI0039) finner dere ekstra dokumentasjon.
 
 <p align="center">
-  <img src="Media/teknobil/Motordriver.jpg" width="300" />
+  <img src="Media/teknobil/Motordriver.jpg" height="300" />
 </p>
 
 ## Raspberry Pi
@@ -64,16 +65,25 @@ Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. De
 Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som er en hvilken som helst annen PC eller en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer. Videre kan Raspberry Pi samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram. I dette prosjektet brukes modellen Raspberry Pi 3B+. [Her](https://www.raspberrypi.com/documentation/) finner dere mer dokumentasjon om Raspberry Pi.
 
 <p align="center">
-  <img src="Media/teknobil/RaspberryPi3.jpg" width="300" />
+  <img src="Media/teknobil/RaspberryPi3.jpg" height="300" />
 </p>
 
 
 
-# Trinnvis veiledning for montering av Teknobilen 2023
+# Trinnvis veiledning for montering av Teknobilen
+Før dere starter monteringen av bilen, ønsker vi å gi dere en kort introduksjon til funksjonaliteten til Teknobilen. Dette vil gi dere en bedre forståelse av hvordan Arduino og Raspberry Pi samarbeider for å gi bilen sine kjøreegenskaper.
+
+Teknobilen bruker Arduino til å kontrollere motorene, mens Raspberry Pi fungerer som hjernen i systemet der den hoster en nettside som et brukergrensesnitt som tillater oss å styre bilen.
+
+For å oppnå kommunikasjon mellom Raspberry Pi og Arduino, bruker dere GPIO-pinner. Disse pinnene lar dere sende styringskommandoer fra Raspberry Pi til Arduino, som deretter styrer motorene basert på disse instruksjonene.
+
+Gjennom kombinasjonen av Arduino og Raspberry Pi kan dere utforske spennende funksjoner som motorstyring, ledkontroll og objektgjennskjenning.
+
+Nå som dere har fått en kort forklaring på funksjonaliteten til Teknobilen, er dere klare til å starte monteringen. Følg instruksjonene nøye, koble sammen komponentene riktig, og gled dere til å oppleve de morsomme og interaktive egenskapene til Teknobilen!
 
 ## Montering av Teknobilen
 
-Følg trinnene nedenfor nøye for å montere Teknobilen 2023. Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
+Følg trinnene nedenfor nøye for å montere Teknobilen . Alle bilder nevnt i veiledningen kan finnes i mappen [teknobil2023/-/tree/main/Media/teknobil](https://github.com/PeterhdPham/Teknostart/tree/main/Media/teknobil).
 
 ### Steg 1: Montering av motorer
 
@@ -81,16 +91,16 @@ Start med å feste motorene til følgende plater med de 25 mm lange M3 skruene.
 (NB! Ettersom vi ikke benytter muttere vær oppmerksom på ikke å stramme skruene for hardt).
 
 <p align="center">
-  <img src="Media/teknobil/01.png" width="300" />
+  <img src="Media/teknobil/01.png" height="300" />
 </p>
 
 ### Steg 2: Sammensetting av baseplate og avlange plater
 
-Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på at baseplaten er riktig vei.
+Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på at baseplaten er riktig vei som vis på bildet slik at hullene passer med komponentene som skal skrus på senere.
 
 <p align="center">
-  <img src="Media/teknobil/02.png" width="300" />
-  <img src="Media/teknobil/03.png" width="300" />
+  <img src="Media/teknobil/02.png" height="300" />
+  <img src="Media/teknobil/03.png" height="300" />
 </p>
 
 ### Steg 3: Ledninger
@@ -98,7 +108,7 @@ Fest så de avlange platene sammen med baseplaten (den store med hull). Pass på
 Nå kan det være lurt å føre ledningene fra motorene igjennom de to firkantede hullene i baseplaten.
 
 <p align="center">
-  <img src="Media/teknobil/04.png" width="300" />
+  <img src="Media/teknobil/04.png" height="300" />
 </p>
 
 ### Steg 4: Montering av bunnplate
@@ -106,19 +116,19 @@ Nå kan det være lurt å føre ledningene fra motorene igjennom de to firkanted
 Fest bunnplaten.
 
 <p align="center">
-  <img src="Media/teknobil/06.png" width="300" />
+  <img src="Media/teknobil/06.png" height="300" />
 </p>
 
 ### Steg 5: Raspbian
 
-Før dere fortsetter med å feste komponentene bør oppsettet av Raspberry Pi være ferdig, ettersom det blir vanskelig å komme til SD-kortet etter at alt er skrudd på plass. Dere bør ha fullført dette steget [her](#sette-opp-sd-kortet).
+Før dere fortsetter med å feste komponentene bør oppsettet av Raspberry Pi være ferdig, ettersom man ikke vil få tilgang til SD-kortet etter at alt er skrudd på plass. Dere bør ha fullført dette steget [her](#sette-opp-sd-kortet).
 
 ### Steg 6: Montering av komponenter
 
 Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 10 mm lange M2.5 skruene.
 
 <p align="center">
-  <img src="Media/teknobil/08.png" width="300" />
+  <img src="Media/teknobil/08.png" height="300" />
 </p>
 
 ### Steg 7: Montering av frontplate og kamera
@@ -126,54 +136,168 @@ Legg komponentene som vist på bildet og skru dem fast inn i baseplaten med de 1
 Fest frontplaten og skru fast kameraet til platen med de 4 mm lange M2 skruene som vist på bildet under.
 
 <p align="center">
-  <img src="Media/teknobil/09.png" width="300" />
-  <img src="Media/teknobil/10.png" width="400" />
+  <img src="Media/teknobil/09.png" height="300" />
+  <img src="Media/teknobil/10.png" height="300"/>
 </p>
 
 Koble kamera til Raspberry Pi med den flate kamerakabelen som vist på bildet under. Sørg for å sette den inn riktig vei.
 
 <p align="center">
-  <img src="Media/teknobil/15.jpg" width="300" />
+  <img src="Media/teknobil/15.jpg" height="300" />
 </p>
 
-### Steg 8: Oppkobling av spenningskilde
+### Steg 8: Oppkobling av spenningskilde og motor
 
-Koble motordriver, Arduino og Raspberry Pi til 5 V på spenningsregulatoren som vist på bildene under.
+
+Vi er nå kommet til et kritisk punkt i prosjektet - det er tid for å koble sammen komponentene. Dette er en nøye prosess og det er avgjørende at dere følger koblingsskjemaene nøye. Ta en god titt på figurene og sørg for at dere har koblet riktig pins mellom spenningsregulatoren og Raspberry Pi samt Arduino.
+
+Under ser dere pinout for Arduino, strømmodulen og Raspberry Pi.
+
+Husk, nøyaktighet er nøkkelen her, så vær tålmodig og dobbeltsjekk alle tilkoblinger før dere fortsetter. I Illustrasjonen under så kobles 
+
 
 <p align="center">
-  <img src="Media/teknobil/16.jpg" width="300" />
-  <img src="Media/teknobil/17.jpg" width="300" />
-  <img src="Media/teknobil/18.jpg" width="300" />
+  <img src="Media/teknobil/oppkoblingPSU.png" height="300" />
+  <img src="Media/teknobil/16.jpg" height="300" />
+  <img src="Media/teknobil/17.jpg" height="300" />
+  <img src="Media/teknobil/18.jpg" height="300" />
 </p>
+
+som vis i illustrasjonen så kobles motorene og komponentene  slikt:
+
+<table>
+<tr><td>
+
+| Motorshield | Motor        |
+|-------------|--------------|
+| M1          | HØYRE BAK    |
+| M2          | HØYRE FRONT  |
+| M3          | VENSTRE FRONT|
+| M4          | VENSTRE BAK  |
+
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
+
+| Power Module | Arduino/RPI/Motor |
+|-------------|--------------      |
+| 3 (V_out)   | Motor (+)          |
+| 4 (GND)     | Motor (-)          |
+| 5 (V_out)   | Arduino (5V)       |
+| 6 (GND)     | Arduino (GND)      |
+| 7 (V_out)   | RPI (5V PWR)       |
+| 8 (GND)     | RPI (GND)          |
+
+</td></tr> </table>
+
+
+
 
 ### Steg 9: Oppkobling av GPIO
 
-I denne bilen brukes Arduino til å kontrollere motorene. Raspberry Pi hoster en nettside med et interface der vi kan styre bilen fra. For at Raspbbery Pi-en skal kunne styre bilen må den derfor kobles sammen med Arduino-en. En GPIO pinne på Pi-en bruker vi for input og output fra kortet. Med disse kan vi for eksempel styre LED-lys eller kontrollere en motor. Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden på kortet som beskriver hvor pinnen er plassert. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
+For å koble sammen Raspberry Pi og Arduino Uno.
+Merk at nummeret på GPIO pinnen er ikke det samme som nummeret langs pinneraden på kortet som beskriver hvor pinnen er plassert. GPIO pinout for Raspberry Pi og tabell for sammenkobling med Arduino er vist under. Bruk dette til å koble sammen de to kortene.
 
 <p align="center">
-  <img src="Media/teknobil/RPi_pinout.png" width="300" />
-</p>
-
+  <img src="Media/teknobil/RPi_pinout.png" height="300" />
+  <img src="Media/teknobil/Arduino_pinout.png" height="300" />
+<table>
+    <tr>
+        <td>
+            <img src="Media/teknobil/oppkoblingRPIArduino.png" height="300" />
+        </td>
+        <td>
+          
 | Arduino | Raspberry Pi |
 |---------|--------------|
-| A5      | GPIO 21      |
-| A4      | GPIO 13      |
-| A3      | GPIO 19      |
-| A2      | GPIO 26      |
-| GND     | GND          |
+| A3      | GPIO 21      |
+| A2      | GPIO 13      |
+| A1      | GPIO 19      |
+| A0      | GPIO 26      |
+
+
+
+</table>
 
 Har dere koblet riktig skal det se ut som vist under.
 
 <p align="center">
-  <img src="Media/teknobil/19.jpg" width="300" />
+  <img src="Media/teknobil/19.jpg" height="300" />
 </p>
 
-### Steg 10: Kontroll og kobling av batteri
+### Steg 11: Oppkobling av LEDS
+
+
+Hver LED har to ben; en kort (katode) og en lang (anode), dette tilsvarer leddenes positive og negative side som vist i illustrasjonen under. 
+
+1.  **Koble motstandene til brødfjølet**: Koble en 220-ohms motstand til brødfjølet. Du vil ha en for katodene til kjøreled og ryggeled (2 røde og 2 gjennomsiktige), og en annen for de andre LEDene (rødt, gult, grønt, blått).
+
+2.  **Koble til GND**: Koble Raspberry Pi's GND (jord) pinne til brødfjølet, deretter til motstanden(e).
+
+3. **Koble til GPIO-pinnene**: Bruk jumperkabler til å koble anoden (den lengre delen av LED) direkte til de tilsvarende GPIO-pinnene på Raspberry Pi. Katodene (den kortere delen av LED) kobles til brødfjølet (som er koblet til GND gjennom motstanden) ved hjelp av jumperkabler.
+
+Her er den tilsvarende tilkoblingen:
+
+<table align="left" border="0">
+    <tr>
+        <th>GPIO-tilkoblinger</th>
+        <th>Funksjon</th>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>kjøreled (Gjennomsiktig LED)</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>kjøreled (Gjennomsiktig LED)</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Ryggeled (Rødt LED)</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Ryggeled (Rødt LED)</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Rødt led</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Gult led</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Grønt led</td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>Blått led</td>
+    </tr>
+</table>
+
+<img src="Media/teknobil/LED.png" align="right" height="280">
+<br clear="all" />
+
+
+**Viktig:** Motstand er nødvendig for å begrense strømmen som går gjennom LEDene, og dermed hindre dem i å brenne ut. Alltid koble motstanden til katodesiden (den kortere benet) av LEDen.
+
+
+<p align="center">
+  <img src="Media/teknobil/oppkoblingLED.png" height="300" />
+</p>
+
+Illustrasjonen over viser et forslg til hvordan en ferdig krets kan se ut. Bildet under viser hva for et kaos det kan bli etter at det er ferdig. Lykke til 😈
+
+<p align="center">
+  <img src="Media/teknobil/realLED.jpg" height="300" />
+</p>
+
+### Steg 11: Kontroll og kobling av batteri
 
 Batterikonnektor til spenningsregulator kobles opp som vist under.
 
 <p align="center">
-  <img src="Media/teknobil/20.jpg" width="300" />
+  <img src="Media/teknobil/20.jpg" height="300" />
 </p>
 
 Når alt er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den skyves inn mellom motorene før dere fester bakplaten. 
@@ -181,176 +305,23 @@ Når alt er koblet opp kan dere få bilen deres kontrollert hos en læringsassis
 NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kretskortene på plass ikke er skrudd såpass stramt at batteriet tar skade når det skyves inn i bilen. Det er viktig å være obs på at man ikke skrur de inn i batteriet senere heller, ellers kan batteriet begynne å brenne. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
 
 <p align="center">
-  <img src="Media/teknobil/22.jpg" width="300" />
-  <img src="Media/teknobil/21.jpg" width="500" />
+  <img src="Media/teknobil/22.jpg" height="300" />
+  <img src="Media/teknobil/batteri_connection.jpg" height="300" />
 </p>
 
-### Steg 11: Montering av bakplate og topplokk
+### Steg 12: Montering av bakplate og topplokk
 
 Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 
 <p align="center">
-  <img src="Media/teknobil/14.png" width="300" />
+  <img src="Media/teknobil/14.png" height="300" />
+  <img src="Media/teknobil/last.jpg" height="300" />
+
+
 </p>
 
-Lykke til med monteringen!
-
-
-
-## Raspberry Pi
-
-I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
-Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
-
-### Sette opp SD-kortet
-
-Utstyr:
-
-- Laptop
-- SD-kort
-- SD-kortleser
-
-SD-kortene dere har fått utdelt inneholder ingen informasjon dere kan bruke. Derfor må dere starte med å laste opp et OS til dette kortet. RPi bruker ikke Windows eller MacOS, men et operativsystem som ofte kalles Rasbian/Debian, som er en versjon av Linux. For å kunne laste opp dette OS-et til kortet kreves et eget skrivebordsprogram som heter Raspberry Pi Imager.
-
-Slik går du fram for å sette opp SD-kortet:
-
-1. Last ned Raspberry Pi Imager
-2. Sett inn SD-kortet inn i SD-kortleseren
-3. Åpne Raspberry Pi Imager
-4. Trykk på «CHOOSE OS» og velg: «Raspberry Pi OS (32-bit)»
-5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
-6. Gå inn på settings:
-
-   ![Raspberry Pi Imager](Media/rpi/01Pi-imager.png)
-
-   1. Sett hostname til «ELSYS"gruppenummer"», eksempel: ELSYS14
-   2. Enable SSH
-      - Use password authentication
-   3. Set username and password
-      - Username: teknostart, NB: viktig at dere kun skriver “teknostart”
-      - Password: "123", eller noe annet dere lett kan huske
-   4. Configure wireless LAN
-      - NB: SSID og Password må være likt det nettet dere kan dele fra mobilen
-   5. Enable Set locale settings:
-      - Time zone: Europe/Oslo
-      - Keyboard layout: no
-   6. Når du er ferdig skal du se noe tilsvarende:
-
-   ![Raspberry Pi Imager settings](Media/rpi/10settings.png)
-
-7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
-8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
-
-
-### Sette opp Raspberry Pi headless
-Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”. For å koble til Pi-en fra PC med SSH må begge to være koblet på samme nettverk. Derfor skal vi dele nett fra mobilen, og koble oss til dette nettet med både Pi og PC.
-
-Utstyr:
-- PC
-- Raspberry Pi med ferdig installert SD-kort
-- Delt nett
-
-#### SSH inn til Raspberry Pi
-
-1. Først må Pi-en være koblet til strøm, dette gjøres enten ved oppkobling i bilen eller ved microUSB porten på kortet
-2. Åpne en terminal på laptopen:
-   - For Windows kan dere søke opp:
-     - Terminal (🪟 + x)
-     - Windows PowerShell
-     - Command Promt
-   - For Mac kan dere søke opp:
-     - Terminal
-3. For å SSH inn til Pi-en går du inn på terminalen og skriver (du kan også copypaste ved å kopiere vanlig for så å lime inn med høyre klikk inne på terminalen.):
-   ```bash
-   ssh teknostart@<hostname>.local
-   ```
-   - Som du satte i Raspberry Pi imager F.eks:
-     ```bash 
-     teknostart@ELSYS1.local 
-     ```
-     - NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen
-     - Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
-     - Du vil få noe tilsvarende:
-     ![SSH into Raspberry Pi](Media/rpi/03SSH.png)
-
-Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
-
-
-#### Få inn riktig programvare
-
-Vi skal nå få inn riktig programvare, samt laste inn alt av kode som skal ligge lokalt på Pi-en.
-
-1. Start med å sjekke at klokken inne på Raspberry Pien stemmer med kommandoen:
-
-```bash
-date
-```
-![Date](Media/rpi/08check_date.png)
-    * Dersom dato og klokken er feil kan du fikse opp i dette ved å bruke kommandoen (Husk å endre dato/klokkeslett til gjeldende tid):
-
-```bash
-sudo date -s '18 Aug 2022 13:00'
-```
-![Change](Media/rpi/09change_date.png)
-
-2. Nå kan du oppdatere og oppgradere med kommandoene
-
-```bash
-sudo apt-get update
-sudo apt-get dist-upgrade
-```
-
-- Trykk enter når de spør om du ønsker å fortsette
-
-
-3. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
-
-```bash
-git clone https://github.com/PeterhdPham/Teknostart.git
-```
-    *NB dette kan ta litt tid
-4. Videre kan du navigere deg inn på "Teknostart" mappen med kommandoen:
-   
-```bash 
-cd Teknostart/
-```
-
-5. Last ned ekstra progrmvare som kreves for å kjøre koden med kommandoen:
-```bash
-pip3 install -r requirements.txt
-sudo apt-get install libatlas-base-dev
-sudo apt-get install python3-pyro4
-```
-6. Naviger videre inn i "projectfolder" med kommandoen:
-
-```bash
-cd projectfolder/
-```
-7. Når Arduino koden er ferdig lastet kan du kjøre Python koden med kommandoen:
-
-```python
-python runCode.py
-```
-
-Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. Når dere skal stoppe koden fra å kjøre, trykk "STOP" i nettleser. For å teste objektgjenkjenningen, trykk "COMPARE".
-
-* Dersom dere får opp en feilmelding om at kamera ikke er enabled:
-  - Trykk Ctrl+C for å avbryte kjøringen av koden i terminalen
-  - Åpne raspi-config:
-    ```bash
-    sudo raspi-config
-    ```
-  - Naviger til "Interface Options", deretter "Legacy Camera"
-  - Velg "Yes" til å enable kamera
-  - Start Pi-en på nytt med
-    ```bash
-    sudo reboot now
-    ```
-  - Naviger til mappen der runCode.py ligger og kjør koden på nytt
-
-
 ## Arduino
-Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - lys på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
+Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - led på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
 
 ### Skaff Arduino Software til egen PC
 
@@ -574,6 +545,139 @@ Oppsett:
 NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring. :)
 
 
+## Raspberry Pi oppsett
+
+I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
+Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
+
+### Sette opp SD-kortet
+
+Utstyr:
+
+- Laptop
+- SD-kort
+- SD-kortleser
+
+SD-kortene dere har fått utdelt inneholder ingen informasjon dere kan bruke. Derfor må dere starte med å laste opp et OS til dette kortet. RPi bruker ikke Windows eller MacOS, men et operativsystem som ofte kalles Rasbian/Debian, som er en versjon av Linux. For å kunne laste opp dette OS-et til kortet kreves et eget skrivebordsprogram som heter Raspberry Pi Imager.
+
+Slik går du fram for å sette opp SD-kortet:
+
+1. Last ned Raspberry Pi Imager
+2. Sett inn SD-kortet inn i SD-kortleseren
+3. Åpne Raspberry Pi Imager
+4. Trykk på «CHOOSE OS» og velg: «Raspberry Pi OS (32-bit)»
+5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
+6. Gå inn på settings:
+
+   ![Raspberry Pi Imager](Media/rpi/01Pi-imager.png)
+
+   1. Sett hostname til «elsys"gruppenummer"», eksempel: elsys14
+   2. Enable SSH
+      - Use password authentication
+   3. Set username and password
+      - Username: pi, NB: viktig at dere kun skriver “pi”
+      - Password: "123", eller noe annet dere lett kan huske
+   4. Configure wireless LAN
+      - NB: SSID og Password må være likt det nettet dere kan dele fra mobilen
+   5. Enable Set locale settings:
+      - Time zone: Europe/Oslo
+      - Keyboard layout: no
+   6. Når du er ferdig skal du se noe tilsvarende:
+
+   ![Raspberry Pi Imager settings](Media/rpi/02settings.png)
+
+7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
+8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
+
+
+### Sette opp Raspberry Pi headless
+Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”. For å koble til Pi-en fra PC med SSH må begge to være koblet på samme nettverk. Derfor skal vi dele nett fra mobilen, og koble oss til dette nettet med både Pi og PC.
+
+Utstyr:
+- PC
+- Raspberry Pi med ferdig installert SD-kort
+- Delt nett
+
+#### SSH inn til Raspberry Pi
+
+1. Først må Pi-en være koblet til strøm, dette gjøres enten ved oppkobling i bilen eller ved microUSB porten på kortet
+2. Åpne en terminal på laptopen:
+   - For Windows kan dere søke opp:
+     - Terminal (🪟 + x)
+     - Windows PowerShell
+     - Command Promt
+   - For Mac kan dere søke opp:
+     - Terminal
+3. For å SSH inn til Pi-en går du inn på terminalen og skriver:
+   ```bash
+   ssh pi@<hostname>.local
+   ```
+bytt ut <hostname> med det du satte i Raspberry Pi imager F.eks:
+   ```bash 
+   pi@elsys1.local 
+   ```
+NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen. Du kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen du brukte. 
+Dobbeltsjekk også at det delte nettet er på 2.4GHz.
+Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
+Du vil få noe tilsvarende:
+
+![SSH into Raspberry Pi](Media/rpi/03SSH.png)
+
+Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
+#### Enable camera
+Aktiver kameraet på RPI-en med kommandoen:
+
+```bash
+sudo raspi-config
+```
+
+- Naviger til "Interface Options", deretter "Legacy Camera"
+  - Velg "Yes" til å enable kamera
+  - Start Pi-en på nytt med
+```bash
+sudo reboot now
+```
+#### Få inn riktig programvare
+
+1. Du kan nå oppdatere og oppgradere med kommandoene
+
+```bash
+sudo apt-get update && sudo apt-get dist-upgrade -y
+
+```
+
+
+2. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
+
+```bash
+git clone https://github.com/PeterhdPham/teknobil2023.git
+```
+3. Videre kan du navigere deg inn på "Teknostart" mappen med kommandoen:
+   
+```bash 
+cd teknobil2023/
+```
+
+4. Last ned ekstra progrmvare som kreves for å kjøre koden med kommandoen:
+```bash
+pip3 install -r requirements.txt && sudo apt-get install libatlas-base-dev -y && sudo apt-get install python3-pyro4 -y
+```
+
+5. Naviger videre inn i "projectfolder" med kommandoen:
+
+```bash
+cd projectfolder/
+```
+6. Når Arduino koden er ferdig lastet kan du kjøre Python koden med kommandoen:
+
+```python
+python runCode.py
+```
+
+Ved å kjøre denne kodelinjen får dere opp en ip-adresse dere kan gå til i nettleser for å få videofeed og kjøre bilen. Når dere skal stoppe koden fra å kjøre, trykk "STOP" i nettleser. For å teste objektgjenkjenningen, trykk "COMPARE".
+
+
+
 
 # Utvidelser
 
@@ -599,25 +703,6 @@ Bla ned til du finner dette i koden din og lek med tallverdiene. For hvilke verd
 ### Omkobling av motorspenning
 
 En annen måte å øke hastigheten til bilen er ved å øke spenningen til motorene. Slik bilen er koblet opp nå er motordriveren koblet til 5 V fra regulatoren, samme som Arduino og Raspberry Pi. Vi kan derimot ganske enkelt koble om spenningen til motordriveren slik at den er koblet direkte på batterispenningen. Bruk dokumentasjonen for spenningsregulatoren som du finner [her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) til å gjøre dette.
-
-
-## Lys
-Noen kjørelys vil gjøre at bilen deres ser enda fetere ut. De er i tillegg praktiske når dere kjører i mørket og gjør bilen mye tryggere for deg og alle andre i trafikken. 
-
-Får å vite hvordan noe elektronikk skal kobles opp er det svært nyttig med et kretsskjema. Da bruker vi ulike symboler for de forskjellige komponentene og viser hvordan de kobles sammen. Under er kretssymbolet for en motstand vist til venstre og kretssymbolet for en LED vist til høyre. Merk at det er viktig hvilken veg en LED plasseres. Står den feil veg vil den ikke lyse.
-
-<p align="center">
-  <img src="Media/teknobil/motstandsymbol.png" width="300" />
-  <img src="Media/teknobil/ledsymbol.png" width="500" />
-</p>
-
-Det er allerede lagt inn i koden at Raspberry Pi-en setter GPIO pinne 23 høy når bilen kjører fremover og GPIO pinne 18 høy når bilen kjører bakover. Det dere dermed mangler for å ha fungerende kjøre- og ryggelys er å koble opp noen LED til breadboardet deres og koble LED-ene dere plasserer foran til GPIO 23 og LED-ene plassert bak til GPIO 18. Et kretsskjema er vist under. Bruk motstander på mellom 100 og 330 Ohm. Det skal være utdelt i settet deres.
-
-<p align="center">
-  <img src="Media/teknobil/LEDSchematic.jpeg" width="300" />
-</p>
-
-Det er hull foran og bak på bilen for å montere LED og dere skal ha fått utdelt male-female ledninger som kan brukes for å koble LED-ene til breadboardet.
 
 
 ## Tutehorn
