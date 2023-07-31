@@ -1,6 +1,6 @@
 # Teknostart 2023
 
-I denne teknostarten skal dere i en gruppe lage en fjernstyrt bil. Dere skal få jobbe med Raspberry Pi, Arduino Uno og LOBE. Det er ikke forventet at du skal kunne noe om dette fra før eller vite hva det er, teknostart vil fungere som en introduksjon til dette.  Dere skal også bygge bilen, koble den opp få alt til å fungere sammen. 
+I denne teknostarten skal dere i en gruppe lage en fjernstyrt bil. Dere skal få jobbe med Raspberry Pi, Arduino Uno og LOBE. Det er ikke forventet at dere skal kunne noe om dette fra før eller vite hva det er, teknostart vil fungere som en introduksjon til dette.  Dere skal også bygge bilen, koble den opp få alt til å fungere sammen. 
 I år er det tre konkurranser. Dere kan vinne ved å være raskest rundt en definert bane, ha den beste objektgjenkjenningen eller ved å ha den vakreste/kuleste bilen. Bruk kreativiteten, maling og tusjer til å skreddersy bilen slik dere ønsker. 
 Dere bør dele dere opp og jobbe på hver deres del. Dere har god tid på oppgaven, så det går fint å jobbe i par og ta seg tid til å prøve å forstå eller finne ut mer om noe dersom dere synes det er interessant. En viktig del av teknostart er å samarbeide godt og fordele arbeidsoppgaver. Vi foreslår at dere fordeler dere på disse hovedoppgavene:
 
@@ -41,7 +41,7 @@ Et breadboard gir en rask måte å koble opp kretser for prototyping uten å må
 Komponenten på bildet under er en spenningsregulatoren. Denne er viktig for Pi-en tåler ikke høyere spenning enn 5 V, men batterispenningen er på over 7 V. Denne har da til formål å senke spenningen slik at både Arduino og Raspberry Pi kan drives fra samme kilde. [Her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) er lenke til dokumentasjon.
 
 <p align="center">
-  <img src="Media/teknobil/Pwermodule.jpg" height="300" />
+  <img src="Media/teknobil/Powermodule.jpg" height="300" />
 </p>
 
 ## Arduino Uno
@@ -62,7 +62,7 @@ Motordriveren som dere har fått utdelt er et såkalt shield for Arduino Uno. De
 
 ## Raspberry Pi
 
-Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som er en hvilken som helst annen PC eller en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer. Videre kan Raspberry Pi samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram. I dette prosjektet brukes modellen Raspberry Pi 3B+. [Her](https://www.raspberrypi.com/documentation/) finner dere mer dokumentasjon om Raspberry Pi.
+Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt dere trenger for å bruke som er en hvilken som helst annen PC eller en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer. Videre kan Raspberry Pi samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram. I dette prosjektet brukes modellen Raspberry Pi 3B+. [Her](https://www.raspberrypi.com/documentation/) finner dere mer dokumentasjon om Raspberry Pi.
 
 <p align="center">
   <img src="Media/teknobil/RaspberryPi3.jpg" height="300" />
@@ -228,7 +228,7 @@ Har dere koblet riktig skal det se ut som vist under.
 
 Hver LED har to ben; en kort (katode) og en lang (anode), dette tilsvarer leddenes positive og negative side som vist i illustrasjonen under. 
 
-1.  **Koble motstandene til brødfjølet**: Koble en 220-ohms motstand til brødfjølet. Du vil ha en for katodene til kjøreled og ryggeled (2 røde og 2 gjennomsiktige), og en annen for de andre LEDene (rødt, gult, grønt, blått).
+1.  **Koble motstandene til brødfjølet**: Koble en 220-ohms motstand til brødfjølet. Dere vil ha en for katodene til kjøreled og ryggeled (2 røde og 2 gjennomsiktige), og en annen for de andre LEDene (rødt, gult, grønt, blått).
 
 2.  **Koble til GND**: Koble Raspberry Pi's GND (jord) pinne til brødfjølet, deretter til motstanden(e).
 
@@ -294,7 +294,7 @@ Illustrasjonen over viser et forslg til hvordan en ferdig krets kan se ut. Bilde
 
 ### Steg 11: Kontroll og kobling av batteri
 
-Batterikonnektor til spenningsregulator kobles opp som vist under.
+Batterikonnektor til spenningsregulator kobles opp som vist under, pass på at positiv (rød) er koblet inn i OV_in og negativ (svart) er koblet til GND.
 
 <p align="center">
   <img src="Media/teknobil/20.jpg" height="300" />
@@ -303,6 +303,12 @@ Batterikonnektor til spenningsregulator kobles opp som vist under.
 Når alt er koblet opp kan dere få bilen deres kontrollert hos en læringsassistent. Dersom alt er korrekt kan dere få utlevert et batteri, den skyves inn mellom motorene før dere fester bakplaten. 
 
 NB: Her er det to viktige ting å passe på. Pass på at skruene som holder kretskortene på plass ikke er skrudd såpass stramt at batteriet tar skade når det skyves inn i bilen. Det er viktig å være obs på at man ikke skrur de inn i batteriet senere heller, ellers kan batteriet begynne å brenne. Pass på at bryteren er satt til 5 V på spenningsregulatoren før dere skrur den på.
+
+<p align="center">
+  <img src="Media\teknobil\11.png
+" height="300" />
+</p>
+
 
 <p align="center">
   <img src="Media/teknobil/22.jpg" height="300" />
@@ -321,7 +327,7 @@ Fest bakplaten og sett på topplokket. Bilen skal nå se ut som vist under.
 </p>
 
 ## Arduino
-Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - led på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Du kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
+Arduino er en open-source elektronikkplattform basert på hardware og software designet for å være enkelt å bruke. Arduinokortene er rusta til å lese ulike inputs - led på en sensor, knappetrykk, en Twittermelding – og bruke denne dataen til å sende et outputsignal – aktivere en motor, skru på en LED, publisere noe på nett. Dere kan fortelle kortet hva den skal gjøre, ved å sende opp sett med instruksjoner til mikrokontrolleren på kortet i form av kodesnutter. Disse instruksjonene sendes til kortet via en USB-kabel fra din PC, men for at denne informasjonen skal lastes opp riktig må vi ha koden vår i en Arduino Software (IDE).
 
 ### Skaff Arduino Software til egen PC
 
@@ -340,11 +346,12 @@ Oppsett:
 1. Koble til arduino-kortet til din PC med en USB-B ledning
 2. Sørg for at softwaren fungerer for riktig type arduinokort, her Arduino Uno
     * Gå inn på «Verktøy»/«Tools»
-    * Velg riktig kort og port (porten er hvilken inngang/utgang du bruker på PC-en. Kan komme feilmelding om det velges feil)
+    * Velg riktig kort og port (porten er hvilken inngang/utgang dere bruker på PC-en. Kan komme feilmelding om det velges feil)
 
 ![Arduino](Media/arduino/01toolssetup.png)
 
-3. Videre erstatter du teksten med koden under:
+3. Videre erstatter dere teksten med koden under:
+
     <details>
     <summary>Klikk her</summary>
 
@@ -529,16 +536,17 @@ Oppsett:
 
     </details>
 
+
 4. Last opp koden til arduinokortet. Blå først for å verifisere koden (dobbeltsjekke at det ikke er noen feil med koden). Deretter rød for å laste opp.
-
-<img src="Media/arduino/02yeah.png" width="240">
-
+<p align='center'>
+  <img src="Media/arduino/02yeah.png" width="240">
+</p>
 NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring. :)
 
 
 ## Raspberry Pi oppsett
 
-I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
+I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor dere, mens dere er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at dere sender informasjon om tastetrykk til Pi-en, og denne sender videre informasjon til Arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker Arduino som slave.
 Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
 
 ### Sette opp SD-kortet
@@ -551,13 +559,13 @@ Utstyr:
 
 SD-kortene dere har fått utdelt inneholder ingen informasjon dere kan bruke. Derfor må dere starte med å laste opp et OS til dette kortet. RPi bruker ikke Windows eller MacOS, men et operativsystem som ofte kalles Rasbian/Debian, som er en versjon av Linux. For å kunne laste opp dette OS-et til kortet kreves et eget skrivebordsprogram som heter Raspberry Pi Imager.
 
-Slik går du fram for å sette opp SD-kortet:
+Slik går dere fram for å sette opp SD-kortet:
 
 1. Last ned Raspberry Pi Imager
 2. Sett inn SD-kortet inn i SD-kortleseren
 3. Åpne Raspberry Pi Imager
 4. Trykk på «CHOOSE OS» og velg: «Raspberry Pi OS (32-bit)»
-5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
+5. Videre «CHOOSE STORAGE», og velg det SD-kortet dere satte inn.
 6. Gå inn på settings:
 
    ![Raspberry Pi Imager](Media/rpi/01Pi-imager.png)
@@ -573,16 +581,16 @@ Slik går du fram for å sette opp SD-kortet:
    5. Enable Set locale settings:
       - Time zone: Europe/Oslo
       - Keyboard layout: no
-   6. Når du er ferdig skal du se noe tilsvarende:
+   6. Når dere er ferdig skal dere se noe tilsvarende:
 
    ![Raspberry Pi Imager settings](Media/rpi/02settings.png)
 
 7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
-8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
+8. Når SD-kortet er ferdig skrevet vil dere få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
 
 
 ### Sette opp Raspberry Pi headless
-Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”. For å koble til Pi-en fra PC med SSH må begge to være koblet på samme nettverk. Derfor skal vi dele nett fra mobilen, og koble oss til dette nettet med både Pi og PC.
+Som sagt er Raspberry Pi en datamaskin, men som dere kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som dere aktiverte i “Advanced options”. For å koble til Pi-en fra PC med SSH må begge to være koblet på samme nettverk. Derfor skal vi dele nett fra mobilen, og koble oss til dette nettet med både Pi og PC.
 
 Tips til terminal:
 - Grunnleggende terminalkommandoer for navigering:
@@ -590,7 +598,7 @@ Tips til terminal:
   - **`ls`**: List opp innholdet i den nåværende katalogen. Denne kommandoen viser alle filer og mapper i den nåværende katalogen.
   - **`cd ..`**: Gå opp ett nivå i katalogstrukturen. Dette tar deg tilbake til mappen som inneholder den nåværende mappen.
 - copy/paste
-  - For å copy/paste på windows inne i terminalen kan du bruke "ctrl + shift + V/C". Dersom du trykker "ctrl + C" så vil den avslutte det den gjør enten der er en påbegynt kommando eller kode.
+  - For å copy/paste på windows inne i terminalen kan dere bruke "ctrl + shift + V/C". Dersom dere trykker "ctrl + C" så vil den avslutte det den gjør enten der er en påbegynt kommando eller kode.
 
 
 
@@ -609,25 +617,25 @@ Utstyr:
      - Command Promt
    - For Mac kan dere søke opp:
      - Terminal
-3. For å SSH inn til Pi-en går du inn på terminalen og skriver:
+3. For å SSH inn til Pi-en går dere inn på terminalen og skriver:
   ```bash
   ssh pi@<hostname>.local
   ```
-bytt ut <hostname> med det du satte i Raspberry Pi imager F.eks:
+bytt ut <hostname> med det dere satte i Raspberry Pi imager F.eks:
    ```bash 
-   pi@elsys1.local 
+   ssh pi@elsys1.local 
    ```
-NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen. Du kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen du brukte. 
+NB: Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen. Dere kan også trykke piltast opp på tastaturet for å bruke den siste kommandoen dere brukte. 
 Dobbeltsjekk også at det delte nettet er på 2.4GHz.
-Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter
+Når den spør om dere ønsker å koble deg til skriver dere “yes” og trykker enter
 
 
-Når du skriver passord så vil du merke at det ikke kommer noe "***", det er meningen, bare skriv passordet som normalt.
+Når dere skriver passord så vil dere merke at det ikke kommer noe "***", det er meningen, bare skriv passordet som normalt.
 
-Du vil få noe tilsvarende:
+Dere vil få noe tilsvarende:
 ![SSH into Raspberry Pi](Media/rpi/03SSH.png)
 
-Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
+Gratulerer dere har nå SSH-et inn til deres Raspberry Pi. Kommandoene dere nå skriver skjer inne på selve Raspberry Pi.
 #### Enable camera
 Aktiver kameraet på RPI-en med kommandoen:
 
@@ -643,35 +651,43 @@ sudo reboot now
 ```
 #### Få inn riktig programvare
 
-1. Du kan nå oppdatere og oppgradere med kommandoene
+1. Dere kan nå oppdatere og oppgradere med kommandoene
 
 ```bash
 sudo apt-get update && sudo apt-get dist-upgrade -y
 ```
 
 
-2. Nå kan du klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
+2. Nå kan dere klone git-en som inneholder koden som Raspberry Pi-en skal kjøre med kommandoen:
 
 ```bash
 git clone https://github.com/PeterhdPham/teknobil2023.git
 ```
-3. Videre kan du navigere deg inn på "Teknostart" mappen med kommandoen:
+
+3. Videre kan dere navigere deg inn på "Teknostart" mappen med kommandoen:
    
 ```bash 
 cd teknobil2023/
 ```
+<p>
+  <img src="Media\rpi\cd.png" height="50" />
+
+merk det i blått sier noe om hvilken mappe dere er i, prøv kommandoen 'cd ..' for å gå tilbake eller 'ls' for å vise hvilke andre filer eller mapper som er der. 
+</p>
+    
 
 4. Last ned ekstra progrmvare som kreves for å kjøre koden med kommandoen:
+
 ```bash
 pip3 install -r requirements.txt && sudo apt-get install libatlas-base-dev -y && sudo apt-get install python3-pyro4 -y
 ```
 
-5. Naviger videre inn i "projectfolder" med kommandoen:
+5. Når nedlstningen er ferdig kan dunavigere videre inn i "projectfolder" med kommandoen:
 
 ```bash
 cd projectfolder/
 ```
-6. Når Arduino koden er ferdig lastet kan du kjøre Python koden med kommandoen:
+6. Når Arduino koden er ferdig lastet kan dere kjøre Python koden med kommandoen:
 
 ```python
 python runCode.py
@@ -701,11 +717,11 @@ int drivingSpeed = 150;
 int turningSpeed = 50;
 ```
 
-Bla ned til du finner dette i koden din og lek med tallverdiene. For hvilke verdier er bilen raskest?
+Bla ned til dere finner dette i koden din og lek med tallverdiene. For hvilke verdier er bilen raskest?
 
 ### Omkobling av motorspenning
 
-En annen måte å øke hastigheten til bilen er ved å øke spenningen til motorene. Slik bilen er koblet opp nå er motordriveren koblet til 5 V fra regulatoren, samme som Arduino og Raspberry Pi. Vi kan derimot ganske enkelt koble om spenningen til motordriveren slik at den er koblet direkte på batterispenningen. Bruk dokumentasjonen for spenningsregulatoren som du finner [her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) til å gjøre dette.
+En annen måte å øke hastigheten til bilen er ved å øke spenningen til motorene. Slik bilen er koblet opp nå er motordriveren koblet til 5 V fra regulatoren, samme som Arduino og Raspberry Pi. Vi kan derimot ganske enkelt koble om spenningen til motordriveren slik at den er koblet direkte på batterispenningen. Bruk dokumentasjonen for spenningsregulatoren som dere finner [her](https://wiki.dfrobot.com/Power_Module__SKU_DFR0205_) til å gjøre dette.
 
 
 ## Tutehorn
@@ -743,82 +759,117 @@ Det er tre slike kommenteringer som må fjernes. Dere må nå finne de to andre 
 ## Lobe
 
 Lag dere egen modell for objektgjenkjenning. Det vi kaller object detection, eller objektgjenkjenning, er en teknikk en datamaskin tar i bruk for å lokalisere objekter i bilder eller videoer. Vi mennesker kjenner fort igjen ulike objekter i bilder og videoer, og skille dem, ila. millisekunder. Målet med object detection er å kunne gjenskape denne egenskapen i en datamaskin. For å få til dette er det ofte tatt i bruk machine learning, som går ut på at maskinen lærer opp seg selv. 
-For å slippe å skrive egen kode for dette skal vi benytte et open-source program kalt LOBE. I dette programmet kan en legge inn bilder av de objektene man ønsker at maskinen/programmet skal kunne kjenne igjen, og sette merkelapp på dem. Disse bildene vil så LOBE bruke til å trene opp en modell (type program), til den klarer å kjenne igjen alle objektene den har merkelapp til. Denne modellen, i form av en mappe, legger vi inn på vår RPi, og du vil ha en egenlaget og fungerende gjenkjenningsmodell når du kjører bilen!
+For å slippe å skrive egen kode for dette skal vi benytte et open-source program kalt LOBE. I dette programmet kan en legge inn bilder av de objektene man ønsker at maskinen/programmet skal kunne kjenne igjen, og sette merkelapp på dem. Disse bildene vil så LOBE bruke til å trene opp en modell (type program), til den klarer å kjenne igjen alle objektene den har merkelapp til. Denne modellen, i form av en mappe, legger vi inn på vår RPi, og dere vil ha en egenlaget og fungerende gjenkjenningsmodell når dere kjører bilen!
 
 
-###	Last ned LOBE
+###	Last ned lobe og tren deres første modell
 -	Last ned lobe fra [her]  (https://www.lobe.ai/) 
 
 Når dere har lasted ned kan dere åpne programmet og starte en "New Project"
 
-![!\[Alt text\](image.png)](Media/Lobe/newProject.png)
+<p align="center">
+  <img src="Media/Lobe/newProject.png" height="350" />
+</p>
 
-Importer dataset fra 
+Importer last ned mappen [dataset](https://github.com/PeterhdPham/teknobil2023/dataset) fra github repositoriet og importer dette inn i lobe. Når programmet spør om hvoran dere ønsker å kategorisere bildene så velger dere "Label using folder name".  Når dere har importert bildene ferdig kan dere trykke på "Train" for å se på programmet trene en AI-modell.
 
-Bildene som skal brukes til å lage denne modellen skal tas med RPi, og for å få lagret disse lokalt på PC-en skal vi benytte en ny programvare
+Dersom den skulle slutte å trene før den har nådd "Correct 100%" kan dere trykke på  det første bildet og korrigere den til riktig label.
+
+<p align="center">
+  <img src="Media\Lobe\keepTraining.png" height="300" />
+</p>
+
+Når modellen deres har en prediksjon på 100% kan dere eksportere modellen deres via Use>Export>"TensorFlow Lite"
+
+<p align="center">
+  <img src="Media\Lobe\tensorFlowLite.png" height="300" />
+</p>
+
+Dere kan da også velge å optimalisere den før den blir exportert.
+
+Etter å ha exportert den må dere bytte navn på mappen til "Lobe" denne brukes i koden for RPi-en, derfor er det viktig å gi denne mappen navnet «Lobe», og plassere denne et sted dere husker!
+
+### Overfør modellen over til Raspberry pi 
+3.	For å få denne inn i mappestrukturen til RPi-en deres så modellen deres faktisk blir brukt, må den erstatte den modellen som allerede ligger inne. Derfor er det nødvendig å laste ned et skrivebordsprogram som lar deg overføre filer og mapper mellom to maskiner, her egen PC og RPi
+
+    1.	Last ned [FileZilla](https://filezilla-project.org/)
+    2.	Åpne programmet når nedlastningen er ferdig
+    3.	Fyll inn Vert (Hostname), brukernavn, passordet til RPi-en deres og port: 22 for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
+
+<p align="center">
+  <img src="Media\Lobe\filezilla.png" height="150" />
+</p>
+
+4.	Erstatt Lobe-mappen som ligger inne i mappen teknobil2023
+
+<p align="center">
+  <img src="Media\Lobe\navtekno.png" height="300" />
+</p>
+
+Til høyre så har dere mappestrukturen til Raspberry pi, mens den til venstre er deres lokale pc sin mappestruktur.
+
+<p align="center">
+  <img src="Media\Lobe\deletelobe.png" height="300" />
+</p>
+
+
+Når dere kjører «runCode.py» fra RPi-en nå, vil den ta i bruk deres egen object detection!!! 
+
+
+### Utvid modellen med deres egne bilder
+Fram til nå har vi ledet dere igjennom hele prosessen og vi har forberedt alt slikt at dere skal få mest mulig friksjonsfritt og mindre "stangete" enn deres fremtidige "broedre iitem systre" fra KYB (Deres teknostart er desidert mye kulere enn dems, GO ELSYS!😎). Men nå er det deres tur til å gjøre noe selvstendig (ikke helt. lol)
+
+
 ### Last ned riktig programvare for å kunne ta bilder med RPi
--	git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git
--	cd RPi_Cam_Web_Interface
--	./install.sh
-Under nedlastingen vil du få opp denne menyen:
- <img src="Media/Lobe/01.jpg" height=350>
+Bildene som skal brukes til å lage denne modellen skal tas med RPi, og for å få lagret disse lokalt på PC-en skal vi benytte en ny programvare som lastes ned på Raspberry pi:
+```bash
+cd
+git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git
+cd RPi_Cam_Web_Interface
+./install.sh
+```
+
+Under nedlastingen vil dere få opp denne menyen:
+<p align='center'>
+ <img src="Media/Lobe/x.jpg" height=300>
 
 Sørg for at alle parametere er like som på bildet over!
 
 ### Ta bilder
-1.	Start programvaren med å skrive kommandoen /.start.sh i terminalen
+1.	Start programvaren med å skrive kommandoen 
+```bash
+/.start.sh
+```
+
 2.	Åpne en ny fane i nettleseren og bruk RPi-en sin IP-adresse som nettstedssøk
-Hvis du ikke vet IP-adressen fra før kan du finne den med kommando ifconfig
+Hvis dere ikke vet IP-adressen fra før kan dere finne den med kommandoen
 
-<img src="Media/Lobe/02.jpg" height=300>
+```bash
+ifconfig
+```
 
-På plassen markert i rødt vil IP-adressen stå
+<img src="Media/Lobe/startnow.png" width=600>
 
-3.	Når du kommer inn på nettsiden følger du linken html. Da burde du komme hit:
-<img src="Media/Lobe/03.jpg" height=350> 
+På plassen markert i rødt vil IP-adressen stå. Skriv ip/adressen sammen med "/html/" f.eks.(http://192.168.131.104/html/)
 
-Om bildet er opp ned kan du gå inn på Camera Settings og sette flip-instillingen til Vertical
 
-4.	Trykk på record image for å ta bilder. Tips for best mulig gjenkjenningsmodell:
+4.	Inne på camera setings > Annotation  kan dere fjerne annotasjonen. Trykk på record image for å ta bilder. Dere kan også bruke timelapse for å slippe å ta bilder manuelt.
+
+ Tips for best mulig gjenkjenningsmodell:
 -	Ta mange bilder av hvert objekt
 -	Helst fra ulike vinkler
 -	Kan vurdere ulike bakgrunner/underlag
 
-5.	For å få lastet ned, trykk på Download Videos ond Images  Select All  Get Zip
-Denne vil bli lastet ned lokalt på egen PC, velg en filplassering du husker.
+5.	For å få lastet ned, trykk på Download Videos ond Images > Select All > Get Zip
 
-### Lag gjenkjenningsmodell
-1.	Åpne Lobe
-2.	Velg New Project
-3.	Inne på Label (i sidemenyen), trykk på Import
--	Her skal du velge de bildene du tok i forrige steg
-Tips når du skal sette label (to alternativer):
-a)	Last opp bildene til ett objekt om gangen, da kan du markere alle bildene med Ctrl+A, og skrive label for alle bildene samtidig. Dette gjøres ved Import -> Images
+Denne vil bli lastet ned lokalt på egen PC, velg en filplassering dere husker.
 
-b)	Legg alle bildene av samme objekt i en egen mappe, der mappenavnet er labelen til objektet. Sett deretter alle objekt-mappene i en felles mappe. Last opp ved å trykke på Import -> Dataset. Eksempel:
+### Oppdater gjenkjenningsmodellen
+1. Åpne Lobe
+2. Velg det allerede eksisterende prosjektet 
+3. Importer de nye bildene som dere akkurat tok. 
+4. Velg alle bildene og sett "label" til å være "elsys", husk bare små bokstaver!
+5. Når alle bildene har fått label, gå inn på Train, og vent til denne har kommet til 100%
+6. Dere kan nå exportere og overføre mappen til Raspberry pien slikt dere allerede har gjort en gang.
 
 
-<img src="Media/Lobe/04.jpg" height=150>
-
-4.	Når alle bildene har fått label, gå inn på Train, og vent til denne har kommet til 100%
-
-<img src="Media/Lobe/05.jpg" height=100>
-
-###   Bruk modellen
-1.	Gå inn på Use, deretter trykk på export
-2.	Velg alternativet TensorFlow Lite, dette vil gi deg en mappe som brukes i koden for RPi-en, derfor er det viktig å gi denne mappen navnet «Lobe», og plassere denne et sted du husker!
-3.	For å få denne inn i mappestrukturen til RPi-en deres så modellen deres faktisk blir brukt, må den erstatte den modellen som allerede ligger inne. Derfor er det nødvendig å laste ned et skrivebordsprogram som lar deg overføre filer og mapper mellom to maskiner, her egen PC og RPi
-
-    Windows:
-    1.	Last ned WinSCP
-    2.	Når nedlastningen er ferdig, åpne programmet
-    3.	Skriv inn Vertsnavn (Hostname), brukernavn og passord til RPi-en deres for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
-    4.	Erstatt Lobe-mappen som ligger på RPi-en fra før, med den du nettopp har laget
-
-    MacOs
-    1.	Last ned FileZilla
-    2.	Åpne programmet når nedlastningen er ferdig
-    3.	Fyll inn Vert (Hostname), brukernavn og passordet til RPi-en deres for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
-    4.	Erstatt Lobe-mappen som ligger
-
-Når du kjører «runCode.py» fra RPi-en nå, vil den ta i bruk deres egen object detection!!! 
