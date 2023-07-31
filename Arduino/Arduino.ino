@@ -1,5 +1,3 @@
-#include <string.h> 
-
 //MOTOR SETUP
 const int E1 = 3; ///<Motor1 Speed - Front Right
 const int E2 = 11;///<Motor2 Speed - Front Left
