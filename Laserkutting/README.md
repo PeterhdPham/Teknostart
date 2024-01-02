@@ -6,12 +6,12 @@ Når det kommer materiale skal dere bruke 3mm MDF, kjøp heller hele plater ders
 Dette er det som trengs per gruppe:
 | Hva                      | Antall | Bilde                                         |
 |--------------------------|--------|-----------------------------------------------|
-| Hovedkontrollplate       | 1      | ![Image](\Images\Hovedkontrollplate.png)      |
-| Frontpanel               | 1      | ![Image](\Images\Frontpanel.png)              |
-| Bakpanel                 | 1      | ![Image](\Images\Bakpanel.png)                |
-| Motorfesteplater         | 2      | ![Image](\Images\Motorfesteplater.png)        |
-| Batteristøttebraketter   | 2      | ![Image](\Images\Batteristøttebraketter.png)  |
-| Chassisbunnplate         | 1      | ![Image](\Images\Chassisbunnplate.png)        |
-| Toppdekselplate          | 1      | ![Image](\Images\Toppdekselplate.png)         |
-| Sidedekselplate          | 2      | ![Image](\Images\Sidedekselplate.png)         |
-| Bakdekselplate           | 1      | ![Image](\Images\Bakdekselplate.png)          |
+| Hovedkontrollplate       | 1      | ![Image](Images\Hovedkontrollplate.png)      |
+| Frontpanel               | 1      | ![Image](Images\Frontpanel.png)              |
+| Bakpanel                 | 1      | ![Image](Images\Bakpanel.png)                |
+| Motorfesteplater         | 2      | ![Image](Images\Motorfesteplater.png)        |
+| Batteristøttebraketter   | 2      | ![Image](Images\Batteristøttebraketter.png)  |
+| Chassisbunnplate         | 1      | ![Image](Images\Chassisbunnplate.png)        |
+| Toppdekselplate          | 1      | ![Image](Images\Toppdekselplate.png)         |
+| Sidedekselplate          | 2      | ![Image](Images\Sidedekselplate.png)         |
+| Bakdekselplate           | 1      | ![Image](Images\Bakdekselplate.png)          |
