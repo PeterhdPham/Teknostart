@@ -4,14 +4,14 @@ For laserkutting av deler til prosjektet anbefales det å bruke [laserkutteren](
 Når det kommer materiale skal dere bruke 3mm MDF, kjøp heller hele plater dersom du skal laserkutte en del da dette ofte er billigere enn å betale per areal (MDF - 3mm - Hel Plate).
 
 Dette er det som trengs per gruppe:
-| Hva       | Antall | Bilde                     |
-|-----------|--------|---------------------------|
-| FRONT     | 1      | ![Image](URL_of_image_1)  |
-| BAK       | 1      | ![Image](URL_of_image_2)  |
-| BASE      | 1      | ![Image](URL_of_image_3)  |
-| BUNN      | 1      | ![Image](URL_of_image_4)  |
-| MOTOR     | 2      | ![Image](URL_of_image_5)  |
-| BATTERI   | 2      | ![Image](URL_of_image_6)  |
-| SIDEPLATE | 2      | ![Image](URL_of_image_7)  |
-| TOPPPLATE | 1      | ![Image](URL_of_image_8)  |
-| BAKPLATE  | 1      | ![Image](URL_of_image_9)  |
+| Hva                      | Antall | Bilde                                         |
+|--------------------------|--------|-----------------------------------------------|
+| Hovedkontrollplate       | 1      | ![Image](\Images\Hovedkontrollplate.png)      |
+| Frontpanel               | 1      | ![Image](\Images\Frontpanel.png)              |
+| Bakpanel                 | 1      | ![Image](\Images\Bakpanel.png)                |
+| Motorfesteplater         | 2      | ![Image](\Images\Motorfesteplater.png)        |
+| Batteristøttebraketter   | 2      | ![Image](\Images\Batteristøttebraketter.png)  |
+| Chassisbunnplate         | 1      | ![Image](\Images\Chassisbunnplate.png)        |
+| Toppdekselplate          | 1      | ![Image](\Images\Toppdekselplate.png)         |
+| Sidedekselplate          | 2      | ![Image](\Images\Sidedekselplate.png)         |
+| Bakdekselplate           | 1      | ![Image](\Images\Bakdekselplate.png)          |
